@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Company Registration | Mhambi Logistics</title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <script src="../js/script.js"
+        defer></script>
+
+</head>
+
+<body>
+
+    <!--=========================================
+                    HEADER
+    ==========================================-->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+
+                <a href="../index.html">
+
+                    <img src="../images/logo.png"
+                        alt="Mhambi Logistics">
+
+                </a>
+
+            </div>
+
+            <nav>
+
+                <ul class="nav-links">
+
+                    <li>
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="about.html">
+
+                            About Us
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="services.html">
+
+                            Logistics Services
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="fleet.html">
+
+                            Our Fleet
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="industries.html">
+
+                            Industries
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="careers.html">
+
+                            Careers
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="contact.html">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <div class="nav-buttons">
+
+                <a href="quote.html"
+                    class="quote-btn">
+
+                    Request Logistics Quote
+
+                </a>
+
+                <a href="track.html"
+                    class="track-btn">
+
+                    Track Shipment
+
+                </a>
+
+                <a href="login.html"
+                    class="login-btn">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--=========================================
+                PAGE HERO
+    ==========================================-->
+
+    <section class="page-hero">
+
+        <div class="hero-overlay">
+
+            <span class="section-tag">
+
+                CLIENT REGISTRATION
+
+            </span>
+
+            <h1>
+
+                Register Your Company
+
+            </h1>
+
+            <p>
+
+                Join the Mhambi Logistics Enterprise Logistics Management Platform
+                to streamline your logistics operations. Once your company has been
+                successfully registered, you will receive secure access to the
+                Client Portal where you can request quotations, track shipments,
+                monitor deliveries and manage your logistics requirements online.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!--=========================================
+            COMPANY REGISTRATION
+    ==========================================-->
+
+    <section class="registration-section">
+
+        <div class="registration-container">
+
+            <div class="registration-intro">
+
+                <span class="section-tag">
+
+                    ENTERPRISE CLIENT ONBOARDING
+
+                </span>
+
+                <h2>
+
+                    Company Registration Form
+
+                </h2>
+
+                <p>
+
+                    Complete the registration form below to become an approved
+                    Mhambi Logistics client. All information is securely stored
+                    and will only be used for managing your logistics services.
+
+                </p>
+
+            </div>
+
+            <div class="registration-card">
+
+                <form id="companyRegistrationForm">
+
+                    <!--=========================================
+                        COMPANY INFORMATION
+                    ==========================================-->
+
+                    <div class="form-section">
+
+                        <div class="section-heading">
+
+                            <i class="fas fa-building"></i>
+
+                            <h3>
+
+                                Company Information
+
+                            </h3>
+
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="companyName">
+
+                                    Company Name *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="companyName"
+                                    name="companyName"
+                                    placeholder="ABC Construction (Pty) Ltd"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="registrationNumber">
+
+                                    Registration Number *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="registrationNumber"
+                                    name="registrationNumber"
+                                    placeholder="2024/123456/07"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="vatNumber">
+
+                                    VAT Number
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="vatNumber"
+                                    name="vatNumber"
+                                    placeholder="Optional">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="industry">
+
+                                    Industry *
+
+                                </label>
+
+                                <select
+                                    id="industry"
+                                    name="industry"
+                                    required>
+
+                                    <option value="">
+
+                                        Select Industry
+
+                                    </option>
+
+                                    <option>Mining</option>
+
+                                    <option>Construction</option>
+
+                                    <option>Manufacturing</option>
+
+                                    <option>Retail</option>
+
+                                    <option>Agriculture</option>
+
+                                    <option>Automotive</option>
+
+                                    <option>Government</option>
+
+                                    <option>Other</option>
+
+                                </select>
+
+                            </div>
+                                                        <div class="form-group full-width">
+
+                                <label for="physicalAddress">
+
+                                    Physical Address *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="physicalAddress"
+                                    name="physicalAddress"
+                                    placeholder="72 Harding Street, Checkout Building"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="city">
+
+                                    City *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    placeholder="Newcastle"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="province">
+
+                                    Province *
+
+                                </label>
+
+                                <select
+                                    id="province"
+                                    name="province"
+                                    required>
+
+                                    <option value="">
+
+                                        Select Province
+
+                                    </option>
+
+                                    <option>Eastern Cape</option>
+
+                                    <option>Free State</option>
+
+                                    <option>Gauteng</option>
+
+                                    <option selected>
+
+                                        KwaZulu-Natal
+
+                                    </option>
+
+                                    <option>Limpopo</option>
+
+                                    <option>Mpumalanga</option>
+
+                                    <option>North West</option>
+
+                                    <option>Northern Cape</option>
+
+                                    <option>Western Cape</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="postalCode">
+
+                                    Postal Code *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="postalCode"
+                                    name="postalCode"
+                                    placeholder="2940"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--=========================================
+                        PRIMARY CONTACT PERSON
+                    ==========================================-->
+
+                    <div class="form-section">
+
+                        <div class="section-heading">
+
+                            <i class="fas fa-user-tie"></i>
+
+                            <h3>
+
+                                Primary Contact Person
+
+                            </h3>
+
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="firstName">
+
+                                    First Name *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    placeholder="John"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="lastName">
+
+                                    Last Name *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Smith"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="jobTitle">
+
+                                    Job Title *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="jobTitle"
+                                    name="jobTitle"
+                                    placeholder="Logistics Manager"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="companyEmail">
+
+                                    Company Email *
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="companyEmail"
+                                    name="companyEmail"
+                                    placeholder="logistics@company.co.za"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="contactNumber">
+
+                                    Contact Number *
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="contactNumber"
+                                    name="contactNumber"
+                                    placeholder="+27 72 123 4567"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="officeNumber">
+
+                                    Office Telephone
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="officeNumber"
+                                    name="officeNumber"
+                                    placeholder="+27 34 123 4567">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--=========================================
+                        ACCOUNT SECURITY
+                    ==========================================-->
+
+                    <div class="form-section">
+
+                        <div class="section-heading">
+
+                            <i class="fas fa-lock"></i>
+
+                            <h3>
+
+                                Account Security
+
+                            </h3>
+
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="username">
+
+                                    Username *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Create a username"
+                                    required>
+
+                            </div>
+                                                        <div class="form-group">
+
+                                <label for="password">
+
+                                    Password *
+
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create a secure password"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="confirmPassword">
+
+                                    Confirm Password *
+
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--=========================================
+                        TERMS & CONDITIONS
+                    ==========================================-->
+
+                    <div class="terms-section">
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required>
+
+                            I confirm that the information provided is accurate and I agree to the
+                            <a href="#">Terms & Conditions</a> and
+                            <a href="#">Privacy Policy</a>.
+
+                        </label>
+
+                    </div>
+
+                    <!--=========================================
+                        FORM BUTTONS
+                    ==========================================-->
+
+                    <div class="form-buttons">
+
+                        <button
+                            type="submit"
+                            class="submit-btn">
+
+                            Register Company
+
+                        </button>
+
+                    </div>
+
+                    <div class="login-link">
+
+                        <p>
+
+                            Already registered?
+
+                            <a href="login.html">
+
+                                Sign In Here
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--=========================================
+                    FOOTER
+    ==========================================-->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <img src="../images/logo.png"
+                    alt="Mhambi Logistics">
+
+                <p>
+
+                    Trusted logistics solutions delivering reliable transportation,
+                    warehousing and supply chain services across South Africa.
+
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>
+
+                    Quick Links
+
+                </h3>
+
+                <ul>
+
+                    <li><a href="../index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Logistics Services</a></li>
+
+                    <li><a href="fleet.html">Our Fleet</a></li>
+
+                    <li><a href="industries.html">Industries</a></li>
+
+                    <li><a href="careers.html">Careers</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <li><a href="quote.html">Request Logistics Quote</a></li>
+
+                    <li><a href="track.html">Track Shipment</a></li>
+
+                    <li><a href="login.html">Client Login</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h3>
+
+                    Contact Information
+
+                </h3>
+
+                <p>
+
+                    72 Harding Street<br>
+
+                    Checkout Building<br>
+
+                    Newcastle<br>
+
+                    KwaZulu-Natal<br>
+
+                    2940
+
+                </p>
+
+                <p>
+
+                    +27 72 514 5482
+
+                </p>
+
+                <p>
+
+                    +27 34 312 3771
+
+                </p>
+
+                <p>
+
+                    info@mhambilogistics.co.za
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                &copy; 2026 Mhambi Logistics. All Rights Reserved.
+
+            </p>
+
+            <p>
+
+                Enterprise Logistics Management Platform |
+                Developed by <strong>NextGen Systems</strong>
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="../js/script.js" defer></script>
+
+<script src="../js/register.js" defer></script>
+
+</body>
+
+</html>

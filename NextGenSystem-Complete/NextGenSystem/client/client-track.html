@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Track Shipment | Mhambi Logistics
+
+    </title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!--=========================================================
+                        HEADER
+==========================================================-->
+
+<header>
+
+    <div class="navbar">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <a href="client-portal.html">
+
+                <img src="../images/logo.png"
+                    alt="Mhambi Logistics">
+
+            </a>
+
+        </div>
+
+
+        <!-- CLIENT NAVIGATION -->
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html"
+                        class="active">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- CLIENT INFORMATION -->
+
+        <div class="nav-buttons">
+
+            <span class="client-name">
+
+                Welcome,
+
+                <strong id="companyName">
+
+                    Client
+
+                </strong>
+
+            </span>
+
+
+            <a href="../public/login.html"
+                class="login-btn">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!--=========================================================
+                    TRACKING HERO
+==========================================================-->
+
+<section class="page-hero client-track-hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+            <span class="section-tag">
+
+                CLIENT SERVICES
+
+            </span>
+
+
+            <h1>
+
+                Track Your Shipment
+
+            </h1>
+
+
+            <p>
+
+                Monitor the progress of your shipment and stay informed
+                throughout the delivery process. Enter your shipment
+                reference number below to view the latest available
+                shipment information.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--=========================================================
+                    TRACKING SECTION
+==========================================================-->
+
+<section class="tracking-section">
+
+    <div class="tracking-container">
+
+
+        <!-- INTRODUCTION -->
+
+        <div class="tracking-intro">
+
+            <span class="section-tag">
+
+                SHIPMENT TRACKING
+
+            </span>
+
+
+            <h2>
+
+                Where Is Your Shipment?
+
+            </h2>
+
+
+            <p>
+
+                Enter your shipment reference number to access
+                the latest delivery information.
+
+            </p>
+
+        </div>
+
+
+        <!-- TRACKING CARD -->
+
+        <div class="tracking-card">
+
+            <div class="tracking-card-header">
+
+                <div>
+
+                    <span class="tracking-label">
+
+                        TRACK SHIPMENT
+
+                    </span>
+
+
+                    <h3>
+
+                        Enter Shipment Reference
+
+                    </h3>
+
+
+                    <p>
+
+                        Your shipment reference can be found on
+                        your quotation, dispatch confirmation or
+                        logistics documentation.
+
+                    </p>
+
+                </div>
+
+
+                <div class="tracking-icon">
+
+                    <i class="fas fa-location-dot"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRACKING FORM -->
+
+            <form id="trackingForm">
+
+                <div class="tracking-input-group">
+
+                    <label for="shipmentId">
+
+                        Shipment ID
+
+                    </label>
+
+
+                    <div class="tracking-input-wrapper">
+
+                        <i class="fas fa-truck"></i>
+
+
+                        <input
+                            type="text"
+                            id="shipmentId"
+                            name="shipmentId"
+                            placeholder="Example: MHM-10021"
+                            autocomplete="off"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="trackButton"
+                    class="submit-btn">
+
+                    <span class="track-button-icon">
+
+                        <i class="fas fa-location-arrow"></i>
+
+                    </span>
+
+
+                    <span class="track-button-text">
+
+                        Track Shipment
+
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE AREA -->
+
+            <div id="trackingMessage"
+                class="tracking-message"
+                role="alert">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================================
+                SHIPMENT RESULT
+==========================================================-->
+
+<section class="shipment-result-section">
+
+    <div class="shipment-result-container">
+
+
+        <!--=================================================
+                    RESULT HEADER
+        ==================================================-->
+
+        <div class="shipment-result-header">
+
+            <div>
+
+                <span class="section-tag">
+
+                    SHIPMENT INFORMATION
+
+                </span>
+
+                <h2>
+
+                    Shipment Details
+
+                </h2>
+
+                <p>
+
+                    The information below shows the latest available
+                    status and delivery information for your shipment.
+
+                </p>
+
+            </div>
+
+
+            <div class="shipment-reference">
+
+                <span>
+
+                    SHIPMENT ID
+
+                </span>
+
+                <strong id="resultShipmentId">
+
+                    MHM-10021
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!--=================================================
+                    STATUS BANNER
+        ==================================================-->
+
+        <div class="shipment-status-banner">
+
+            <div class="shipment-status-icon">
+
+                <i class="fas fa-truck-fast"></i>
+
+            </div>
+
+
+            <div class="shipment-status-content">
+
+                <span>
+
+                    CURRENT STATUS
+
+                </span>
+
+                <h3 id="shipmentStatus">
+
+                    In Transit
+
+                </h3>
+
+                <p id="shipmentStatusMessage">
+
+                    Your shipment is currently on its way
+                    to the delivery destination.
+
+                </p>
+
+            </div>
+
+
+            <div class="shipment-eta">
+
+                <span>
+
+                    ESTIMATED DELIVERY
+
+                </span>
+
+                <strong id="shipmentEta">
+
+                    Today
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!--=================================================
+                    SHIPMENT OVERVIEW
+        ==================================================-->
+
+        <div class="shipment-overview-grid">
+
+
+            <!-- ORIGIN -->
+
+            <div class="shipment-info-card">
+
+                <div class="shipment-info-icon">
+
+                    <i class="fas fa-circle-dot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        ORIGIN
+
+                    </span>
+
+                    <h3 id="shipmentOrigin">
+
+                        Newcastle
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DESTINATION -->
+
+            <div class="shipment-info-card">
+
+                <div class="shipment-info-icon destination">
+
+                    <i class="fas fa-location-dot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        DESTINATION
+
+                    </span>
+
+                    <h3 id="shipmentDestination">
+
+                        Johannesburg
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VEHICLE -->
+
+            <div class="shipment-info-card">
+
+                <div class="shipment-info-icon vehicle">
+
+                    <i class="fas fa-truck"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        VEHICLE
+
+                    </span>
+
+                    <h3 id="shipmentVehicle">
+
+                        Truck 12
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DRIVER -->
+
+            <div class="shipment-info-card">
+
+                <div class="shipment-info-icon driver">
+
+                    <i class="fas fa-user"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        DRIVER
+
+                    </span>
+
+                    <h3 id="shipmentDriver">
+
+                        Assigned Driver
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!--=================================================
+                    DELIVERY PROGRESS
+        ==================================================-->
+
+        <div class="tracking-progress-card">
+
+            <div class="tracking-progress-header">
+
+                <div>
+
+                    <span class="section-tag">
+
+                        DELIVERY PROGRESS
+
+                    </span>
+
+                    <h3>
+
+                        Shipment Journey
+
+                    </h3>
+
+                </div>
+
+
+                <span
+                    class="progress-percentage"
+                    id="progressPercentage">
+
+                    65%
+
+                </span>
+
+            </div>
+
+
+
+            <!-- PROGRESS BAR -->
+
+            <div class="progress-bar-container">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                    style="width: 65%;">
+
+                </div>
+
+            </div>
+
+
+
+            <!--=================================================
+                        TIMELINE
+            ==================================================-->
+
+            <div class="shipment-timeline">
+
+
+                <!-- BOOKED -->
+
+                <div class="timeline-item completed">
+
+                    <div class="timeline-marker">
+
+                        <i class="fas fa-check"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            BOOKED
+
+                        </span>
+
+                        <h4>
+
+                            Shipment Request Received
+
+                        </h4>
+
+                        <p id="bookedDate">
+
+                            Shipment successfully registered.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COLLECTION -->
+
+                <div class="timeline-item completed">
+
+                    <div class="timeline-marker">
+
+                        <i class="fas fa-check"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            COLLECTED
+
+                        </span>
+
+                        <h4>
+
+                            Cargo Collected
+
+                        </h4>
+
+                        <p id="collectionStatus">
+
+                            Cargo has been collected from
+                            the origin location.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TRANSIT -->
+
+                <div class="timeline-item current">
+
+                    <div class="timeline-marker">
+
+                        <i class="fas fa-truck"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            IN TRANSIT
+
+                        </span>
+
+                        <h4>
+
+                            Shipment On The Road
+
+                        </h4>
+
+                        <p id="transitStatus">
+
+                            Your shipment is currently
+                            travelling to its destination.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DELIVERY -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-marker">
+
+                        <i class="fas fa-flag-checkered"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+
+                            DELIVERY
+
+                        </span>
+
+                        <h4>
+
+                            Delivery
+
+                        </h4>
+
+                        <p id="deliveryStatus">
+
+                            Awaiting final delivery.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!--=================================================
+                    SHIPMENT ADDITIONAL INFORMATION
+        ==================================================-->
+
+        <div class="shipment-additional-grid">
+
+
+            <!-- CARGO -->
+
+            <div class="shipment-detail-card">
+
+                <div class="detail-card-heading">
+
+                    <i class="fas fa-box-open"></i>
+
+                    <h3>
+
+                        Cargo Information
+
+                    </h3>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+
+                        Cargo Type
+
+                    </span>
+
+                    <strong id="cargoType">
+
+                        General Cargo
+
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+
+                        Weight
+
+                    </span>
+
+                    <strong id="cargoWeight">
+
+                        Not specified
+
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+
+                        Number of Items
+
+                    </span>
+
+                    <strong id="cargoItems">
+
+                        Not specified
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE -->
+
+            <div class="shipment-detail-card">
+
+                <div class="detail-card-heading">
+
+                    <i class="fas fa-clipboard-list"></i>
+
+                    <h3>
+
+                        Service Information
+
+                    </h3>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+
+                        Service Type
+
+                    </span>
+
+                    <strong id="serviceType">
+
+                        Road Freight
+
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+
+                        Priority
+
+                    </span>
+
+                    <strong id="shipmentPriority">
+
+                        Standard
+
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+
+                        Current Location
+
+                    </span>
+
+                    <strong id="currentLocation">
+
+                        In Transit
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!--=================================================
+                    TRACKING NOTE
+        ==================================================-->
+
+        <div class="tracking-note">
+
+            <i class="fas fa-shield-halved"></i>
+
+
+            <div>
+
+                <strong>
+
+                    Secure Shipment Information
+
+                </strong>
+
+                <p>
+
+                    Shipment information is displayed securely
+                    for the registered client account associated
+                    with this shipment.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================================
+                    QUICK ACTIONS
+==========================================================-->
+
+<section class="tracking-actions-section">
+
+    <div class="tracking-actions-container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                CLIENT SERVICES
+
+            </span>
+
+            <h2>
+
+                Need More Assistance?
+
+            </h2>
+
+            <p>
+
+                Manage your logistics requirements or contact
+                our support team if you need assistance with
+                your shipment.
+
+            </p>
+
+        </div>
+
+
+        <div class="tracking-actions-grid">
+
+
+            <!-- REQUEST QUOTE -->
+
+            <div class="tracking-action-card">
+
+                <div class="tracking-action-icon">
+
+                    <i class="fas fa-file-signature"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Request a Quote
+
+                </h3>
+
+
+                <p>
+
+                    Need to arrange another delivery?
+                    Submit a new logistics quotation request.
+
+                </p>
+
+
+                <a href="client-quote.html"
+                    class="quote-btn">
+
+                    Request Quote
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SHIPMENT HISTORY -->
+
+            <div class="tracking-action-card">
+
+                <div class="tracking-action-icon">
+
+                    <i class="fas fa-clock-rotate-left"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Shipment History
+
+                </h3>
+
+
+                <p>
+
+                    View your previous shipments and
+                    review completed deliveries.
+
+                </p>
+
+
+                <a href="shipment-history.html"
+                    class="track-btn">
+
+                    View History
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SUPPORT -->
+
+            <div class="tracking-action-card">
+
+                <div class="tracking-action-icon">
+
+                    <i class="fas fa-headset"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Contact Support
+
+                </h3>
+
+
+                <p>
+
+                    Our logistics support team is available
+                    to assist with your shipment.
+
+                </p>
+
+
+                <a href="support.html"
+                    class="quote-btn">
+
+                    Contact Support
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--=========================================================
+                        FOOTER
+==========================================================-->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <!-- FOOTER ABOUT -->
+
+        <div class="footer-about">
+
+            <img src="../images/logo.png"
+                alt="Mhambi Logistics Logo">
+
+
+            <p>
+
+                Enterprise Client Portal for managing
+                quotations, shipments, logistics documents
+                and client services.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- CLIENT PORTAL LINKS -->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Client Portal
+
+            </h3>
+
+
+            <ul>
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- FOOTER CONTACT -->
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Need Assistance?
+
+            </h3>
+
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 72 514 5482
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 34 312 3771
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                info@mhambilogistics.co.za
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-clock"></i>
+
+                Monday - Friday
+
+                <br>
+
+                08:00 - 17:00
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+
+            &copy; 2026 Mhambi Logistics. All Rights Reserved.
+
+        </p>
+
+
+        <p>
+
+            Enterprise Logistics Management Platform
+
+            |
+
+            Developed by
+
+            <strong>
+
+                NextGen Systems
+
+            </strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!--=========================================================
+                    JAVASCRIPT
+==========================================================-->
+
+<script src="../js/script.js"
+    defer></script>
+
+<script src="../js/client-track.js"
+    defer></script>
+
+
+</body>
+
+</html>

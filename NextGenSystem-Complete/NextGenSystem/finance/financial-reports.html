@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Reports | Mhambi Logistics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal-extra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body class="client-portal-page">
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../public/index.html"><img src="../images/logo.png" alt="Mhambi Logistics"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="finance-dashboard.html">Dashboard</a></li>
+                <li><a href="invoices.html">Invoices</a></li>
+                <li><a href="financial-reports.html" class="active">Reports</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <span class="client-name">
+                Welcome, <strong data-staff-first-name>Staff</strong>
+                <span class="staff-role-badge" data-staff-role>Finance Officer</span>
+            </span>
+            <a href="../public/login.html" class="login-btn" id="logoutButton">Logout</a>
+        </div>
+    </div>
+</header>
+
+<section class="client-portal-hero">
+    <div class="client-portal-hero-overlay">
+        <div class="client-portal-hero-content">
+            <span class="section-tag">FINANCE PORTAL</span>
+            <h1>Financial Reports</h1>
+            <p>Understand where revenue is coming from and which invoices need follow-up.</p>
+            
+        </div>
+    </div>
+</section>
+
+<section class="client-dashboard">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">FINANCIAL REPORTS</span>
+            <h2>Reports & Aging</h2>
+            <p>A read-only view of revenue and outstanding balances.</p>
+        </div>
+        <div class="dashboard-stat-grid">
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-sack-dollar"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Revenue Collected</span>
+                        <strong id="statRevenue">0</strong>
+                        <small>Total of all paid invoices</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-scale-unbalanced"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Outstanding</span>
+                        <strong id="statOutstanding">0</strong>
+                        <small>Unpaid + overdue</small>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+
+<section class="client-activity">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">TOP CLIENTS</span>
+            <h2>Clients by Invoiced Amount</h2>
+            <p>Ranked by total value invoiced.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Top Clients</h3>
+                    <p></p>
+                </div>
+            </div>
+            
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Client</th><th>Total Invoiced</th></tr></thead>
+                    <tbody id="topClientsBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="client-actions">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">AGING REPORT</span>
+            <h2>Unpaid & Overdue Invoices</h2>
+            <p>Invoices that still need to be collected, oldest due date first.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Aging Report</h3>
+                    <p></p>
+                </div>
+            </div>
+            
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Invoice #</th><th>Client</th><th>Amount</th><th>Due Date</th><th>Status</th></tr></thead>
+                    <tbody id="agingBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="../images/logo.png" alt="Mhambi Logistics Logo">
+            <p>Secure enterprise logistics management for our valued clients and internal operations teams.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Staff Portal</h3>
+            <ul>
+                <li><a href="finance-dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+                <li><a href="../public/login.html">Switch Portal</a></li>
+                <li><a href="../public/index.html">Public Website</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Internal Support</h3>
+            <p><i class="fas fa-location-dot"></i> Newcastle, KwaZulu-Natal</p>
+            <p><i class="fas fa-phone"></i> +27 72 514 5482</p>
+            <p><i class="fas fa-envelope"></i> ops@mhambilogistics.co.za</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mhambi Logistics. All Rights Reserved.</p>
+        <p>Enterprise Logistics Management Platform | Developed by <strong>NextGen Systems</strong></p>
+    </div>
+</footer>
+
+<script src="../js/auth-common.js"></script>
+<script src="../js/portal-engine.js"></script>
+<script src="../js/financial-reports.js"></script>
+</body>
+</html>

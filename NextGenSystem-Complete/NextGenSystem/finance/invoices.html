@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices | Mhambi Logistics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal-extra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body class="client-portal-page">
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../public/index.html"><img src="../images/logo.png" alt="Mhambi Logistics"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="finance-dashboard.html">Dashboard</a></li>
+                <li><a href="invoices.html" class="active">Invoices</a></li>
+                <li><a href="financial-reports.html">Reports</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <span class="client-name">
+                Welcome, <strong data-staff-first-name>Staff</strong>
+                <span class="staff-role-badge" data-staff-role>Finance Officer</span>
+            </span>
+            <a href="../public/login.html" class="login-btn" id="logoutButton">Logout</a>
+        </div>
+    </div>
+</header>
+
+<section class="client-portal-hero">
+    <div class="client-portal-hero-overlay">
+        <div class="client-portal-hero-content">
+            <span class="section-tag">FINANCE PORTAL</span>
+            <h1>Invoices</h1>
+            <p>Create new invoices and keep payment statuses up to date.</p>
+            
+        </div>
+    </div>
+</section>
+
+<section class="client-dashboard">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">INVOICING</span>
+            <h2>Invoices</h2>
+            <p>Every invoice issued to a Mhambi Logistics client.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Invoice Register</h3>
+                    <p>Showing <span id="invoiceCount">0</span> invoices.</p>
+                </div>
+            </div>
+            
+            <div class="portal-toolbar">
+                <div class="portal-toolbar-filters">
+                    <div class="portal-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search records...">
+                    </div>
+                    <select id="statusFilter">
+                        <option value="all">All Statuses</option><option value="paid">Paid</option><option value="unpaid">Unpaid</option><option value="overdue">Overdue</option>
+                    </select>
+                </div>
+                <button type="button" class="portal-add-btn" id="addInvoiceBtn"><i class="fas fa-plus"></i> New Invoice</button>
+            </div>
+            
+            <div class="portal-form-panel" id="invoiceFormPanel">
+                <h4 id="invoiceFormTitle">New Invoice</h4>
+                <form id="invoiceForm">
+                    <input type="hidden" id="invoiceEditId">
+                    <div class="form-grid">
+                        <div class="form-group"><label>Client Company</label><input type="text" id="invCompany" required></div>
+                        <div class="form-group"><label>Client Email</label><input type="email" id="invEmail" required></div>
+                        <div class="form-group"><label>Shipment Reference</label><input type="text" id="invShipmentRef" placeholder="e.g. MHM-10021"></div>
+                        <div class="form-group"><label>Amount (ZAR)</label><input type="number" id="invAmount" min="0" step="0.01" required></div>
+                        <div class="form-group"><label>Issue Date</label><input type="date" id="invIssueDate" required></div>
+                        <div class="form-group"><label>Due Date</label><input type="date" id="invDueDate" required></div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="invStatus">
+                                <option value="unpaid">Unpaid</option>
+                                <option value="paid">Paid</option>
+                                <option value="overdue">Overdue</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="portal-modal-actions">
+                        <button type="button" class="btn-outline" id="invoiceCancelBtn">Cancel</button>
+                        <button type="submit" class="portal-add-btn"><i class="fas fa-check"></i> Save Invoice</button>
+                    </div>
+                </form>
+            </div>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Invoice #</th><th>Client</th><th>Shipment</th><th>Amount</th><th>Due Date</th><th>Status</th><th>Actions</th></tr></thead>
+                    <tbody id="invoicesBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="../images/logo.png" alt="Mhambi Logistics Logo">
+            <p>Secure enterprise logistics management for our valued clients and internal operations teams.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Staff Portal</h3>
+            <ul>
+                <li><a href="finance-dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+                <li><a href="../public/login.html">Switch Portal</a></li>
+                <li><a href="../public/index.html">Public Website</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Internal Support</h3>
+            <p><i class="fas fa-location-dot"></i> Newcastle, KwaZulu-Natal</p>
+            <p><i class="fas fa-phone"></i> +27 72 514 5482</p>
+            <p><i class="fas fa-envelope"></i> ops@mhambilogistics.co.za</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mhambi Logistics. All Rights Reserved.</p>
+        <p>Enterprise Logistics Management Platform | Developed by <strong>NextGen Systems</strong></p>
+    </div>
+</footer>
+
+<script src="../js/auth-common.js"></script>
+<script src="../js/portal-engine.js"></script>
+<script src="../js/invoices.js"></script>
+</body>
+</html>

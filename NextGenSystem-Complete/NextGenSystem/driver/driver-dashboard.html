@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard | Mhambi Logistics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal-extra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body class="client-portal-page">
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../public/index.html"><img src="../images/logo.png" alt="Mhambi Logistics"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="driver-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="my-deliveries.html">My Deliveries</a></li>
+                <li><a href="delivery-history.html">Delivery History</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <span class="client-name">
+                Welcome, <strong data-staff-first-name>Staff</strong>
+                <span class="staff-role-badge" data-staff-role>Driver</span>
+            </span>
+            <a href="../public/login.html" class="login-btn" id="logoutButton">Logout</a>
+        </div>
+    </div>
+</header>
+
+<section class="client-portal-hero">
+    <div class="client-portal-hero-overlay">
+        <div class="client-portal-hero-content">
+            <span class="section-tag">DRIVER PORTAL</span>
+            <h1>Welcome back, <span id="staffFirstName">Driver</span></h1>
+            <p>Here is what's on your route today, plus your recent delivery activity.</p>
+            <div class="hero-buttons"><a href="my-deliveries.html" class="quote-btn"><i class="fas fa-truck-moving"></i> My Deliveries</a><a href="delivery-history.html" class="track-btn"><i class="fas fa-clock-rotate-left"></i> Delivery History</a></div>
+        </div>
+    </div>
+</section>
+
+<section class="client-dashboard">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">MY OVERVIEW</span>
+            <h2>Driver Dashboard</h2>
+            <p>Everything you need for today's runs, in one place.</p>
+        </div>
+        <div class="dashboard-stat-grid">
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-truck-fast"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Active Deliveries</span>
+                        <strong id="statActive">0</strong>
+                        <small>Assigned or in transit</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Delivered This Month</span>
+                        <strong id="statDeliveredMonth">0</strong>
+                        <small>Completed drop-offs</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-truck"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">My Vehicle</span>
+                        <strong id="statVehicle">0</strong>
+                        <small>Currently assigned</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-road"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Total Completed</span>
+                        <strong id="statTotalDelivered">0</strong>
+                        <small>All-time deliveries</small>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+
+<section class="client-activity">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">TODAY'S WORK</span>
+            <h2>My Active Deliveries</h2>
+            <p>Shipments currently assigned to you.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Active Deliveries</h3>
+                    <p>Update your status from the My Deliveries page.</p>
+                </div>
+            </div>
+            
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Tracking #</th><th>Client</th><th>Route</th><th>ETA</th><th>Status</th></tr></thead>
+                    <tbody id="activeBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="../images/logo.png" alt="Mhambi Logistics Logo">
+            <p>Secure enterprise logistics management for our valued clients and internal operations teams.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Staff Portal</h3>
+            <ul>
+                <li><a href="driver-dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+                <li><a href="../public/login.html">Switch Portal</a></li>
+                <li><a href="../public/index.html">Public Website</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Internal Support</h3>
+            <p><i class="fas fa-location-dot"></i> Newcastle, KwaZulu-Natal</p>
+            <p><i class="fas fa-phone"></i> +27 72 514 5482</p>
+            <p><i class="fas fa-envelope"></i> ops@mhambilogistics.co.za</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mhambi Logistics. All Rights Reserved.</p>
+        <p>Enterprise Logistics Management Platform | Developed by <strong>NextGen Systems</strong></p>
+    </div>
+</footer>
+
+<script src="../js/auth-common.js"></script>
+<script src="../js/portal-engine.js"></script>
+<script src="../js/driver-dashboard.js"></script>
+</body>
+</html>

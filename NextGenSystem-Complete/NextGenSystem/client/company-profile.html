@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Company Profile | Mhambi Logistics
+    </title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <script src="../js/script.js"
+        defer></script>
+
+    <script src="../js/company-profile.js"
+        defer></script>
+
+</head>
+
+<body>
+
+<!--=========================================================
+                        HEADER
+=========================================================-->
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+
+            <a href="client-portal.html">
+
+                <img src="../images/logo.png"
+                    alt="Mhambi Logistics">
+
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html"
+                        class="active">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <span class="client-name">
+
+                Welcome,
+
+                <strong id="companyName">
+
+                    Client
+
+                </strong>
+
+            </span>
+
+            <a href="login.html"
+                class="login-btn">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!--=========================================================
+                    PROFILE HERO
+=========================================================-->
+
+<section class="profile-hero">
+
+    <div class="profile-hero-overlay">
+
+        <div class="profile-hero-content">
+
+            <span class="section-tag">
+
+                CLIENT ACCOUNT
+
+            </span>
+
+            <h1>
+
+                Company Profile
+
+            </h1>
+
+            <p>
+
+                Manage your registered company information,
+                primary contact details and account information
+                from one secure location.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================================
+                    PROFILE CONTENT
+=========================================================-->
+
+<section class="company-profile-section">
+
+    <div class="company-profile-container">
+
+
+        <!--=================================================
+                    PROFILE INTRO
+        ==================================================-->
+
+        <div class="profile-intro">
+
+            <div>
+
+                <span class="section-tag">
+
+                    ACCOUNT MANAGEMENT
+
+                </span>
+
+                <h2>
+
+                    Your Company Profile
+
+                </h2>
+
+                <p>
+
+                    Review and manage the information associated
+                    with your Mhambi Logistics client account.
+
+                </p>
+
+            </div>
+
+
+            <div class="profile-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+
+                    Account Active
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!--=================================================
+                    PROFILE OVERVIEW
+        ==================================================-->
+
+        <div class="profile-overview-card">
+
+            <div class="profile-overview-icon">
+
+                <i class="fas fa-building"></i>
+
+            </div>
+
+
+            <div class="profile-overview-content">
+
+                <span>
+
+                    REGISTERED COMPANY
+
+                </span>
+
+                <h2 id="profileCompanyName">
+
+                    Company Name
+
+                </h2>
+
+                <p id="profileIndustry">
+
+                    Industry
+
+                </p>
+
+            </div>
+
+
+            <div class="profile-overview-badge">
+
+                <i class="fas fa-shield-halved"></i>
+
+                Verified Client
+
+            </div>
+
+        </div>
+
+
+
+        <!--=================================================
+                    PROFILE GRID
+        ==================================================-->
+
+        <div class="profile-grid">
+
+
+            <!--=============================================
+                    COMPANY INFORMATION
+            ==============================================-->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-title">
+
+                        <div class="profile-card-icon">
+
+                            <i class="fas fa-building"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+
+                                BUSINESS DETAILS
+
+                            </span>
+
+                            <h3>
+
+                                Company Information
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Company Name
+
+                        </span>
+
+                        <strong id="companyNameDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Registration Number
+
+                        </span>
+
+                        <strong id="registrationNumberDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            VAT Number
+
+                        </span>
+
+                        <strong id="vatNumberDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Industry
+
+                        </span>
+
+                        <strong id="industryDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!--=============================================
+                    PRIMARY CONTACT
+            ==============================================-->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-title">
+
+                        <div class="profile-card-icon">
+
+                            <i class="fas fa-user-tie"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+
+                                ACCOUNT CONTACT
+
+                            </span>
+
+                            <h3>
+
+                                Primary Contact
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Full Name
+
+                        </span>
+
+                        <strong id="contactPersonDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Job Title
+
+                        </span>
+
+                        <strong id="jobTitleDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Company Email
+
+                        </span>
+
+                        <strong id="companyEmailDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Contact Number
+
+                        </span>
+
+                        <strong id="contactNumberDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!--=============================================
+                    REGISTERED ADDRESS
+            ==============================================-->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-title">
+
+                        <div class="profile-card-icon">
+
+                            <i class="fas fa-location-dot"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+
+                                BUSINESS LOCATION
+
+                            </span>
+
+                            <h3>
+
+                                Registered Address
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-address">
+
+
+                    <div class="address-icon">
+
+                        <i class="fas fa-map-marker-alt"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="addressCompanyName">
+
+                            Company Name
+
+                        </strong>
+
+                        <p id="physicalAddressDetail">
+
+                            —
+
+                        </p>
+
+                        <p>
+
+                            <span id="cityDetail">
+
+                                —
+
+                            </span>,
+
+                            <span id="provinceDetail">
+
+                                —
+
+                            </span>
+
+                        </p>
+
+                        <p>
+
+                            Postal Code:
+
+                            <strong id="postalCodeDetail">
+
+                                —
+
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!--=============================================
+                    ACCOUNT INFORMATION
+            ==============================================-->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-title">
+
+                        <div class="profile-card-icon">
+
+                            <i class="fas fa-user-shield"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+
+                                SECURITY
+
+                            </span>
+
+                            <h3>
+
+                                Account Information
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Username
+
+                        </span>
+
+                        <strong id="usernameDetail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Account Type
+
+                        </span>
+
+                        <strong>
+
+                            Enterprise Client
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Account Status
+
+                        </span>
+
+                        <strong class="active-account">
+
+                            <i class="fas fa-circle"></i>
+
+                            Active
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Security
+
+                        </span>
+
+                        <strong>
+
+                            <i class="fas fa-lock"></i>
+
+                            Protected
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!--=================================================
+                    PROFILE ACTION PANEL
+        ==================================================-->
+
+        <div class="profile-action-panel">
+
+            <div class="profile-action-content">
+
+                <div class="profile-action-icon">
+
+                    <i class="fas fa-pen-to-square"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+
+                        KEEP YOUR INFORMATION UP TO DATE
+
+                    </span>
+
+                    <h3>
+
+                        Need to update your company details?
+
+                    </h3>
+
+                    <p>
+
+                        Make sure your company and contact information
+                        remains accurate so that Mhambi Logistics can
+                        communicate with you effectively.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="profile-edit-btn"
+                id="editProfileButton">
+
+                <i class="fas fa-pen"></i>
+
+                Edit Profile
+
+            </button>
+
+        </div>
+
+
+
+        <!--=================================================
+                    EDIT PROFILE FORM
+        ==================================================-->
+
+        <div
+            class="profile-edit-card"
+            id="profileEditCard"
+            hidden>
+
+
+            <div class="profile-edit-header">
+
+                <div>
+
+                    <span>
+
+                        ACCOUNT MANAGEMENT
+
+                    </span>
+
+                    <h2>
+
+                        Edit Company Information
+
+                    </h2>
+
+                    <p>
+
+                        Update the information you would like
+                        to change below.
+
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="profile-close-btn"
+                    id="closeEditProfile">
+
+                    <i class="fas fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <form id="companyProfileForm">
+
+
+                <!--=========================================
+                        EDIT COMPANY
+                ==========================================-->
+
+                <div class="profile-form-section">
+
+                    <div class="profile-form-section-title">
+
+                        <i class="fas fa-building"></i>
+
+                        <h3>
+
+                            Company Details
+
+                        </h3>
+
+                    </div>
+
+
+                    <div class="profile-form-grid">
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editCompanyName">
+
+                                Company Name
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editCompanyName"
+                                name="companyName"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editRegistrationNumber">
+
+                                Registration Number
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editRegistrationNumber"
+                                name="registrationNumber"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editVatNumber">
+
+                                VAT Number
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editVatNumber"
+                                name="vatNumber">
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editIndustry">
+
+                                Industry
+
+                            </label>
+
+                            <select
+                                id="editIndustry"
+                                name="industry">
+
+                                <option value="">
+
+                                    Select Industry
+
+                                </option>
+
+                                <option>
+
+                                    Mining
+
+                                </option>
+
+                                <option>
+
+                                    Construction
+
+                                </option>
+
+                                <option>
+
+                                    Manufacturing
+
+                                </option>
+
+                                <option>
+
+                                    Retail
+
+                                </option>
+
+                                <option>
+
+                                    Agriculture
+
+                                </option>
+
+                                <option>
+
+                                    Automotive
+
+                                </option>
+
+                                <option>
+
+                                    Government
+
+                                </option>
+
+                                <option>
+
+                                    Other
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!--=========================================
+                        CONTACT DETAILS
+                ==========================================-->
+
+                <div class="profile-form-section">
+
+                    <div class="profile-form-section-title">
+
+                        <i class="fas fa-user-tie"></i>
+
+                        <h3>
+
+                            Primary Contact
+
+                        </h3>
+
+                    </div>
+
+
+                    <div class="profile-form-grid">
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editFirstName">
+
+                                First Name
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editFirstName"
+                                name="firstName"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editLastName">
+
+                                Last Name
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editLastName"
+                                name="lastName"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editJobTitle">
+
+                                Job Title
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editJobTitle"
+                                name="jobTitle"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editCompanyEmail">
+
+                                Company Email
+
+                            </label>
+
+                            <input
+                                type="email"
+                                id="editCompanyEmail"
+                                name="companyEmail"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editContactNumber">
+
+                                Contact Number
+
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="editContactNumber"
+                                name="contactNumber"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editOfficeNumber">
+
+                                Office Telephone
+
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="editOfficeNumber"
+                                name="officeNumber">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!--=========================================
+                        ADDRESS
+                ==========================================-->
+
+                <div class="profile-form-section">
+
+                    <div class="profile-form-section-title">
+
+                        <i class="fas fa-location-dot"></i>
+
+                        <h3>
+
+                            Registered Address
+
+                        </h3>
+
+                    </div>
+
+
+                    <div class="profile-form-grid">
+
+
+                        <div class="profile-form-group full-width">
+
+                            <label for="editPhysicalAddress">
+
+                                Physical Address
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editPhysicalAddress"
+                                name="physicalAddress"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editCity">
+
+                                City
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editCity"
+                                name="city"
+                                required>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editProvince">
+
+                                Province
+
+                            </label>
+
+                            <select
+                                id="editProvince"
+                                name="province"
+                                required>
+
+                                <option value="">
+
+                                    Select Province
+
+                                </option>
+
+                                <option>Eastern Cape</option>
+
+                                <option>Free State</option>
+
+                                <option>Gauteng</option>
+
+                                <option>KwaZulu-Natal</option>
+
+                                <option>Limpopo</option>
+
+                                <option>Mpumalanga</option>
+
+                                <option>North West</option>
+
+                                <option>Northern Cape</option>
+
+                                <option>Western Cape</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="profile-form-group">
+
+                            <label for="editPostalCode">
+
+                                Postal Code
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editPostalCode"
+                                name="postalCode"
+                                required>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!--=========================================
+                        FORM ACTIONS
+                ==========================================-->
+
+                <div class="profile-form-actions">
+
+                    <button
+                        type="button"
+                        class="profile-cancel-btn"
+                        id="cancelProfileEdit">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="profile-save-btn">
+
+                        <i class="fas fa-check"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================================
+                        FOOTER
+=========================================================-->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <!--=================================================
+                        FOOTER ABOUT
+        ==================================================-->
+
+        <div class="footer-about">
+
+            <img src="../images/logo.png"
+                alt="Mhambi Logistics Logo">
+
+            <p>
+
+                Enterprise Client Portal for managing quotations,
+                shipments, logistics documents and client services.
+
+            </p>
+
+        </div>
+
+
+
+        <!--=================================================
+                        FOOTER LINKS
+        ==================================================-->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Client Portal
+
+            </h3>
+
+            <ul>
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!--=================================================
+                    FOOTER CONTACT
+        ==================================================-->
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Need Assistance?
+
+            </h3>
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 72 514 5482
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 34 312 3771
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                info@mhambilogistics.co.za
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!--=================================================
+                    FOOTER BOTTOM
+    ==================================================-->
+
+    <div class="footer-bottom">
+
+        <p>
+
+            &copy; 2026 Mhambi Logistics.
+            All Rights Reserved.
+
+        </p>
+
+        <p>
+
+            Enterprise Logistics Management Platform |
+
+            Developed by
+
+            <strong>
+
+                NextGen Systems
+
+            </strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

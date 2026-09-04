@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Client Portal | Mhambi Logistics
+    </title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+
+<body class="client-portal-page">
+
+
+<!--=========================================================
+                        HEADER
+=========================================================-->
+
+<header>
+
+    <div class="navbar">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <a href="client-portal.html">
+
+                <img src="../images/logo.png"
+                    alt="Mhambi Logistics">
+
+            </a>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="client-portal.html"
+                        class="active">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- CLIENT AREA -->
+
+        <div class="nav-buttons">
+
+            <span class="client-name">
+
+                Welcome,
+
+                <strong id="companyName">
+
+                    Client
+
+                </strong>
+
+            </span>
+
+
+            <a href="login.html"
+                class="login-btn"
+                id="logoutButton">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!--=========================================================
+                    CLIENT PORTAL HERO
+=========================================================-->
+
+<section class="client-portal-hero">
+
+    <div class="client-portal-hero-overlay">
+
+        <div class="client-portal-hero-content">
+
+            <span class="section-tag">
+
+                ENTERPRISE CLIENT PORTAL
+
+            </span>
+
+
+            <h1>
+
+                Welcome back,
+
+                <span id="companyHero">
+
+                    Client
+
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Manage your logistics operations from one secure platform.
+                Request quotations, monitor shipments, access documents
+                and stay informed about your deliveries.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="quote.html"
+                    class="quote-btn">
+
+                    <i class="fas fa-file-signature"></i>
+
+                    Request Logistics Quote
+
+                </a>
+
+
+                <a href="track.html"
+                    class="track-btn">
+
+                    <i class="fas fa-location-dot"></i>
+
+                    Track Shipment
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--=========================================================
+                    DASHBOARD OVERVIEW
+=========================================================-->
+
+<section class="client-dashboard">
+
+    <div class="client-dashboard-container">
+
+
+        <!-- SECTION HEADER -->
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                DASHBOARD
+
+            </span>
+
+
+            <h2>
+
+                Logistics Overview
+
+            </h2>
+
+
+            <p>
+
+                A central view of your logistics activities,
+                shipment progress and client account.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- DASHBOARD STATISTICS -->
+
+        <div class="dashboard-stat-grid">
+
+
+            <!-- QUOTATIONS -->
+
+            <div class="dashboard-stat-card">
+
+                <div class="dashboard-stat-icon">
+
+                    <i class="fas fa-file-signature"></i>
+
+                </div>
+
+
+                <div class="dashboard-stat-content">
+
+                    <span class="dashboard-stat-label">
+
+                        Quotations
+
+                    </span>
+
+
+                    <strong>
+
+                        0
+
+                    </strong>
+
+
+                    <small>
+
+                        Submitted requests
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACTIVE SHIPMENTS -->
+
+            <div class="dashboard-stat-card">
+
+                <div class="dashboard-stat-icon">
+
+                    <i class="fas fa-truck-moving"></i>
+
+                </div>
+
+
+                <div class="dashboard-stat-content">
+
+                    <span class="dashboard-stat-label">
+
+                        Active Shipments
+
+                    </span>
+
+
+                    <strong>
+
+                        0
+
+                    </strong>
+
+
+                    <small>
+
+                        Currently in transit
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DELIVERIES -->
+
+            <div class="dashboard-stat-card">
+
+                <div class="dashboard-stat-icon">
+
+                    <i class="fas fa-circle-check"></i>
+
+                </div>
+
+
+                <div class="dashboard-stat-content">
+
+                    <span class="dashboard-stat-label">
+
+                        Completed Deliveries
+
+                    </span>
+
+
+                    <strong>
+
+                        0
+
+                    </strong>
+
+
+                    <small>
+
+                        Successfully delivered
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACCOUNT STATUS -->
+
+            <div class="dashboard-stat-card">
+
+                <div class="dashboard-stat-icon">
+
+                    <i class="fas fa-shield-halved"></i>
+
+                </div>
+
+
+                <div class="dashboard-stat-content">
+
+                    <span class="dashboard-stat-label">
+
+                        Account Status
+
+                    </span>
+
+
+                    <strong class="account-active">
+
+                        Active
+
+                    </strong>
+
+
+                    <small>
+
+                        Account in good standing
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+<!--=========================================================
+                RECENT SHIPMENT ACTIVITY
+=========================================================-->
+
+<section class="client-activity">
+
+    <div class="client-activity-container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                SHIPMENT MANAGEMENT
+
+            </span>
+
+            <h2>
+
+                Recent Shipment Activity
+
+            </h2>
+
+            <p>
+
+                Monitor your latest shipments and delivery progress
+                from your client dashboard.
+
+            </p>
+
+        </div>
+
+
+        <!-- SHIPMENT TABLE -->
+
+        <div class="shipment-dashboard-card">
+
+            <div class="shipment-card-header">
+
+                <div>
+
+                    <h3>
+
+                        Your Recent Shipments
+
+                    </h3>
+
+                    <p>
+
+                        Latest shipment activity associated with your company.
+
+                    </p>
+
+                </div>
+
+
+                <a href="shipment-history.html"
+                    class="dashboard-view-link">
+
+                    View All
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table class="shipment-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+
+                                Shipment ID
+
+                            </th>
+
+                            <th>
+
+                                Origin
+
+                            </th>
+
+                            <th>
+
+                                Destination
+
+                            </th>
+
+                            <th>
+
+                                Status
+
+                            </th>
+
+                            <th>
+
+                                Vehicle
+
+                            </th>
+
+                            <th>
+
+                                ETA
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td colspan="6"
+                                class="empty-shipment-state">
+
+                                <div class="empty-state-icon">
+
+                                    <i class="fas fa-truck"></i>
+
+                                </div>
+
+
+                                <strong>
+
+                                    No shipments yet
+
+                                </strong>
+
+
+                                <span>
+
+                                    Your shipment activity will appear here
+                                    once a logistics request has been processed.
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--=========================================================
+                    QUICK ACTIONS
+=========================================================-->
+
+<section class="client-actions">
+
+    <div class="client-actions-container">
+
+
+        <!-- SECTION HEADER -->
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                QUICK ACCESS
+
+            </span>
+
+
+            <h2>
+
+                What would you like to do?
+
+            </h2>
+
+
+            <p>
+
+                Access the services you use most from your
+                Enterprise Client Portal.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ACTION CARDS -->
+
+        <div class="client-action-grid">
+
+
+            <!-- REQUEST QUOTE -->
+
+            <a href="quote.html"
+                class="client-action-card">
+
+                <div class="client-action-icon">
+
+                    <i class="fas fa-file-signature"></i>
+
+                </div>
+
+
+                <div class="client-action-content">
+
+                    <h3>
+
+                        Request a Quote
+
+                    </h3>
+
+
+                    <p>
+
+                        Submit a new logistics or transportation
+                        quotation request.
+
+                    </p>
+
+
+                    <span class="client-action-link">
+
+                        Request Quote
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- TRACK SHIPMENT -->
+
+            <a href="track.html"
+                class="client-action-card">
+
+                <div class="client-action-icon">
+
+                    <i class="fas fa-location-dot"></i>
+
+                </div>
+
+
+                <div class="client-action-content">
+
+                    <h3>
+
+                        Track Shipment
+
+                    </h3>
+
+
+                    <p>
+
+                        Check the current status and progress
+                        of your shipments.
+
+                    </p>
+
+
+                    <span class="client-action-link">
+
+                        Track Shipment
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- DOCUMENTS -->
+
+            <a href="documents.html"
+                class="client-action-card">
+
+                <div class="client-action-icon">
+
+                    <i class="fas fa-folder-open"></i>
+
+                </div>
+
+
+                <div class="client-action-content">
+
+                    <h3>
+
+                        View Documents
+
+                    </h3>
+
+
+                    <p>
+
+                        Access invoices, proof of delivery
+                        and other logistics documents.
+
+                    </p>
+
+
+                    <span class="client-action-link">
+
+                        View Documents
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- SUPPORT -->
+
+            <a href="support.html"
+                class="client-action-card">
+
+                <div class="client-action-icon">
+
+                    <i class="fas fa-headset"></i>
+
+                </div>
+
+
+                <div class="client-action-content">
+
+                    <h3>
+
+                        Client Support
+
+                    </h3>
+
+
+                    <p>
+
+                        Contact our logistics support team
+                        whenever you need assistance.
+
+                    </p>
+
+
+                    <span class="client-action-link">
+
+                        Get Support
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================================
+                COMPANY PROFILE
+=========================================================-->
+
+<section class="client-profile">
+
+    <div class="client-profile-container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                CLIENT ACCOUNT
+
+            </span>
+
+            <h2>
+
+                Your Company Profile
+
+            </h2>
+
+            <p>
+
+                View the company information associated with
+                your Mhambi Logistics client account.
+
+            </p>
+
+        </div>
+
+
+        <!-- PROFILE GRID -->
+
+        <div class="client-profile-grid">
+
+
+            <!--=================================================
+                    COMPANY INFORMATION
+            ==================================================-->
+
+            <div class="client-profile-card company-details-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-icon">
+
+                        <i class="fas fa-building"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+
+                            REGISTERED COMPANY
+
+                        </span>
+
+                        <h3 id="profileCompanyName">
+
+                            Company Name
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Registration Number
+
+                        </span>
+
+                        <strong id="profileRegistrationNumber">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            VAT Number
+
+                        </span>
+
+                        <strong id="profileVatNumber">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Industry
+
+                        </span>
+
+                        <strong id="profileIndustry">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Physical Address
+
+                        </span>
+
+                        <strong id="profileAddress">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Location
+
+                        </span>
+
+                        <strong id="profileLocation">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <a href="company-profile.html"
+                    class="profile-card-link">
+
+                    View Full Company Profile
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!--=================================================
+                    PRIMARY CONTACT
+            ==================================================-->
+
+            <div class="client-profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-icon">
+
+                        <i class="fas fa-user-tie"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+
+                            PRIMARY CONTACT
+
+                        </span>
+
+                        <h3 id="profileContactPerson">
+
+                            Contact Person
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Job Title
+
+                        </span>
+
+                        <strong id="profileJobTitle">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Company Email
+
+                        </span>
+
+                        <strong id="profileEmail">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Contact Number
+
+                        </span>
+
+                        <strong id="profileContactNumber">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+
+                            Office Telephone
+
+                        </span>
+
+                        <strong id="profileOfficeNumber">
+
+                            —
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <a href="support.html"
+                    class="profile-card-link">
+
+                    Contact Support
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!--=================================================
+                    ACCOUNT STATUS
+            ==================================================-->
+
+            <div class="client-profile-card account-status-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-icon">
+
+                        <i class="fas fa-shield-halved"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+
+                            ACCOUNT STATUS
+
+                        </span>
+
+                        <h3>
+
+                            Account Active
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-status">
+
+                    <div class="account-status-indicator">
+
+                        <i class="fas fa-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+
+                            Your account is active
+
+                        </strong>
+
+                        <p>
+
+                            Your organisation has secure access
+                            to the Mhambi Logistics Client Portal.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-security-note">
+
+                    <i class="fas fa-lock"></i>
+
+                    <span>
+
+                        Your account information is protected
+                        within the client portal.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!--=================================================
+                    SUPPORT
+            ==================================================-->
+
+            <div class="client-profile-card support-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-card-icon">
+
+                        <i class="fas fa-headset"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+
+                            CLIENT SUPPORT
+
+                        </span>
+
+                        <h3>
+
+                            Need Assistance?
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <p class="support-description">
+
+                    Our logistics support team is available
+                    to assist with quotations, shipments,
+                    documentation and account enquiries.
+
+                </p>
+
+
+                <div class="support-contact">
+
+                    <a href="tel:+27343123771">
+
+                        <i class="fas fa-phone"></i>
+
+                        +27 34 312 3771
+
+                    </a>
+
+
+                    <a href="mailto:info@mhambilogistics.co.za">
+
+                        <i class="fas fa-envelope"></i>
+
+                        info@mhambilogistics.co.za
+
+                    </a>
+
+                </div>
+
+
+                <a href="support.html"
+                    class="profile-card-link">
+
+                    Visit Support Centre
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--=========================================================
+                        FOOTER
+=========================================================-->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-about">
+
+            <img src="../images/logo.png"
+                alt="Mhambi Logistics Logo">
+
+
+            <p>
+
+                Secure enterprise logistics management
+                for our valued clients.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- CLIENT PORTAL LINKS -->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Client Portal
+
+            </h3>
+
+
+            <ul>
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Client Support
+
+            </h3>
+
+
+            <p>
+
+                <i class="fas fa-location-dot"></i>
+
+                Newcastle, KwaZulu-Natal
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 72 514 5482
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 34 312 3771
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                info@mhambilogistics.co.za
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 Mhambi Logistics. All Rights Reserved.
+
+        </p>
+
+
+        <p>
+
+            Enterprise Logistics Management Platform |
+            Developed by <strong>NextGen Systems</strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!--=========================================================
+                    CLIENT PORTAL JAVASCRIPT
+=========================================================-->
+
+<script src="../js/client-portal.js"
+    defer></script>
+
+<script src="../js/script.js"
+    defer></script>
+
+</body>
+
+</html>

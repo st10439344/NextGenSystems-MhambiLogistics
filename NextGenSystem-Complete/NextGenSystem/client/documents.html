@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Documents | Mhambi Logistics
+
+    </title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!--=========================================================
+                        HEADER
+==========================================================-->
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+
+            <a href="client-portal.html">
+
+                <img src="../images/logo.png"
+                    alt="Mhambi Logistics">
+
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html"
+                        class="active">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <span class="client-name">
+
+                Welcome,
+
+                <strong id="companyName">
+
+                    Client
+
+                </strong>
+
+            </span>
+
+
+            <a href="login.html"
+                class="login-btn">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!--=========================================================
+                    DOCUMENT HERO
+==========================================================-->
+
+<section class="page-hero documents-hero">
+
+    <div class="hero-overlay">
+
+        <span class="section-tag">
+
+            CLIENT DOCUMENT CENTRE
+
+        </span>
+
+
+        <h1>
+
+            Your Logistics Documents
+
+        </h1>
+
+
+        <p>
+
+            Access and manage important logistics documents
+            associated with your company, including quotations,
+            invoices, proof of delivery and shipment documents.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                    DOCUMENT SECTION
+==========================================================-->
+
+<section class="documents-section">
+
+    <div class="documents-container">
+
+
+        <!--=================================================
+                        INTRODUCTION
+        ==================================================-->
+
+        <div class="documents-intro">
+
+            <span class="section-tag">
+
+                DOCUMENT MANAGEMENT
+
+            </span>
+
+
+            <h2>
+
+                Manage Your Documents
+
+            </h2>
+
+
+            <p>
+
+                Find important documents quickly using the
+                search and category filters below.
+
+            </p>
+
+        </div>
+
+
+        <!--=================================================
+                    DOCUMENT SUMMARY CARDS
+        ==================================================-->
+
+        <div class="document-summary-grid">
+
+
+            <div class="document-summary-card">
+
+                <div class="document-summary-icon">
+
+                    <i class="fas fa-folder-open"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        TOTAL DOCUMENTS
+
+                    </span>
+
+
+                    <h3 id="totalDocuments">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="document-summary-card">
+
+                <div class="document-summary-icon quote">
+
+                    <i class="fas fa-file-signature"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        QUOTATIONS
+
+                    </span>
+
+
+                    <h3 id="totalQuotes">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="document-summary-card">
+
+                <div class="document-summary-icon invoice">
+
+                    <i class="fas fa-file-invoice-dollar"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        INVOICES
+
+                    </span>
+
+
+                    <h3 id="totalInvoices">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="document-summary-card">
+
+                <div class="document-summary-icon delivery">
+
+                    <i class="fas fa-file-circle-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        DELIVERY DOCUMENTS
+
+                    </span>
+
+
+                    <h3 id="totalDeliveryDocuments">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--=================================================
+                    SEARCH & FILTER
+        ==================================================-->
+
+        <div class="documents-toolbar">
+
+
+            <div class="document-search">
+
+                <label for="documentSearch">
+
+                    Search Documents
+
+                </label>
+
+
+                <div class="document-search-input">
+
+                    <i class="fas fa-search"></i>
+
+
+                    <input
+                        type="text"
+                        id="documentSearch"
+                        placeholder="Search by document name, number or shipment...">
+
+                </div>
+
+            </div>
+
+
+            <div class="document-filter">
+
+                <label for="documentCategory">
+
+                    Document Category
+
+                </label>
+
+
+                <select id="documentCategory">
+
+                    <option value="all">
+
+                        All Documents
+
+                    </option>
+
+                    <option value="quote">
+
+                        Quotations
+
+                    </option>
+
+                    <option value="invoice">
+
+                        Invoices
+
+                    </option>
+
+                    <option value="delivery">
+
+                        Proof of Delivery
+
+                    </option>
+
+                    <option value="shipment">
+
+                        Shipment Documents
+
+                    </option>
+
+                    <option value="other">
+
+                        Other
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="clearDocumentFilters"
+                class="document-clear-btn">
+
+                <i class="fas fa-rotate-left"></i>
+
+                Clear
+
+            </button>
+
+        </div>
+
+
+        <!--=================================================
+                    DOCUMENT LIST CARD
+        ==================================================-->
+
+        <div class="documents-card">
+
+            <div class="documents-card-header">
+
+                <div>
+
+                    <span class="document-label">
+
+                        SECURE DOCUMENT LIBRARY
+
+                    </span>
+
+
+                    <h3>
+
+                        Available Documents
+
+                    </h3>
+
+
+                    <p>
+
+                        Documents belonging to your registered
+                        company account.
+
+                    </p>
+
+                </div>
+
+
+                <span
+                    id="documentRecordCount"
+                    class="document-record-count">
+
+                    0 Documents
+
+                </span>
+
+            </div>
+
+
+            <div class="document-table-wrapper">
+
+                <table class="document-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+
+                                Document
+
+                            </th>
+
+                            <th>
+
+                                Document Number
+
+                            </th>
+
+                            <th>
+
+                                Category
+
+                            </th>
+
+                            <th>
+
+                                Related Shipment
+
+                            </th>
+
+                            <th>
+
+                                Date
+
+                            </th>
+
+                            <th>
+
+                                Status
+
+                            </th>
+
+                            <th>
+
+                                Action
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="documentTableBody">
+
+                        <!-- Documents loaded by documents.js -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!--=================================================
+                            EMPTY STATE
+            ==================================================-->
+
+            <div
+                id="documentEmptyState"
+                class="document-empty-state"
+                style="display: none;">
+
+                <div class="document-empty-icon">
+
+                    <i class="fas fa-folder-open"></i>
+
+                </div>
+
+
+                <h3>
+
+                    No Documents Found
+
+                </h3>
+
+
+                <p>
+
+                    We could not find any documents matching
+                    your search or selected category.
+
+                </p>
+
+
+                <button
+                    type="button"
+                    id="emptyDocumentClear"
+                    class="quote-btn">
+
+                    <i class="fas fa-rotate-left"></i>
+
+                    Clear Filters
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!--=================================================
+                    SECURITY INFORMATION
+        ==================================================-->
+
+        <div class="documents-security-note">
+
+            <div class="documents-security-icon">
+
+                <i class="fas fa-shield-halved"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+
+                    Secure Document Access
+
+                </strong>
+
+
+                <p>
+
+                    Your documents are linked to your registered
+                    company account. Only authenticated clients
+                    can access documents stored within their
+                    client portal.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!--=========================================================
+                    DOCUMENT ACTIONS
+==========================================================-->
+
+<section class="documents-actions-section">
+
+    <div class="documents-container">
+
+        <div class="documents-action-intro">
+
+            <span class="section-tag">
+
+                QUICK ACCESS
+
+            </span>
+
+            <h2>
+
+                Frequently Used Documents
+
+            </h2>
+
+            <p>
+
+                Access common logistics documents and
+                services available through your client portal.
+
+            </p>
+
+        </div>
+
+
+        <div class="documents-action-grid">
+
+
+            <!--=================================================
+                        QUOTATIONS
+            ==================================================-->
+
+            <div class="document-action-card">
+
+                <div class="document-action-icon">
+
+                    <i class="fas fa-file-signature"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Quotations
+
+                </h3>
+
+
+                <p>
+
+                    View your quotation requests and access
+                    quotation documents associated with your
+                    logistics requirements.
+
+                </p>
+
+
+                <a href="client-quote.html"
+                    class="quote-btn">
+
+                    <i class="fas fa-arrow-right"></i>
+
+                    View Quotes
+
+                </a>
+
+            </div>
+
+
+            <!--=================================================
+                        SHIPMENT DOCUMENTS
+            ==================================================-->
+
+            <div class="document-action-card">
+
+                <div class="document-action-icon shipment">
+
+                    <i class="fas fa-truck"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Shipment Documents
+
+                </h3>
+
+
+                <p>
+
+                    Review documents connected to your active
+                    and completed shipments.
+
+                </p>
+
+
+                <a href="shipment-history.html"
+                    class="track-btn">
+
+                    <i class="fas fa-arrow-right"></i>
+
+                    View Shipments
+
+                </a>
+
+            </div>
+
+
+            <!--=================================================
+                        PROOF OF DELIVERY
+            ==================================================-->
+
+            <div class="document-action-card">
+
+                <div class="document-action-icon delivery">
+
+                    <i class="fas fa-file-circle-check"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Proof of Delivery
+
+                </h3>
+
+
+                <p>
+
+                    Access proof of delivery documents for
+                    completed logistics deliveries.
+
+                </p>
+
+
+                <button
+                    type="button"
+                    class="track-btn document-category-btn"
+                    data-category="delivery">
+
+                    <i class="fas fa-folder-open"></i>
+
+                    View POD
+
+                </button>
+
+            </div>
+
+
+            <!--=================================================
+                        INVOICES
+            ==================================================-->
+
+            <div class="document-action-card">
+
+                <div class="document-action-icon invoice">
+
+                    <i class="fas fa-file-invoice-dollar"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Invoices
+
+                </h3>
+
+
+                <p>
+
+                    View invoices related to your logistics
+                    services and completed transactions.
+
+                </p>
+
+
+                <button
+                    type="button"
+                    class="quote-btn document-category-btn"
+                    data-category="invoice">
+
+                    <i class="fas fa-file-invoice"></i>
+
+                    View Invoices
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                DOCUMENT INFORMATION
+==========================================================-->
+
+<section class="documents-information-section">
+
+    <div class="documents-container">
+
+        <div class="documents-information-grid">
+
+
+            <!--=================================================
+                    HOW DOCUMENTS WORK
+            ==================================================-->
+
+            <div class="documents-information-card">
+
+                <div class="documents-information-icon">
+
+                    <i class="fas fa-circle-info"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+
+                        How Your Documents Work
+
+                    </h3>
+
+
+                    <p>
+
+                        Documents are linked to your company
+                        account and organised according to
+                        their purpose. Use the category filter
+                        above to quickly locate a specific type
+                        of document.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!--=================================================
+                    NEED ASSISTANCE
+            ==================================================-->
+
+            <div class="documents-information-card">
+
+                <div class="documents-information-icon support">
+
+                    <i class="fas fa-headset"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+
+                        Need Help?
+
+                    </h3>
+
+
+                    <p>
+
+                        If you cannot find a document you need,
+                        our support team can assist you with
+                        your account and logistics documentation.
+
+                    </p>
+
+
+                    <a href="support.html"
+                        class="document-support-link">
+
+                        Contact Support
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                        FOOTER
+==========================================================-->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <!--=================================================
+                        FOOTER ABOUT
+        ==================================================-->
+
+        <div class="footer-about">
+
+            <img src="../images/logo.png"
+                alt="Mhambi Logistics Logo">
+
+
+            <p>
+
+                Enterprise Client Portal for managing quotations,
+                shipments, logistics documents and client services.
+
+            </p>
+
+        </div>
+
+
+        <!--=================================================
+                        CLIENT SERVICES
+        ==================================================-->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Client Services
+
+            </h3>
+
+
+            <ul>
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!--=================================================
+                        FOOTER CONTACT
+        ==================================================-->
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Need Assistance?
+
+            </h3>
+
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 72 514 5482
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 34 312 3771
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                info@mhambilogistics.co.za
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-clock"></i>
+
+                Monday - Friday
+
+                <br>
+
+                08:00 - 17:00
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!--=================================================
+                        FOOTER BOTTOM
+    ==================================================-->
+
+    <div class="footer-bottom">
+
+        <p>
+
+            &copy; 2026 Mhambi Logistics.
+            All Rights Reserved.
+
+        </p>
+
+
+        <p>
+
+            Enterprise Logistics Management Platform
+
+            |
+
+            Developed by
+
+            <strong>
+
+                NextGen Systems
+
+            </strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!--=========================================================
+                    PAGE SCRIPTS
+==========================================================-->
+
+<script src="../js/script.js"
+    defer></script>
+
+<script src="../js/documents.js"
+    defer></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Shipment History | Mhambi Logistics
+    </title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <script src="../js/script.js"
+        defer></script>
+
+    <script src="../js/shipment-history.js"
+        defer></script>
+
+</head>
+
+<body>
+
+
+<!--=========================================================
+                        HEADER
+==========================================================-->
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+
+            <a href="client-portal.html">
+
+                <img src="../images/logo.png"
+                    alt="Mhambi Logistics">
+
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html"
+                        class="active">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <span class="client-name">
+
+                Welcome,
+
+                <strong id="companyName">
+
+                    Client
+
+                </strong>
+
+            </span>
+
+
+            <a href="login.html"
+                class="login-btn">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!--=========================================================
+                    PAGE HERO
+==========================================================-->
+
+<section class="page-hero shipment-history-hero">
+
+    <div class="hero-overlay">
+
+        <span class="section-tag">
+
+            SHIPMENT MANAGEMENT
+
+        </span>
+
+
+        <h1>
+
+            Shipment History
+
+        </h1>
+
+
+        <p>
+
+            View your company's previous and current shipments,
+            monitor delivery progress and access important
+            shipment information from one secure platform.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                SHIPMENT HISTORY INTRO
+==========================================================-->
+
+<section class="shipment-history-section">
+
+    <div class="shipment-history-container">
+
+        <div class="shipment-history-intro">
+
+            <span class="section-tag">
+
+                CLIENT LOGISTICS RECORD
+
+            </span>
+
+
+            <h2>
+
+                Your Shipment History
+
+            </h2>
+
+
+            <p>
+
+                Review all shipments associated with your company.
+                Use the shipment information below to monitor
+                deliveries and quickly access tracking details.
+
+            </p>
+
+        </div>
+
+
+        <!--=================================================
+                    SUMMARY CARDS
+        ==================================================-->
+
+        <div class="shipment-summary-grid">
+
+            <div class="shipment-summary-card">
+
+                <div class="shipment-summary-icon">
+
+                    <i class="fas fa-truck"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        TOTAL SHIPMENTS
+
+                    </span>
+
+
+                    <h3 id="totalShipments">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="shipment-summary-card">
+
+                <div class="shipment-summary-icon in-transit">
+
+                    <i class="fas fa-route"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        IN TRANSIT
+
+                    </span>
+
+
+                    <h3 id="activeShipments">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="shipment-summary-card">
+
+                <div class="shipment-summary-icon delivered">
+
+                    <i class="fas fa-circle-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        DELIVERED
+
+                    </span>
+
+
+                    <h3 id="deliveredShipments">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="shipment-summary-card">
+
+                <div class="shipment-summary-icon pending">
+
+                    <i class="fas fa-clock"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+
+                        PENDING
+
+                    </span>
+
+
+                    <h3 id="pendingShipments">
+
+                        0
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!--=================================================
+                    SHIPMENT SEARCH & FILTERS
+        ==================================================-->
+
+        <div class="shipment-history-toolbar">
+
+            <div class="shipment-search">
+
+                <label for="shipmentSearch">
+
+                    Search Shipments
+
+                </label>
+
+                <div class="shipment-search-input">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="text"
+                        id="shipmentSearch"
+                        placeholder="Search by tracking number, destination or vehicle...">
+
+                </div>
+
+            </div>
+
+
+            <div class="shipment-filter">
+
+                <label for="shipmentStatusFilter">
+
+                    Shipment Status
+
+                </label>
+
+                <select id="shipmentStatusFilter">
+
+                    <option value="all">
+
+                        All Shipments
+
+                    </option>
+
+                    <option value="in-transit">
+
+                        In Transit
+
+                    </option>
+
+                    <option value="delivered">
+
+                        Delivered
+
+                    </option>
+
+                    <option value="pending">
+
+                        Pending
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="clearFilters"
+                class="shipment-clear-btn">
+
+                <i class="fas fa-rotate-left"></i>
+
+                Clear
+
+            </button>
+
+        </div>
+
+
+        <!--=================================================
+                    SHIPMENT HISTORY TABLE
+        ==================================================-->
+
+        <div class="shipment-history-card">
+
+            <div class="shipment-history-card-header">
+
+                <div>
+
+                    <span class="tracking-label">
+
+                        TRANSACTION HISTORY
+
+                    </span>
+
+                    <h3>
+
+                        Your Shipments
+
+                    </h3>
+
+                    <p>
+
+                        A complete record of shipments associated
+                        with your company account.
+
+                    </p>
+
+                </div>
+
+
+                <div class="shipment-record-count">
+
+                    <i class="fas fa-database"></i>
+
+                    <span id="shipmentRecordCount">
+
+                        0 Records
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!--=================================================
+                        DESKTOP TABLE
+            ==================================================-->
+
+            <div class="shipment-table-wrapper">
+
+                <table class="shipment-history-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+
+                                Tracking Number
+
+                            </th>
+
+                            <th>
+
+                                Origin
+
+                            </th>
+
+                            <th>
+
+                                Destination
+
+                            </th>
+
+                            <th>
+
+                                Vehicle
+
+                            </th>
+
+                            <th>
+
+                                Status
+
+                            </th>
+
+                            <th>
+
+                                Shipment Date
+
+                            </th>
+
+                            <th>
+
+                                Action
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="shipmentHistoryBody">
+
+                        <!--
+
+                            Shipment records will be
+                            inserted here by
+                            shipment-history.js
+
+                        -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!--=================================================
+                        EMPTY STATE
+            ==================================================-->
+
+            <div
+                id="shipmentEmptyState"
+                class="shipment-empty-state"
+                style="display: none;">
+
+                <div class="shipment-empty-icon">
+
+                    <i class="fas fa-box-open"></i>
+
+                </div>
+
+
+                <h3>
+
+                    No Shipments Found
+
+                </h3>
+
+
+                <p>
+
+                    There are currently no shipments matching
+                    your search or filter.
+
+                </p>
+
+
+                <button
+                    type="button"
+                    id="emptyStateClear"
+                    class="quote-btn">
+
+                    <i class="fas fa-rotate-left"></i>
+
+                    Clear Filters
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!--=================================================
+                    SHIPMENT INFORMATION NOTE
+        ==================================================-->
+
+        <div class="shipment-history-note">
+
+            <div class="shipment-history-note-icon">
+
+                <i class="fas fa-circle-info"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+
+                    About your shipment records
+
+                </strong>
+
+
+                <p>
+
+                    Your shipment history is linked to your
+                    registered company account. Only shipments
+                    associated with the currently logged-in
+                    company will be displayed.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                    QUICK ACTIONS
+==========================================================-->
+
+<section class="tracking-actions-section">
+
+    <div class="tracking-actions-container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                CLIENT SERVICES
+
+            </span>
+
+
+            <h2>
+
+                Need to Manage Another Shipment?
+
+            </h2>
+
+
+            <p>
+
+                Quickly access the services you use most often
+                from your Enterprise Client Portal.
+
+            </p>
+
+        </div>
+
+
+        <div class="tracking-actions-grid">
+
+
+            <!--=================================================
+                        REQUEST QUOTE
+            ==================================================-->
+
+            <div class="tracking-action-card">
+
+                <div class="tracking-action-icon">
+
+                    <i class="fas fa-file-signature"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Request a Quote
+
+                </h3>
+
+
+                <p>
+
+                    Submit a new logistics quotation request
+                    for your next shipment.
+
+                </p>
+
+
+                <a href="client-quote.html"
+                    class="quote-btn">
+
+                    Request Quote
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!--=================================================
+                        TRACK SHIPMENT
+            ==================================================-->
+
+            <div class="tracking-action-card">
+
+                <div class="tracking-action-icon">
+
+                    <i class="fas fa-location-dot"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Track Shipment
+
+                </h3>
+
+
+                <p>
+
+                    Enter a shipment tracking number to view
+                    the latest delivery progress.
+
+                </p>
+
+
+                <a href="client-track.html"
+                    class="track-btn">
+
+                    Track Shipment
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!--=================================================
+                        CLIENT PORTAL
+            ==================================================-->
+
+            <div class="tracking-action-card">
+
+                <div class="tracking-action-icon">
+
+                    <i class="fas fa-gauge-high"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Back to Dashboard
+
+                </h3>
+
+
+                <p>
+
+                    Return to your client dashboard and view
+                    your complete logistics overview.
+
+                </p>
+
+
+                <a href="client-portal.html"
+                    class="quote-btn">
+
+                    Dashboard
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================================================
+                        FOOTER
+==========================================================-->
+
+<footer>
+
+    <div class="footer-container">
+
+        <!--=================================================
+                            FOOTER ABOUT
+        ==================================================-->
+
+        <div class="footer-about">
+
+            <img src="../images/logo.png"
+                alt="Mhambi Logistics Logo">
+
+            <p>
+
+                Enterprise Client Portal for managing quotations,
+                shipments, logistics documents and client services.
+
+            </p>
+
+        </div>
+
+
+        <!--=================================================
+                        CLIENT SERVICES
+        ==================================================-->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Client Services
+
+            </h3>
+
+            <ul>
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!--=================================================
+                        FOOTER CONTACT
+        ==================================================-->
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Need Assistance?
+
+            </h3>
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 72 514 5482
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 34 312 3771
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                info@mhambilogistics.co.za
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-clock"></i>
+
+                Monday - Friday
+
+                <br>
+
+                08:00 - 17:00
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!--=================================================
+                        FOOTER BOTTOM
+    ==================================================-->
+
+    <div class="footer-bottom">
+
+        <p>
+
+            &copy; 2026 Mhambi Logistics.
+            All Rights Reserved.
+
+        </p>
+
+        <p>
+
+            Enterprise Logistics Management Platform
+            |
+
+            Developed by
+
+            <strong>
+
+                NextGen Systems
+
+            </strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!--=========================================================
+                    PAGE SCRIPTS
+==========================================================-->
+
+<script src="../js/script.js"
+    defer></script>
+
+<script src="../js/shipment-history.js"
+    defer></script>
+
+
+</body>
+
+</html>

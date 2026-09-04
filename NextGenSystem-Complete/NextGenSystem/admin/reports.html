@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Reports | Mhambi Logistics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal-extra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body class="client-portal-page">
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../public/index.html"><img src="../images/logo.png" alt="Mhambi Logistics"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="client-accounts.html">Client Accounts</a></li>
+                <li><a href="user-management.html">Staff Users</a></li>
+                <li><a href="reports.html" class="active">Reports</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <span class="client-name">
+                Welcome, <strong data-staff-first-name>Staff</strong>
+                <span class="staff-role-badge" data-staff-role>Administrator</span>
+            </span>
+            <a href="../public/login.html" class="login-btn" id="logoutButton">Logout</a>
+        </div>
+    </div>
+</header>
+
+<section class="client-portal-hero">
+    <div class="client-portal-hero-overlay">
+        <div class="client-portal-hero-content">
+            <span class="section-tag">ADMINISTRATOR PORTAL</span>
+            <h1>Platform Reports</h1>
+            <p>High-level, read-only figures drawn from dispatch, finance and warehouse records.</p>
+            
+        </div>
+    </div>
+</section>
+
+<section class="client-dashboard">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">PLATFORM REPORTS</span>
+            <h2>Business Performance</h2>
+            <p>A read-only summary compiled from every department's data.</p>
+        </div>
+        <div class="dashboard-stat-grid">
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-sack-dollar"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Revenue (Paid Invoices)</span>
+                        <strong id="statRevenue">0</strong>
+                        <small>All time, paid status</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Outstanding Balance</span>
+                        <strong id="statOutstanding">0</strong>
+                        <small>Unpaid & overdue invoices</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-boxes-stacked"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Low / Out of Stock Items</span>
+                        <strong id="statLowStock">0</strong>
+                        <small>Warehouse reorder alerts</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-truck-ramp-box"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Total Shipments</span>
+                        <strong id="statTotalShipments">0</strong>
+                        <small>Logged across the platform</small>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+
+<section class="client-activity">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">SHIPMENT STATUS</span>
+            <h2>Shipments by Status</h2>
+            <p>How every shipment on the platform is currently distributed.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Status Breakdown</h3>
+                    <p>Live count per status.</p>
+                </div>
+            </div>
+            
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Status</th><th>Shipments</th></tr></thead>
+                    <tbody id="statusBreakdownBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="client-actions">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">TOP CLIENTS</span>
+            <h2>Clients by Shipment Volume</h2>
+            <p>The companies generating the most shipment activity.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Top Clients</h3>
+                    <p>Ranked by total shipment count.</p>
+                </div>
+            </div>
+            
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Client</th><th>Shipments</th></tr></thead>
+                    <tbody id="topClientsBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="../images/logo.png" alt="Mhambi Logistics Logo">
+            <p>Secure enterprise logistics management for our valued clients and internal operations teams.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Staff Portal</h3>
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+                <li><a href="../public/login.html">Switch Portal</a></li>
+                <li><a href="../public/index.html">Public Website</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Internal Support</h3>
+            <p><i class="fas fa-location-dot"></i> Newcastle, KwaZulu-Natal</p>
+            <p><i class="fas fa-phone"></i> +27 72 514 5482</p>
+            <p><i class="fas fa-envelope"></i> ops@mhambilogistics.co.za</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mhambi Logistics. All Rights Reserved.</p>
+        <p>Enterprise Logistics Management Platform | Developed by <strong>NextGen Systems</strong></p>
+    </div>
+</footer>
+
+<script src="../js/auth-common.js"></script>
+<script src="../js/portal-engine.js"></script>
+<script src="../js/reports.js"></script>
+</body>
+</html>

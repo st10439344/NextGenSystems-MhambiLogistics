@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Request Quote | Mhambi Logistics
+    </title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <script src="../js/script.js"
+        defer></script>
+
+    <script src="../js/client-quote.js"
+        defer></script>
+
+</head>
+
+<body>
+
+<!--=========================================================
+                    CLIENT PORTAL HEADER
+=========================================================-->
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+
+            <a href="client-portal.html">
+
+                <img src="../images/logo.png"
+                    alt="Mhambi Logistics">
+
+            </a>
+
+        </div>
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html"
+                        class="active">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <span class="client-name">
+
+                Welcome,
+
+                <strong id="headerCompanyName">
+
+                    Client
+
+                </strong>
+
+            </span>
+
+            <a href="../public/login.html"
+                class="login-btn">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!--=========================================================
+                    PAGE HERO
+=========================================================-->
+
+<section class="page-hero client-quote-hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+            <span class="section-tag">
+
+                CLIENT SERVICES
+
+            </span>
+
+            <h1>
+
+                Request a Logistics Quote
+
+            </h1>
+
+            <p>
+
+                Tell us what you need transported and our logistics
+                team will prepare a quotation tailored to your
+                company's requirements.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                    QUOTE INTRODUCTION
+=========================================================-->
+
+<section class="registration-section">
+
+    <div class="registration-container">
+
+        <div class="registration-intro">
+
+            <span class="section-tag">
+
+                ENTERPRISE QUOTE REQUEST
+
+            </span>
+
+            <h2>
+
+                Let's Plan Your Next Shipment
+
+            </h2>
+
+            <p>
+
+                Submit your transportation requirements below.
+                Your request will be securely associated with
+
+                <strong id="companyName">
+
+                    your company
+
+                </strong>
+
+                and sent to the Mhambi Logistics team for review.
+
+            </p>
+
+        </div>
+
+
+        <!--=================================================
+                    QUOTE REQUEST CARD
+        =================================================-->
+
+        <div class="registration-card">
+
+            <form id="clientQuoteForm">
+
+
+                <!--=========================================
+                    SECTION 01
+                    SHIPMENT INFORMATION
+                ==========================================-->
+
+                <div class="form-section">
+
+                    <div class="section-heading">
+
+                        <i class="fas fa-route"></i>
+
+                        <div>
+
+                            <span class="form-section-number">
+
+                                01
+
+                            </span>
+
+                            <h3>
+
+                                Shipment Information
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <p class="form-section-description">
+
+                        Provide the basic details of the shipment
+                        you would like Mhambi Logistics to handle.
+
+                    </p>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="collectionLocation">
+
+                                Collection Location *
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-location-dot"></i>
+
+                                <input
+                                    type="text"
+                                    id="collectionLocation"
+                                    name="collectionLocation"
+                                    placeholder="e.g. Newcastle, KwaZulu-Natal"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="deliveryLocation">
+
+                                Delivery Location *
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-flag-checkered"></i>
+
+                                <input
+                                    type="text"
+                                    id="deliveryLocation"
+                                    name="deliveryLocation"
+                                    placeholder="e.g. Johannesburg, Gauteng"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="collectionDate">
+
+                                Preferred Collection Date *
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-calendar-days"></i>
+
+                                <input
+                                    type="date"
+                                    id="collectionDate"
+                                    name="collectionDate"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="deliveryDate">
+
+                                Required Delivery Date
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-calendar-check"></i>
+
+                                <input
+                                    type="date"
+                                    id="deliveryDate"
+                                    name="deliveryDate">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="cargoType">
+
+                                Cargo Type *
+
+                            </label>
+
+                            <select
+                                id="cargoType"
+                                name="cargoType"
+                                required>
+
+                                <option value="">
+
+                                    Select Cargo Type
+
+                                </option>
+
+                                <option value="general">
+
+                                    General Cargo
+
+                                </option>
+
+                                <option value="construction">
+
+                                    Construction Materials
+
+                                </option>
+
+                                <option value="mining">
+
+                                    Mining Equipment
+
+                                </option>
+
+                                <option value="agricultural">
+
+                                    Agricultural Products
+
+                                </option>
+
+                                <option value="automotive">
+
+                                    Automotive Parts
+
+                                </option>
+
+                                <option value="machinery">
+
+                                    Machinery & Equipment
+
+                                </option>
+
+                                <option value="retail">
+
+                                    Retail Goods
+
+                                </option>
+
+                                <option value="other">
+
+                                    Other
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="estimatedWeight">
+
+                                Estimated Weight *
+
+                            </label>
+
+                            <div class="input-with-unit">
+
+                                <input
+                                    type="number"
+                                    id="estimatedWeight"
+                                    name="estimatedWeight"
+                                    placeholder="e.g. 2500"
+                                    min="1"
+                                    required>
+
+                                <span>
+
+                                    kg
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="numberOfItems">
+
+                                Number of Items *
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="numberOfItems"
+                                name="numberOfItems"
+                                placeholder="e.g. 25"
+                                min="1"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="cargoDescription">
+
+                                Cargo Description *
+
+                            </label>
+
+                            <textarea
+                                id="cargoDescription"
+                                name="cargoDescription"
+                                rows="4"
+                                placeholder="Briefly describe the goods or materials to be transported..."
+                                required></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                                <!--=========================================
+                    SECTION 02
+                    TRANSPORT REQUIREMENTS
+                ==========================================-->
+
+                <div class="form-section">
+
+                    <div class="section-heading">
+
+                        <i class="fas fa-truck-fast"></i>
+
+                        <div>
+
+                            <span class="form-section-number">
+
+                                02
+
+                            </span>
+
+                            <h3>
+
+                                Transport Requirements
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <p class="form-section-description">
+
+                        Select the logistics service and vehicle
+                        requirements that best match your shipment.
+
+                    </p>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="serviceType">
+
+                                Logistics Service *
+
+                            </label>
+
+                            <select
+                                id="serviceType"
+                                name="serviceType"
+                                required>
+
+                                <option value="">
+
+                                    Select Service
+
+                                </option>
+
+                                <option value="road-freight">
+
+                                    Road Freight
+
+                                </option>
+
+                                <option value="dedicated-transport">
+
+                                    Dedicated Transport
+
+                                </option>
+
+                                <option value="express-delivery">
+
+                                    Express Delivery
+
+                                </option>
+
+                                <option value="warehousing">
+
+                                    Warehousing & Distribution
+
+                                </option>
+
+                                <option value="supply-chain">
+
+                                    Supply Chain Management
+
+                                </option>
+
+                                <option value="fleet-services">
+
+                                    Fleet Services
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="vehicleType">
+
+                                Preferred Vehicle Type *
+
+                            </label>
+
+                            <select
+                                id="vehicleType"
+                                name="vehicleType"
+                                required>
+
+                                <option value="">
+
+                                    Select Vehicle Type
+
+                                </option>
+
+                                <option value="bakkie">
+
+                                    Bakkie / Light Delivery Vehicle
+
+                                </option>
+
+                                <option value="rigid-truck">
+
+                                    Rigid Truck
+
+                                </option>
+
+                                <option value="tautliner">
+
+                                    Tautliner
+
+                                </option>
+
+                                <option value="flatbed">
+
+                                    Flatbed Truck
+
+                                </option>
+
+                                <option value="superlink">
+
+                                    Superlink
+
+                                </option>
+
+                                <option value="refrigerated">
+
+                                    Refrigerated Truck
+
+                                </option>
+
+                                <option value="specialised">
+
+                                    Specialised Vehicle
+
+                                </option>
+
+                                <option value="unsure">
+
+                                    Not Sure / Recommend a Vehicle
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="loadType">
+
+                                Load Type *
+
+                            </label>
+
+                            <select
+                                id="loadType"
+                                name="loadType"
+                                required>
+
+                                <option value="">
+
+                                    Select Load Type
+
+                                </option>
+
+                                <option value="full-load">
+
+                                    Full Load
+
+                                </option>
+
+                                <option value="part-load">
+
+                                    Part Load
+
+                                </option>
+
+                                <option value="multiple-items">
+
+                                    Multiple Items
+
+                                </option>
+
+                                <option value="single-item">
+
+                                    Single Item
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="priority">
+
+                                Delivery Priority *
+
+                            </label>
+
+                            <select
+                                id="priority"
+                                name="priority"
+                                required>
+
+                                <option value="">
+
+                                    Select Priority
+
+                                </option>
+
+                                <option value="standard">
+
+                                    Standard
+
+                                </option>
+
+                                <option value="urgent">
+
+                                    Urgent
+
+                                </option>
+
+                                <option value="scheduled">
+
+                                    Scheduled Delivery
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="loadingRequirements">
+
+                                Loading Requirements
+
+                            </label>
+
+                            <select
+                                id="loadingRequirements"
+                                name="loadingRequirements">
+
+                                <option value="">
+
+                                    Select Requirement
+
+                                </option>
+
+                                <option value="standard">
+
+                                    Standard Loading
+
+                                </option>
+
+                                <option value="forklift">
+
+                                    Forklift Required
+
+                                </option>
+
+                                <option value="crane">
+
+                                    Crane Required
+
+                                </option>
+
+                                <option value="manual">
+
+                                    Manual Loading
+
+                                </option>
+
+                                <option value="client-loading">
+
+                                    Client Will Handle Loading
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="unloadingRequirements">
+
+                                Unloading Requirements
+
+                            </label>
+
+                            <select
+                                id="unloadingRequirements"
+                                name="unloadingRequirements">
+
+                                <option value="">
+
+                                    Select Requirement
+
+                                </option>
+
+                                <option value="standard">
+
+                                    Standard Unloading
+
+                                </option>
+
+                                <option value="forklift">
+
+                                    Forklift Required
+
+                                </option>
+
+                                <option value="crane">
+
+                                    Crane Required
+
+                                </option>
+
+                                <option value="manual">
+
+                                    Manual Unloading
+
+                                </option>
+
+                                <option value="client-unloading">
+
+                                    Client Will Handle Unloading
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="specialRequirements">
+
+                                Special Requirements
+
+                            </label>
+
+                            <textarea
+                                id="specialRequirements"
+                                name="specialRequirements"
+                                rows="4"
+                                placeholder="Tell us about any special handling, access, security, temperature or delivery requirements..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--=========================================
+                    SECTION 03
+                    CLIENT CONTACT & REFERENCE
+                ==========================================-->
+
+                <div class="form-section">
+
+                    <div class="section-heading">
+
+                        <i class="fas fa-address-card"></i>
+
+                        <div>
+
+                            <span class="form-section-number">
+
+                                03
+
+                            </span>
+
+                            <h3>
+
+                                Client Contact & Reference
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <p class="form-section-description">
+
+                        Confirm the person responsible for this
+                        quotation request and provide any internal
+                        reference information.
+
+                    </p>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="quoteContactName">
+
+                                Contact Person *
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="quoteContactName"
+                                    name="quoteContactName"
+                                    placeholder="Contact person"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="quoteContactEmail">
+
+                                Email Address *
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="quoteContactEmail"
+                                    name="quoteContactEmail"
+                                    placeholder="contact@company.co.za"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="quoteContactNumber">
+
+                                Contact Number *
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="quoteContactNumber"
+                                    name="quoteContactNumber"
+                                    placeholder="+27 72 123 4567"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="clientReference">
+
+                                Client Reference
+
+                            </label>
+
+                            <div class="input-icon">
+
+                                <i class="fas fa-hashtag"></i>
+
+                                <input
+                                    type="text"
+                                    id="clientReference"
+                                    name="clientReference"
+                                    placeholder="e.g. PO-2026-00125">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="additionalNotes">
+
+                                Additional Notes
+
+                            </label>
+
+                            <textarea
+                                id="additionalNotes"
+                                name="additionalNotes"
+                                rows="4"
+                                placeholder="Add any additional information that may help our logistics team prepare your quotation..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                                <!--=========================================
+                    QUOTE REVIEW & CONFIRMATION
+                ==========================================-->
+
+                <div class="quote-review-section">
+
+                    <div class="quote-review-header">
+
+                        <div>
+
+                            <span class="section-tag">
+
+                                FINAL REVIEW
+
+                            </span>
+
+                            <h3>
+
+                                Review Your Quote Request
+
+                            </h3>
+
+                            <p>
+
+                                Please make sure the information provided
+                                is correct before submitting your request.
+
+                            </p>
+
+                        </div>
+
+                        <div class="review-icon">
+
+                            <i class="fas fa-clipboard-check"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quote-review-notice">
+
+                        <i class="fas fa-shield-halved"></i>
+
+                        <div>
+
+                            <strong>
+
+                                Secure Client Request
+
+                            </strong>
+
+                            <p>
+
+                                This quotation request will be securely
+                                associated with your registered company
+                                account and stored for future reference.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--=========================================
+                    TERMS & CONDITIONS
+                ==========================================-->
+
+                <div class="terms-section">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="quoteTerms"
+                            name="quoteTerms"
+                            required>
+
+                        <span>
+
+                            I confirm that the information provided is
+                            accurate and I agree to the
+                            
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+
+                            and
+
+                            <a href="#">
+                                Privacy Policy
+                            </a>.
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!--=========================================
+                    FORM ACTIONS
+                ==========================================-->
+
+                <div class="form-buttons quote-form-buttons">
+
+                    <a href="client-portal.html"
+                        class="track-btn">
+
+                        <i class="fas fa-arrow-left"></i>
+
+                        Back to Dashboard
+
+                    </a>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                        id="submitQuoteButton">
+
+                        <span class="submit-button-text">
+
+                            Submit Quote Request
+
+                        </span>
+
+                        <span class="submit-button-icon">
+
+                            <i class="fas fa-paper-plane"></i>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!--=========================================
+                    FORM STATUS MESSAGE
+                ==========================================-->
+
+                <div id="quoteMessage"
+                    class="quote-message"
+                    role="alert"
+                    aria-live="polite">
+
+                </div>
+
+
+                <!--=========================================
+                    LOGIN / PORTAL INFORMATION
+                ==========================================-->
+
+                <div class="login-link">
+
+                    <p>
+
+                        Need to review your company information?
+
+                        <a href="company-profile.html">
+
+                            View Company Profile
+
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                    CLIENT SUPPORT BANNER
+=========================================================-->
+
+<section class="support-banner">
+
+    <div class="support-banner-container">
+
+        <div class="support-banner-icon">
+
+            <i class="fas fa-headset"></i>
+
+        </div>
+
+        <div class="support-banner-content">
+
+            <span class="section-tag">
+
+                NEED ASSISTANCE?
+
+            </span>
+
+            <h2>
+
+                Our Logistics Team Is Here To Help
+
+            </h2>
+
+            <p>
+
+                If you are unsure which service or vehicle is right
+                for your shipment, our team can help you determine
+                the best solution for your requirements.
+
+            </p>
+
+        </div>
+
+        <div class="support-banner-action">
+
+            <a href="support.html"
+                class="quote-btn">
+
+                Contact Support
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--=========================================================
+                        FOOTER
+=========================================================-->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <!--=========================================
+                    FOOTER ABOUT
+        ==========================================-->
+
+        <div class="footer-about">
+
+            <img src="../images/logo.png"
+                alt="Mhambi Logistics Logo">
+
+            <p>
+
+                Reliable logistics and supply chain solutions
+                supporting businesses across South Africa.
+
+            </p>
+
+        </div>
+
+
+        <!--=========================================
+                    CLIENT PORTAL LINKS
+        ==========================================-->
+
+        <div class="footer-links">
+
+            <h3>
+
+                Client Portal
+
+            </h3>
+
+            <ul>
+
+                <li>
+
+                    <a href="client-portal.html">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="client-quote.html">
+
+                        Request Quote
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="track.html">
+
+                        Track Shipment
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="shipment-history.html">
+
+                        Shipment History
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="documents.html">
+
+                        Documents
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="company-profile.html">
+
+                        Company Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="support.html">
+
+                        Support
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!--=========================================
+                    FOOTER CONTACT
+        ==========================================-->
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Need Assistance?
+
+            </h3>
+
+            <p>
+
+                <i class="fas fa-location-dot"></i>
+
+                72 Harding Street,
+                Checkout Building,
+                Newcastle,
+                KwaZulu-Natal,
+                2940
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 72 514 5482
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +27 34 312 3771
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                info@mhambilogistics.co.za
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!--=========================================
+                    FOOTER BOTTOM
+    ==========================================-->
+
+    <div class="footer-bottom">
+
+        <p>
+
+            &copy; 2026 Mhambi Logistics.
+            All Rights Reserved.
+
+        </p>
+
+        <p>
+
+            Enterprise Logistics Management Platform
+            |
+            Developed by
+            <strong>
+
+                NextGen Systems
+
+            </strong>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!--=========================================================
+                    JAVASCRIPT
+=========================================================-->
+
+<script src="../js/script.js"
+    defer></script>
+
+<script src="../js/client-quote.js"
+    defer></script>
+
+</body>
+
+</html>

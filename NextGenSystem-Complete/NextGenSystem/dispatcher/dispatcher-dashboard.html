@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispatcher Dashboard | Mhambi Logistics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal-extra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body class="client-portal-page">
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../public/index.html"><img src="../images/logo.png" alt="Mhambi Logistics"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="dispatcher-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="assign-shipments.html">Assign Shipments</a></li>
+                <li><a href="load-board.html">Load Board</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <span class="client-name">
+                Welcome, <strong data-staff-first-name>Staff</strong>
+                <span class="staff-role-badge" data-staff-role>Dispatcher</span>
+            </span>
+            <a href="../public/login.html" class="login-btn" id="logoutButton">Logout</a>
+        </div>
+    </div>
+</header>
+
+<section class="client-portal-hero">
+    <div class="client-portal-hero-overlay">
+        <div class="client-portal-hero-content">
+            <span class="section-tag">DISPATCH PORTAL</span>
+            <h1>Welcome back, <span id="staffFirstName">Dispatcher</span></h1>
+            <p>Keep freight moving by assigning drivers and vehicles and tracking every load in real time.</p>
+            <div class="hero-buttons"><a href="assign-shipments.html" class="quote-btn"><i class="fas fa-clipboard-check"></i> Assign Shipments</a><a href="load-board.html" class="track-btn"><i class="fas fa-route"></i> Load Board</a></div>
+        </div>
+    </div>
+</section>
+
+<section class="client-dashboard">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">DISPATCH OVERVIEW</span>
+            <h2>Dispatch Control Centre</h2>
+            <p>Track every shipment moving through the network and see what needs your attention right now.</p>
+        </div>
+        <div class="dashboard-stat-grid">
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Pending Assignment</span>
+                        <strong id="statPending">0</strong>
+                        <small>Awaiting a driver & vehicle</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-truck-moving"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">In Transit</span>
+                        <strong id="statInTransit">0</strong>
+                        <small>Currently on the road</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-circle-check"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Delivered</span>
+                        <strong id="statDelivered">0</strong>
+                        <small>Successfully completed</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-truck"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Vehicles Available</span>
+                        <strong id="statAvailable">0</strong>
+                        <small>Ready for dispatch</small>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+
+<section class="client-activity">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">NEEDS ATTENTION</span>
+            <h2>Shipments Awaiting Assignment</h2>
+            <p>These shipments have no driver or vehicle assigned yet.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Pending Shipments</h3>
+                    <p>Assign a driver and vehicle from the Assign Shipments page.</p>
+                </div>
+            </div>
+            
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Tracking #</th><th>Client</th><th>Route</th><th>Weight</th><th>Priority</th><th>Status</th></tr></thead>
+                    <tbody id="pendingBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="../images/logo.png" alt="Mhambi Logistics Logo">
+            <p>Secure enterprise logistics management for our valued clients and internal operations teams.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Staff Portal</h3>
+            <ul>
+                <li><a href="dispatcher-dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+                <li><a href="../public/login.html">Switch Portal</a></li>
+                <li><a href="../public/index.html">Public Website</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Internal Support</h3>
+            <p><i class="fas fa-location-dot"></i> Newcastle, KwaZulu-Natal</p>
+            <p><i class="fas fa-phone"></i> +27 72 514 5482</p>
+            <p><i class="fas fa-envelope"></i> ops@mhambilogistics.co.za</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mhambi Logistics. All Rights Reserved.</p>
+        <p>Enterprise Logistics Management Platform | Developed by <strong>NextGen Systems</strong></p>
+    </div>
+</footer>
+
+<script src="../js/auth-common.js"></script>
+<script src="../js/portal-engine.js"></script>
+<script src="../js/dispatcher-dashboard.js"></script>
+</body>
+</html>

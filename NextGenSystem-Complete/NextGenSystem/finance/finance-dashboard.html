@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard | Mhambi Logistics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal-extra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body class="client-portal-page">
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../public/index.html"><img src="../images/logo.png" alt="Mhambi Logistics"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="finance-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="invoices.html">Invoices</a></li>
+                <li><a href="financial-reports.html">Reports</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <span class="client-name">
+                Welcome, <strong data-staff-first-name>Staff</strong>
+                <span class="staff-role-badge" data-staff-role>Finance Officer</span>
+            </span>
+            <a href="../public/login.html" class="login-btn" id="logoutButton">Logout</a>
+        </div>
+    </div>
+</header>
+
+<section class="client-portal-hero">
+    <div class="client-portal-hero-overlay">
+        <div class="client-portal-hero-content">
+            <span class="section-tag">FINANCE PORTAL</span>
+            <h1>Welcome back, <span id="staffFirstName">Finance</span></h1>
+            <p>Track invoicing, payments and outstanding balances across the business.</p>
+            <div class="hero-buttons"><a href="invoices.html" class="quote-btn"><i class="fas fa-file-invoice"></i> Manage Invoices</a><a href="financial-reports.html" class="track-btn"><i class="fas fa-chart-line"></i> Reports</a></div>
+        </div>
+    </div>
+</section>
+
+<section class="client-dashboard">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">FINANCE OVERVIEW</span>
+            <h2>Finance Dashboard</h2>
+            <p>A snapshot of billing and collections across every client.</p>
+        </div>
+        <div class="dashboard-stat-grid">
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Total Invoiced</span>
+                        <strong id="statTotalInvoiced">0</strong>
+                        <small>All invoices, all statuses</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-circle-check"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Paid</span>
+                        <strong id="statPaid">0</strong>
+                        <small>Settled invoices</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Unpaid</span>
+                        <strong id="statUnpaid">0</strong>
+                        <small>Awaiting payment</small>
+                    </div>
+                </div>
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                    <div class="dashboard-stat-content">
+                        <span class="dashboard-stat-label">Overdue</span>
+                        <strong id="statOverdue">0</strong>
+                        <small>Past their due date</small>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+
+<section class="client-activity">
+    <div class="client-dashboard-container">
+        <div class="section-title">
+            <span class="section-tag">RECENT ACTIVITY</span>
+            <h2>Latest Invoices</h2>
+            <p>The most recently issued invoices.</p>
+        </div>
+        
+        <div class="data-card">
+            <div class="data-card-header">
+                <div>
+                    <h3>Recent Invoices</h3>
+                    <p>Manage every invoice from the Invoices page.</p>
+                </div>
+            </div>
+            
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead><tr><th>Invoice #</th><th>Client</th><th>Amount</th><th>Due Date</th><th>Status</th></tr></thead>
+                    <tbody id="recentInvoicesBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="../images/logo.png" alt="Mhambi Logistics Logo">
+            <p>Secure enterprise logistics management for our valued clients and internal operations teams.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Staff Portal</h3>
+            <ul>
+                <li><a href="finance-dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+                <li><a href="../public/login.html">Switch Portal</a></li>
+                <li><a href="../public/index.html">Public Website</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Internal Support</h3>
+            <p><i class="fas fa-location-dot"></i> Newcastle, KwaZulu-Natal</p>
+            <p><i class="fas fa-phone"></i> +27 72 514 5482</p>
+            <p><i class="fas fa-envelope"></i> ops@mhambilogistics.co.za</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mhambi Logistics. All Rights Reserved.</p>
+        <p>Enterprise Logistics Management Platform | Developed by <strong>NextGen Systems</strong></p>
+    </div>
+</footer>
+
+<script src="../js/auth-common.js"></script>
+<script src="../js/portal-engine.js"></script>
+<script src="../js/finance-dashboard.js"></script>
+</body>
+</html>
