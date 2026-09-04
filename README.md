@@ -184,8 +184,6 @@ The project includes the following design and planning artefacts:
 * System Sitemap
 * Website Wireframes
 * Mobile Application Wireframes
-* User Flows
-* System Architecture
 
 These artefacts are used to guide the development of the platform and maintain consistency between the planned system and the implemented solution.
 
