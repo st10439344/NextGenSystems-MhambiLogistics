@@ -1,0 +1,6351 @@
+{
+ "version": 1,
+ "roles": {
+  "admin": {
+   "title": "Administrator",
+   "hero": "ADMIN PORTAL",
+   "home": "admin-dashboard",
+   "folder": "admin",
+   "nav": [
+    "admin-dashboard",
+    "users",
+    "roles",
+    "companies",
+    "quotations",
+    "support-admin",
+    "system-settings",
+    "audit-logs",
+    "data-management",
+    "admin-reports",
+    "notifications",
+    "profile"
+   ]
+  },
+  "dispatcher": {
+   "title": "Dispatcher",
+   "hero": "DISPATCH PORTAL",
+   "home": "dispatcher-dashboard",
+   "folder": "dispatcher",
+   "nav": [
+    "dispatcher-dashboard",
+    "quotations",
+    "create-shipment",
+    "route-planning",
+    "shipment-tracking",
+    "delivery-scheduling",
+    "drivers",
+    "incidents",
+    "shipment-reports",
+    "support-admin",
+    "notifications",
+    "profile"
+   ]
+  },
+  "warehouse": {
+   "title": "Warehouse",
+   "hero": "WAREHOUSE PORTAL",
+   "home": "warehouse-dashboard",
+   "folder": "warehouse",
+   "nav": [
+    "warehouse-dashboard",
+    "inventory-management",
+    "stock-management",
+    "receiving",
+    "dispatch-stock",
+    "stock-transfers",
+    "low-stock-alerts",
+    "stock-movements",
+    "inventory-reports",
+    "notifications",
+    "profile"
+   ]
+  },
+  "fleet": {
+   "title": "Fleet",
+   "hero": "FLEET PORTAL",
+   "home": "fleet-dashboard",
+   "folder": "fleet",
+   "nav": [
+    "fleet-dashboard",
+    "vehicle-management",
+    "maintenance-schedule",
+    "upcoming-maintenance",
+    "fuel-management",
+    "vehicle-assignments",
+    "fleet-tracking",
+    "incidents",
+    "fleet-reports",
+    "notifications",
+    "profile"
+   ]
+  },
+  "procurement": {
+   "title": "Procurement",
+   "hero": "PROCUREMENT PORTAL",
+   "home": "procurement-dashboard",
+   "folder": "procurement",
+   "nav": [
+    "procurement-dashboard",
+    "quotations",
+    "suppliers",
+    "purchase-requests",
+    "purchase-orders",
+    "goods-received",
+    "supplier-invoices",
+    "procurement-reports",
+    "notifications",
+    "profile"
+   ]
+  },
+  "finance": {
+   "title": "Finance",
+   "hero": "FINANCE PORTAL",
+   "home": "finance-dashboard",
+   "folder": "finance",
+   "nav": [
+    "finance-dashboard",
+    "invoices",
+    "payments",
+    "receipts",
+    "accounts-payable",
+    "accounts-receivable",
+    "financial-reports",
+    "expenses",
+    "budgets",
+    "notifications",
+    "profile"
+   ]
+  },
+  "driver": {
+   "title": "Driver",
+   "hero": "DRIVER PORTAL",
+   "home": "driver-dashboard",
+   "folder": "driver",
+   "nav": [
+    "driver-dashboard",
+    "my-deliveries",
+    "delivery-schedule",
+    "driver-navigation",
+    "proof-of-delivery",
+    "delivery-history",
+    "incident-reporting",
+    "notifications",
+    "profile"
+   ]
+  },
+  "client": {
+   "title": "Client",
+   "hero": "CLIENT PORTAL",
+   "home": "client-portal",
+   "folder": "client",
+   "nav": [
+    "client-portal",
+    "client-quote",
+    "client-track",
+    "shipment-history",
+    "client-invoices",
+    "documents",
+    "company-profile",
+    "support",
+    "notifications",
+    "profile"
+   ]
+  }
+ },
+ "pages": {
+  "notifications": {
+   "id": "notifications",
+   "title": "Notifications",
+   "subtitle": "Updates about your shipments, quotations and tasks.",
+   "type": "notifications"
+  },
+  "profile": {
+   "id": "profile",
+   "title": "Profile & Settings",
+   "subtitle": "Your details, password, theme and notification preferences.",
+   "type": "profile"
+  },
+  "company-profile": {
+   "id": "company-profile",
+   "title": "Company Profile",
+   "subtitle": "Keep your company contact details up to date.",
+   "type": "company"
+  },
+  "users": {
+   "id": "users",
+   "title": "User Management",
+   "subtitle": "Create staff accounts, assign roles and activate or deactivate access.",
+   "type": "table",
+   "endpoint": "/users",
+   "search": true,
+   "filters": [
+    {
+     "param": "role",
+     "label": "Role",
+     "options": [
+      "admin",
+      "dispatcher",
+      "warehouse",
+      "fleet",
+      "procurement",
+      "finance",
+      "driver",
+      "client"
+     ]
+    },
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "active",
+      "inactive"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Name",
+     "field": "fullName",
+     "type": "strong"
+    },
+    {
+     "label": "Email",
+     "field": "email",
+     "type": "text"
+    },
+    {
+     "label": "Role",
+     "field": "role",
+     "type": "status"
+    },
+    {
+     "label": "Company",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "Last login",
+     "field": "lastLoginAt",
+     "type": "datetime"
+    }
+   ],
+   "create": {
+    "label": "Create staff account",
+    "title": "New user account",
+    "method": "POST",
+    "url": "/users",
+    "fields": [
+     {
+      "name": "fullName",
+      "label": "Full name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+     },
+     {
+      "name": "phone",
+      "label": "Phone",
+      "type": "text"
+     },
+     {
+      "name": "role",
+      "label": "Role",
+      "type": "select",
+      "options": [
+       "admin",
+       "dispatcher",
+       "warehouse",
+       "fleet",
+       "procurement",
+       "finance",
+       "driver",
+       "client"
+      ],
+      "required": true
+     },
+     {
+      "name": "companyId",
+      "label": "Company (clients only)",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/companies?limit=200",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "optional": true
+     },
+     {
+      "name": "licenceNumber",
+      "label": "Licence number (drivers only)",
+      "type": "text"
+     },
+     {
+      "name": "password",
+      "label": "Initial password",
+      "type": "password",
+      "required": true,
+      "hint": "At least 10 characters with upper case, lower case and a number."
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "method": "PATCH",
+     "url": "/users/{id}",
+     "form": {
+      "title": "Edit user",
+      "fields": [
+       {
+        "name": "fullName",
+        "label": "Full name",
+        "type": "text",
+        "from": "fullName"
+       },
+       {
+        "name": "phone",
+        "label": "Phone",
+        "type": "text",
+        "from": "phone"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Change role",
+     "icon": "user-shield",
+     "method": "PUT",
+     "url": "/users/{id}/role",
+     "form": {
+      "title": "Assign role",
+      "fields": [
+       {
+        "name": "role",
+        "label": "Role",
+        "type": "select",
+        "options": [
+         "admin",
+         "dispatcher",
+         "warehouse",
+         "fleet",
+         "procurement",
+         "finance",
+         "driver",
+         "client"
+        ],
+        "required": true,
+        "from": "role"
+       },
+       {
+        "name": "licenceNumber",
+        "label": "Licence number (when making a driver)",
+        "type": "text"
+       },
+       {
+        "name": "companyId",
+        "label": "Company (when making a client)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/companies?limit=200",
+         "path": "data",
+         "value": "id",
+         "label": "name"
+        },
+        "cast": "number",
+        "optional": true
+       }
+      ]
+     }
+    },
+    {
+     "label": "Deactivate",
+     "icon": "user-slash",
+     "when": {
+      "status": [
+       "active"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/users/{id}/status",
+     "body": {
+      "status": "inactive"
+     },
+     "confirm": "Deactivate this account? The user will be signed out immediately.",
+     "danger": true
+    },
+    {
+     "label": "Activate",
+     "icon": "user-check",
+     "when": {
+      "status": [
+       "inactive"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/users/{id}/status",
+     "body": {
+      "status": "active"
+     }
+    }
+   ]
+  },
+  "roles": {
+   "id": "roles",
+   "title": "Role Management",
+   "subtitle": "The eight application roles and the permissions each one carries. Assign roles from User Management.",
+   "type": "table",
+   "endpoint": "/roles",
+   "columns": [
+    {
+     "label": "Role",
+     "field": "name",
+     "type": "strong"
+    },
+    {
+     "label": "Code",
+     "field": "code",
+     "type": "text"
+    },
+    {
+     "label": "Users",
+     "field": "userCount",
+     "type": "number"
+    },
+    {
+     "label": "Permissions",
+     "field": "permissions",
+     "type": "count"
+    },
+    {
+     "label": "Description",
+     "field": "description",
+     "type": "text"
+    }
+   ],
+   "actions": [
+    {
+     "label": "View permissions",
+     "icon": "list",
+     "type": "detail",
+     "detail": {
+      "title": "{name}",
+      "fields": [
+       {
+        "label": "Description",
+        "path": "description"
+       }
+      ],
+      "lists": [
+       {
+        "title": "Permissions",
+        "path": "permissions",
+        "scalar": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "companies": {
+   "id": "companies",
+   "title": "Company Management",
+   "subtitle": "Registered client companies.",
+   "type": "table",
+   "endpoint": "/companies",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "active",
+      "inactive"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Code",
+     "field": "clientCode",
+     "type": "strong"
+    },
+    {
+     "label": "Company",
+     "field": "name",
+     "type": "text"
+    },
+    {
+     "label": "Industry",
+     "field": "industry",
+     "type": "text"
+    },
+    {
+     "label": "City",
+     "field": "city",
+     "type": "text"
+    },
+    {
+     "label": "Phone",
+     "field": "phone",
+     "type": "text"
+    },
+    {
+     "label": "Email",
+     "field": "email",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Register company",
+    "title": "New company",
+    "method": "POST",
+    "url": "/companies",
+    "fields": [
+     {
+      "name": "name",
+      "label": "Company name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "registrationNumber",
+      "label": "Registration number",
+      "type": "text"
+     },
+     {
+      "name": "vatNumber",
+      "label": "VAT number",
+      "type": "text"
+     },
+     {
+      "name": "industry",
+      "label": "Industry",
+      "type": "text"
+     },
+     {
+      "name": "address",
+      "label": "Address",
+      "type": "text"
+     },
+     {
+      "name": "city",
+      "label": "City",
+      "type": "text"
+     },
+     {
+      "name": "province",
+      "label": "Province",
+      "type": "text"
+     },
+     {
+      "name": "postalCode",
+      "label": "Postal code",
+      "type": "text"
+     },
+     {
+      "name": "phone",
+      "label": "Phone",
+      "type": "text"
+     },
+     {
+      "name": "email",
+      "label": "Email",
+      "type": "email"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "method": "PATCH",
+     "url": "/companies/{id}",
+     "form": {
+      "title": "Edit company",
+      "fields": [
+       {
+        "name": "name",
+        "label": "Company name",
+        "type": "text",
+        "from": "name"
+       },
+       {
+        "name": "vatNumber",
+        "label": "VAT number",
+        "type": "text",
+        "from": "vatNumber"
+       },
+       {
+        "name": "industry",
+        "label": "Industry",
+        "type": "text",
+        "from": "industry"
+       },
+       {
+        "name": "city",
+        "label": "City",
+        "type": "text",
+        "from": "city"
+       },
+       {
+        "name": "phone",
+        "label": "Phone",
+        "type": "text",
+        "from": "phone"
+       },
+       {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "from": "email"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Deactivate",
+     "icon": "ban",
+     "when": {
+      "status": [
+       "active"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/companies/{id}",
+     "body": {
+      "status": "inactive"
+     },
+     "confirm": "Deactivate this company?",
+     "danger": true
+    },
+    {
+     "label": "Activate",
+     "icon": "check",
+     "when": {
+      "status": [
+       "inactive"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/companies/{id}",
+     "body": {
+      "status": "active"
+     }
+    }
+   ]
+  },
+  "system-settings": {
+   "id": "system-settings",
+   "title": "System Settings",
+   "subtitle": "Company-wide settings. The VAT rate is applied to every new invoice.",
+   "type": "settings-form",
+   "endpoint": "/settings/system",
+   "method": "PUT",
+   "fields": [
+    {
+     "name": "companyName",
+     "label": "Company name",
+     "type": "text"
+    },
+    {
+     "name": "supportEmail",
+     "label": "Support email",
+     "type": "email"
+    },
+    {
+     "name": "tradingHours",
+     "label": "Trading hours",
+     "type": "text"
+    },
+    {
+     "name": "vatRate",
+     "label": "VAT rate (0.15 = 15%)",
+     "type": "number",
+     "step": "0.01"
+    }
+   ]
+  },
+  "audit-logs": {
+   "id": "audit-logs",
+   "title": "Audit Logs",
+   "subtitle": "Who did what, and when.",
+   "type": "table",
+   "endpoint": "/audit-logs",
+   "search": true,
+   "searchParam": "action",
+   "searchLabel": "Filter by action (e.g. user.create)",
+   "columns": [
+    {
+     "label": "When",
+     "field": "createdAt",
+     "type": "datetime"
+    },
+    {
+     "label": "User",
+     "field": "userName",
+     "type": "text"
+    },
+    {
+     "label": "Action",
+     "field": "action",
+     "type": "strong"
+    },
+    {
+     "label": "Entity",
+     "field": "entityType",
+     "type": "text"
+    },
+    {
+     "label": "Id",
+     "field": "entityId",
+     "type": "text"
+    },
+    {
+     "label": "IP",
+     "field": "ip",
+     "type": "text"
+    }
+   ],
+   "export": {
+    "label": "Download CSV",
+    "url": "/audit-logs?format=csv",
+    "filename": "audit-logs.csv"
+   }
+  },
+  "data-management": {
+   "id": "data-management",
+   "title": "Data Management",
+   "subtitle": "Export operational data as CSV.",
+   "type": "table",
+   "endpoint": "/admin/tables",
+   "columns": [
+    {
+     "label": "Table",
+     "field": "table",
+     "type": "strong"
+    },
+    {
+     "label": "Rows",
+     "field": "rows",
+     "type": "number"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Export CSV",
+     "icon": "download",
+     "type": "download",
+     "url": "/admin/export/{table}",
+     "filename": "{table}.csv"
+    }
+   ]
+  },
+  "admin-reports": {
+   "id": "admin-reports",
+   "title": "Reports",
+   "subtitle": "Operational and financial reports.",
+   "type": "reports",
+   "reports": [
+    [
+     "shipments",
+     "Shipments"
+    ],
+    [
+     "finance",
+     "Finance"
+    ],
+    [
+     "inventory",
+     "Inventory"
+    ],
+    [
+     "fleet",
+     "Fleet"
+    ],
+    [
+     "procurement",
+     "Procurement"
+    ]
+   ]
+  },
+  "quotations": {
+   "id": "quotations",
+   "title": "Client Quotations",
+   "subtitle": "Review, price and convert client quotation requests. (Separate from supplier purchasing.)",
+   "type": "table",
+   "endpoint": "/quotations",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "submitted",
+      "in_review",
+      "quoted",
+      "accepted",
+      "rejected",
+      "declined",
+      "converted"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Reference",
+     "field": "reference",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Weight",
+     "field": "weightKg",
+     "type": "kg"
+    },
+    {
+     "label": "Service",
+     "field": "serviceType",
+     "type": "text"
+    },
+    {
+     "label": "Quoted",
+     "field": "quotedAmount",
+     "type": "money"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "Requested",
+     "field": "createdAt",
+     "type": "date"
+    }
+   ],
+   "actions": [
+    {
+     "label": "View",
+     "icon": "eye",
+     "type": "detail",
+     "detail": {
+      "title": "Quotation {reference}",
+      "fields": [
+       {
+        "label": "Client",
+        "path": "companyName"
+       },
+       {
+        "label": "From",
+        "path": "origin"
+       },
+       {
+        "label": "To",
+        "path": "destination"
+       },
+       {
+        "label": "Cargo",
+        "path": "cargoDescription"
+       },
+       {
+        "label": "Weight (kg)",
+        "path": "weightKg"
+       },
+       {
+        "label": "Service",
+        "path": "serviceType"
+       },
+       {
+        "label": "Preferred date",
+        "path": "preferredDate",
+        "type": "date"
+       },
+       {
+        "label": "Quoted (excl. VAT)",
+        "path": "quotedAmount",
+        "type": "money"
+       },
+       {
+        "label": "Staff notes",
+        "path": "staffNotes"
+       },
+       {
+        "label": "Status",
+        "path": "status",
+        "type": "status"
+       },
+       {
+        "label": "Tracking",
+        "path": "trackingRef"
+       }
+      ],
+      "url": "/quotations/{id}"
+     }
+    },
+    {
+     "label": "Start review",
+     "icon": "magnifying-glass",
+     "when": {
+      "status": [
+       "submitted"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/quotations/{id}/process",
+     "body": {
+      "action": "review"
+     }
+    },
+    {
+     "label": "Quote",
+     "icon": "file-invoice-dollar",
+     "when": {
+      "status": [
+       "submitted",
+       "in_review",
+       "quoted"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/quotations/{id}/process",
+     "body": {
+      "action": "quote"
+     },
+     "form": {
+      "title": "Price quotation (excluding VAT)",
+      "fields": [
+       {
+        "name": "quotedAmount",
+        "label": "Quoted amount (ZAR)",
+        "type": "number",
+        "required": true,
+        "step": "0.01",
+        "from": "quotedAmount"
+       },
+       {
+        "name": "notes",
+        "label": "Notes to client",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Reject",
+     "icon": "ban",
+     "when": {
+      "status": [
+       "submitted",
+       "in_review",
+       "quoted"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/quotations/{id}/process",
+     "body": {
+      "action": "reject"
+     },
+     "danger": true,
+     "form": {
+      "title": "Reject quotation",
+      "fields": [
+       {
+        "name": "notes",
+        "label": "Reason (shown to client)",
+        "type": "textarea",
+        "required": true
+       }
+      ]
+     }
+    },
+    {
+     "label": "Convert to shipment",
+     "icon": "truck-ramp-box",
+     "when": {
+      "status": [
+       "accepted"
+      ]
+     },
+     "method": "POST",
+     "url": "/quotations/{id}/convert",
+     "form": {
+      "title": "Create shipment from quotation",
+      "fields": [
+       {
+        "name": "priority",
+        "label": "Priority",
+        "type": "select",
+        "options": [
+         "normal",
+         "high",
+         "urgent",
+         "low"
+        ]
+       },
+       {
+        "name": "scheduledDate",
+        "label": "Scheduled date",
+        "type": "date"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "create-shipment": {
+   "id": "create-shipment",
+   "title": "Create & Assign Shipments",
+   "subtitle": "Create shipments, generate tracking references and assign drivers and vehicles.",
+   "type": "table",
+   "endpoint": "/shipments",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "pending",
+      "assigned",
+      "collected",
+      "in_transit",
+      "delivered",
+      "failed",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Weight",
+     "field": "weightKg",
+     "type": "kg"
+    },
+    {
+     "label": "Priority",
+     "field": "priority",
+     "type": "status"
+    },
+    {
+     "label": "Driver",
+     "field": "assignment.driverName",
+     "type": "text"
+    },
+    {
+     "label": "Vehicle",
+     "field": "assignment.vehicleRegistration",
+     "type": "text"
+    },
+    {
+     "label": "Scheduled",
+     "field": "scheduledDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Create shipment",
+    "title": "New shipment",
+    "method": "POST",
+    "url": "/shipments",
+    "fields": [
+     {
+      "name": "companyId",
+      "label": "Client company",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/companies?limit=200",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "origin",
+      "label": "Origin",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "destination",
+      "label": "Destination",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "cargoDescription",
+      "label": "Cargo description",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "weightKg",
+      "label": "Weight (kg)",
+      "type": "number",
+      "required": true
+     },
+     {
+      "name": "priority",
+      "label": "Priority",
+      "type": "select",
+      "options": [
+       "normal",
+       "high",
+       "urgent",
+       "low"
+      ]
+     },
+     {
+      "name": "scheduledDate",
+      "label": "Scheduled date",
+      "type": "date"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Assign driver & vehicle",
+     "icon": "user-plus",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "POST",
+     "url": "/shipments/{id}/assign",
+     "form": {
+      "title": "Assign driver and vehicle",
+      "fields": [
+       {
+        "name": "driverId",
+        "label": "Driver (available)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/drivers?availableOnly=true",
+         "path": "data",
+         "value": "id",
+         "label": "fullName"
+        },
+        "cast": "number",
+        "required": true
+       },
+       {
+        "name": "vehicleId",
+        "label": "Vehicle (available)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/vehicles?status=available",
+         "path": "data",
+         "value": "id",
+         "label": "registration",
+         "tpl": "{registration} - {type} ({capacityKg} kg)"
+        },
+        "cast": "number",
+        "required": true,
+        "tpl": "{registration} - {type} ({capacityKg} kg)"
+       },
+       {
+        "name": "scheduledPickup",
+        "label": "Pickup",
+        "type": "datetime"
+       },
+       {
+        "name": "scheduledDelivery",
+        "label": "Delivery",
+        "type": "datetime"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Track",
+     "icon": "route",
+     "type": "detail",
+     "detail": {
+      "title": "Shipment {trackingRef}",
+      "url": "/shipments/{id}",
+      "fields": [
+       {
+        "label": "Client",
+        "path": "shipment.companyName"
+       },
+       {
+        "label": "From",
+        "path": "shipment.origin"
+       },
+       {
+        "label": "To",
+        "path": "shipment.destination"
+       },
+       {
+        "label": "Cargo",
+        "path": "shipment.cargoDescription"
+       },
+       {
+        "label": "Weight (kg)",
+        "path": "shipment.weightKg"
+       },
+       {
+        "label": "Status",
+        "path": "shipment.status",
+        "type": "status"
+       },
+       {
+        "label": "Driver",
+        "path": "shipment.assignment.driverName"
+       },
+       {
+        "label": "Vehicle",
+        "path": "shipment.assignment.vehicleRegistration"
+       },
+       {
+        "label": "ETA",
+        "path": "shipment.eta",
+        "type": "date"
+       },
+       {
+        "label": "Delivered to",
+        "path": "proofOfDelivery.recipientName"
+       }
+      ],
+      "lists": [
+       {
+        "title": "Status history",
+        "path": "history",
+        "columns": [
+         {
+          "label": "When",
+          "field": "at",
+          "type": "datetime"
+         },
+         {
+          "label": "Status",
+          "field": "status",
+          "type": "status"
+         },
+         {
+          "label": "Note",
+          "field": "note",
+          "type": "text"
+         },
+         {
+          "label": "Location",
+          "field": "location",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "when": {
+      "status": [
+       "pending",
+       "assigned"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/shipments/{id}",
+     "form": {
+      "title": "Edit shipment",
+      "fields": [
+       {
+        "name": "origin",
+        "label": "Origin",
+        "type": "text",
+        "from": "origin"
+       },
+       {
+        "name": "destination",
+        "label": "Destination",
+        "type": "text",
+        "from": "destination"
+       },
+       {
+        "name": "cargoDescription",
+        "label": "Cargo",
+        "type": "text",
+        "from": "cargoDescription"
+       },
+       {
+        "name": "weightKg",
+        "label": "Weight (kg)",
+        "type": "number",
+        "from": "weightKg"
+       },
+       {
+        "name": "priority",
+        "label": "Priority",
+        "type": "select",
+        "options": [
+         "normal",
+         "high",
+         "urgent",
+         "low"
+        ],
+        "from": "priority"
+       },
+       {
+        "name": "scheduledDate",
+        "label": "Scheduled date",
+        "type": "date",
+        "from": "scheduledDate"
+       },
+       {
+        "name": "eta",
+        "label": "ETA",
+        "type": "date",
+        "from": "eta"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Cancel",
+     "icon": "ban",
+     "when": {
+      "status": [
+       "pending",
+       "assigned"
+      ]
+     },
+     "method": "POST",
+     "url": "/shipments/{id}/cancel",
+     "danger": true,
+     "form": {
+      "title": "Cancel shipment",
+      "fields": [
+       {
+        "name": "reason",
+        "label": "Reason",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Re-dispatch",
+     "icon": "rotate-left",
+     "when": {
+      "status": [
+       "failed"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/shipments/{id}/status",
+     "body": {
+      "status": "pending"
+     },
+     "confirm": "Return this failed shipment to pending for re-dispatch?"
+    }
+   ],
+   "export": {
+    "label": "Download CSV",
+    "url": "/shipments?format=csv",
+    "filename": "shipments.csv"
+   }
+  },
+  "route-planning": {
+   "id": "route-planning",
+   "title": "Route Planning",
+   "subtitle": "Open routes in the map, check weights and capacities, and adjust schedules.",
+   "type": "table",
+   "endpoint": "/shipments",
+   "params": {
+    "status": "pending"
+   },
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "pending",
+      "assigned",
+      "collected",
+      "in_transit",
+      "delivered",
+      "failed",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Weight",
+     "field": "weightKg",
+     "type": "kg"
+    },
+    {
+     "label": "Priority",
+     "field": "priority",
+     "type": "status"
+    },
+    {
+     "label": "Scheduled",
+     "field": "scheduledDate",
+     "type": "date"
+    },
+    {
+     "label": "ETA",
+     "field": "eta",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Route map",
+     "icon": "map-location-dot",
+     "type": "navigate",
+     "field": "destination",
+     "originField": "origin"
+    },
+    {
+     "label": "Assign driver & vehicle",
+     "icon": "user-plus",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "POST",
+     "url": "/shipments/{id}/assign",
+     "form": {
+      "title": "Assign driver and vehicle",
+      "fields": [
+       {
+        "name": "driverId",
+        "label": "Driver (available)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/drivers?availableOnly=true",
+         "path": "data",
+         "value": "id",
+         "label": "fullName"
+        },
+        "cast": "number",
+        "required": true
+       },
+       {
+        "name": "vehicleId",
+        "label": "Vehicle (available)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/vehicles?status=available",
+         "path": "data",
+         "value": "id",
+         "label": "registration",
+         "tpl": "{registration} - {type} ({capacityKg} kg)"
+        },
+        "cast": "number",
+        "required": true,
+        "tpl": "{registration} - {type} ({capacityKg} kg)"
+       },
+       {
+        "name": "scheduledPickup",
+        "label": "Pickup",
+        "type": "datetime"
+       },
+       {
+        "name": "scheduledDelivery",
+        "label": "Delivery",
+        "type": "datetime"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "when": {
+      "status": [
+       "pending",
+       "assigned"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/shipments/{id}",
+     "form": {
+      "title": "Edit shipment",
+      "fields": [
+       {
+        "name": "origin",
+        "label": "Origin",
+        "type": "text",
+        "from": "origin"
+       },
+       {
+        "name": "destination",
+        "label": "Destination",
+        "type": "text",
+        "from": "destination"
+       },
+       {
+        "name": "cargoDescription",
+        "label": "Cargo",
+        "type": "text",
+        "from": "cargoDescription"
+       },
+       {
+        "name": "weightKg",
+        "label": "Weight (kg)",
+        "type": "number",
+        "from": "weightKg"
+       },
+       {
+        "name": "priority",
+        "label": "Priority",
+        "type": "select",
+        "options": [
+         "normal",
+         "high",
+         "urgent",
+         "low"
+        ],
+        "from": "priority"
+       },
+       {
+        "name": "scheduledDate",
+        "label": "Scheduled date",
+        "type": "date",
+        "from": "scheduledDate"
+       },
+       {
+        "name": "eta",
+        "label": "ETA",
+        "type": "date",
+        "from": "eta"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "shipment-tracking": {
+   "id": "shipment-tracking",
+   "title": "Shipment Tracking",
+   "subtitle": "Live progress of every shipment.",
+   "type": "table",
+   "endpoint": "/shipments",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "pending",
+      "assigned",
+      "collected",
+      "in_transit",
+      "delivered",
+      "failed",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Weight",
+     "field": "weightKg",
+     "type": "kg"
+    },
+    {
+     "label": "Priority",
+     "field": "priority",
+     "type": "status"
+    },
+    {
+     "label": "Driver",
+     "field": "assignment.driverName",
+     "type": "text"
+    },
+    {
+     "label": "Vehicle",
+     "field": "assignment.vehicleRegistration",
+     "type": "text"
+    },
+    {
+     "label": "Scheduled",
+     "field": "scheduledDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Track",
+     "icon": "route",
+     "type": "detail",
+     "detail": {
+      "title": "Shipment {trackingRef}",
+      "url": "/shipments/{id}",
+      "fields": [
+       {
+        "label": "Client",
+        "path": "shipment.companyName"
+       },
+       {
+        "label": "From",
+        "path": "shipment.origin"
+       },
+       {
+        "label": "To",
+        "path": "shipment.destination"
+       },
+       {
+        "label": "Cargo",
+        "path": "shipment.cargoDescription"
+       },
+       {
+        "label": "Weight (kg)",
+        "path": "shipment.weightKg"
+       },
+       {
+        "label": "Status",
+        "path": "shipment.status",
+        "type": "status"
+       },
+       {
+        "label": "Driver",
+        "path": "shipment.assignment.driverName"
+       },
+       {
+        "label": "Vehicle",
+        "path": "shipment.assignment.vehicleRegistration"
+       },
+       {
+        "label": "ETA",
+        "path": "shipment.eta",
+        "type": "date"
+       },
+       {
+        "label": "Delivered to",
+        "path": "proofOfDelivery.recipientName"
+       }
+      ],
+      "lists": [
+       {
+        "title": "Status history",
+        "path": "history",
+        "columns": [
+         {
+          "label": "When",
+          "field": "at",
+          "type": "datetime"
+         },
+         {
+          "label": "Status",
+          "field": "status",
+          "type": "status"
+         },
+         {
+          "label": "Note",
+          "field": "note",
+          "type": "text"
+         },
+         {
+          "label": "Location",
+          "field": "location",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "label": "Route map",
+     "icon": "map-location-dot",
+     "type": "navigate",
+     "field": "destination",
+     "originField": "origin"
+    },
+    {
+     "label": "Re-dispatch",
+     "icon": "rotate-left",
+     "when": {
+      "status": [
+       "failed"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/shipments/{id}/status",
+     "body": {
+      "status": "pending"
+     },
+     "confirm": "Return this failed shipment to pending for re-dispatch?"
+    }
+   ]
+  },
+  "delivery-scheduling": {
+   "id": "delivery-scheduling",
+   "title": "Delivery Scheduling",
+   "subtitle": "Scheduled pickups and deliveries. Remove an assignment to re-plan a load.",
+   "type": "table",
+   "endpoint": "/assignments",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "assigned",
+      "active",
+      "completed",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Driver",
+     "field": "driverName",
+     "type": "text"
+    },
+    {
+     "label": "Vehicle",
+     "field": "vehicleRegistration",
+     "type": "text"
+    },
+    {
+     "label": "Pickup",
+     "field": "scheduledPickup",
+     "type": "datetime"
+    },
+    {
+     "label": "Delivery",
+     "field": "scheduledDelivery",
+     "type": "datetime"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Remove assignment",
+     "icon": "link-slash",
+     "when": {
+      "status": [
+       "assigned"
+      ]
+     },
+     "method": "DELETE",
+     "url": "/assignments/{id}",
+     "confirm": "Remove this assignment and return the shipment to pending?",
+     "danger": true
+    }
+   ]
+  },
+  "drivers": {
+   "id": "drivers",
+   "title": "Drivers",
+   "subtitle": "Driver availability and workload.",
+   "type": "table",
+   "endpoint": "/drivers",
+   "filters": [],
+   "search": false,
+   "columns": [
+    {
+     "label": "Driver",
+     "field": "fullName",
+     "type": "strong"
+    },
+    {
+     "label": "Licence",
+     "field": "licenceNumber",
+     "type": "text"
+    },
+    {
+     "label": "Code",
+     "field": "licenceCode",
+     "type": "text"
+    },
+    {
+     "label": "Phone",
+     "field": "phone",
+     "type": "text"
+    },
+    {
+     "label": "Open jobs",
+     "field": "openAssignments",
+     "type": "number"
+    },
+    {
+     "label": "On trip",
+     "field": "onTrip",
+     "type": "bool"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ]
+  },
+  "shipment-reports": {
+   "id": "shipment-reports",
+   "title": "Shipment Reports",
+   "subtitle": "Dispatch performance.",
+   "type": "reports",
+   "reports": [
+    [
+     "shipments",
+     "Shipments"
+    ]
+   ]
+  },
+  "incidents": {
+   "id": "incidents",
+   "title": "Incidents",
+   "subtitle": "Incidents reported by drivers.",
+   "type": "table",
+   "endpoint": "/incidents",
+   "filters": [],
+   "columns": [
+    {
+     "label": "Reported",
+     "field": "reportedAt",
+     "type": "datetime"
+    },
+    {
+     "label": "Driver",
+     "field": "driverName",
+     "type": "text"
+    },
+    {
+     "label": "Shipment",
+     "field": "trackingRef",
+     "type": "text"
+    },
+    {
+     "label": "Vehicle",
+     "field": "vehicleRegistration",
+     "type": "text"
+    },
+    {
+     "label": "Type",
+     "field": "type",
+     "type": "status"
+    },
+    {
+     "label": "Severity",
+     "field": "severity",
+     "type": "status"
+    },
+    {
+     "label": "Description",
+     "field": "description",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Investigating",
+     "icon": "magnifying-glass",
+     "when": {
+      "status": [
+       "open"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/incidents/{id}",
+     "body": {
+      "status": "investigating"
+     }
+    },
+    {
+     "label": "Resolve",
+     "icon": "check",
+     "when": {
+      "status": [
+       "open",
+       "investigating"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/incidents/{id}",
+     "body": {
+      "status": "resolved"
+     }
+    }
+   ]
+  },
+  "support-admin": {
+   "id": "support-admin",
+   "title": "Support Requests",
+   "subtitle": "Client support requests.",
+   "type": "table",
+   "endpoint": "/support",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "open",
+      "in_progress",
+      "resolved",
+      "closed"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Reference",
+     "field": "reference",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "text"
+    },
+    {
+     "label": "Subject",
+     "field": "subject",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "Received",
+     "field": "createdAt",
+     "type": "date"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Read",
+     "icon": "eye",
+     "type": "detail",
+     "detail": {
+      "title": "{reference}",
+      "fields": [
+       {
+        "label": "From",
+        "path": "request.userName"
+       },
+       {
+        "label": "Subject",
+        "path": "request.subject"
+       },
+       {
+        "label": "Message",
+        "path": "request.message"
+       },
+       {
+        "label": "Response",
+        "path": "request.response"
+       }
+      ],
+      "url": "/support/{id}"
+     }
+    },
+    {
+     "label": "Respond",
+     "icon": "reply",
+     "method": "PATCH",
+     "url": "/support/{id}",
+     "form": {
+      "title": "Respond to client",
+      "fields": [
+       {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+         "in_progress",
+         "resolved",
+         "closed"
+        ],
+        "required": true
+       },
+       {
+        "name": "response",
+        "label": "Response",
+        "type": "textarea",
+        "required": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "inventory-management": {
+   "id": "inventory-management",
+   "title": "Inventory",
+   "subtitle": "Stock on hand across warehouses. Every change is saved and recorded in the movement history.",
+   "type": "table",
+   "endpoint": "/inventory",
+   "search": true,
+   "filters": [
+    {
+     "param": "lowStock",
+     "label": "Alerts",
+     "options": [
+      {
+       "value": "true",
+       "label": "Low stock only"
+      }
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Warehouse",
+     "field": "warehouseName",
+     "type": "text"
+    },
+    {
+     "label": "SKU",
+     "field": "sku",
+     "type": "strong"
+    },
+    {
+     "label": "Item",
+     "field": "name",
+     "type": "text"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Unit",
+     "field": "unit",
+     "type": "text"
+    },
+    {
+     "label": "Reorder at",
+     "field": "reorderLevel",
+     "type": "number"
+    },
+    {
+     "label": "Bin",
+     "field": "location",
+     "type": "text"
+    },
+    {
+     "label": "Alert",
+     "field": "lowStock",
+     "type": "lowstock"
+    }
+   ],
+   "create": {
+    "label": "Add stock record",
+    "title": "New stock record",
+    "method": "POST",
+    "url": "/inventory",
+    "fields": [
+     {
+      "name": "warehouseId",
+      "label": "Warehouse",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/warehouses",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "sku",
+      "label": "SKU",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "name",
+      "label": "Item name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "category",
+      "label": "Category",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "unit",
+      "label": "Unit",
+      "type": "text"
+     },
+     {
+      "name": "quantity",
+      "label": "Opening quantity",
+      "type": "number"
+     },
+     {
+      "name": "reorderLevel",
+      "label": "Reorder level",
+      "type": "number"
+     },
+     {
+      "name": "location",
+      "label": "Bin / location",
+      "type": "text"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Receive stock",
+     "icon": "arrow-down-to-line",
+     "method": "POST",
+     "url": "/inventory/{id}/receive",
+     "form": {
+      "title": "Receive stock",
+      "fields": [
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "reference",
+        "label": "Reference (GRN / PO)",
+        "type": "text"
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Dispatch stock",
+     "icon": "arrow-up-from-line",
+     "method": "POST",
+     "url": "/inventory/{id}/dispatch",
+     "form": {
+      "title": "Dispatch stock",
+      "fields": [
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "shipmentId",
+        "label": "For shipment (optional)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/shipments?limit=200",
+         "path": "data",
+         "value": "id",
+         "label": "trackingRef"
+        },
+        "cast": "number",
+        "optional": true
+       },
+       {
+        "name": "reference",
+        "label": "Reference",
+        "type": "text"
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Transfer",
+     "icon": "right-left",
+     "method": "POST",
+     "url": "/inventory/{id}/transfer",
+     "form": {
+      "title": "Transfer to another warehouse",
+      "fields": [
+       {
+        "name": "toWarehouseId",
+        "label": "Destination warehouse",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/warehouses",
+         "path": "data",
+         "value": "id",
+         "label": "name"
+        },
+        "cast": "number",
+        "required": true
+       },
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Adjust count",
+     "icon": "scale-balanced",
+     "method": "POST",
+     "url": "/inventory/{id}/adjust",
+     "form": {
+      "title": "Adjust stock after a count",
+      "fields": [
+       {
+        "name": "newQuantity",
+        "label": "Counted quantity",
+        "type": "number",
+        "required": true,
+        "from": "quantity"
+       },
+       {
+        "name": "note",
+        "label": "Reason",
+        "type": "textarea",
+        "required": true
+       }
+      ]
+     }
+    },
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "method": "PATCH",
+     "url": "/inventory/{id}",
+     "form": {
+      "title": "Edit item",
+      "fields": [
+       {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "from": "name"
+       },
+       {
+        "name": "category",
+        "label": "Category",
+        "type": "text",
+        "from": "category"
+       },
+       {
+        "name": "unit",
+        "label": "Unit",
+        "type": "text",
+        "from": "unit"
+       },
+       {
+        "name": "reorderLevel",
+        "label": "Reorder level",
+        "type": "number",
+        "from": "reorderLevel"
+       },
+       {
+        "name": "location",
+        "label": "Bin",
+        "type": "text",
+        "from": "location"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Delete",
+     "icon": "trash",
+     "when": {
+      "quantity": [
+       0
+      ]
+     },
+     "method": "DELETE",
+     "url": "/inventory/{id}",
+     "confirm": "Delete this empty stock record?",
+     "danger": true
+    }
+   ],
+   "export": {
+    "label": "Download CSV",
+    "url": "/inventory?format=csv",
+    "filename": "inventory.csv"
+   }
+  },
+  "stock-management": {
+   "id": "stock-management",
+   "title": "Stock Management",
+   "subtitle": "Update quantities: receive, dispatch, transfer or correct a count.",
+   "type": "table",
+   "endpoint": "/inventory",
+   "search": true,
+   "columns": [
+    {
+     "label": "Warehouse",
+     "field": "warehouseName",
+     "type": "text"
+    },
+    {
+     "label": "SKU",
+     "field": "sku",
+     "type": "strong"
+    },
+    {
+     "label": "Item",
+     "field": "name",
+     "type": "text"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Unit",
+     "field": "unit",
+     "type": "text"
+    },
+    {
+     "label": "Reorder at",
+     "field": "reorderLevel",
+     "type": "number"
+    },
+    {
+     "label": "Bin",
+     "field": "location",
+     "type": "text"
+    },
+    {
+     "label": "Alert",
+     "field": "lowStock",
+     "type": "lowstock"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Receive stock",
+     "icon": "arrow-down-to-line",
+     "method": "POST",
+     "url": "/inventory/{id}/receive",
+     "form": {
+      "title": "Receive stock",
+      "fields": [
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "reference",
+        "label": "Reference (GRN / PO)",
+        "type": "text"
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Dispatch stock",
+     "icon": "arrow-up-from-line",
+     "method": "POST",
+     "url": "/inventory/{id}/dispatch",
+     "form": {
+      "title": "Dispatch stock",
+      "fields": [
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "shipmentId",
+        "label": "For shipment (optional)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/shipments?limit=200",
+         "path": "data",
+         "value": "id",
+         "label": "trackingRef"
+        },
+        "cast": "number",
+        "optional": true
+       },
+       {
+        "name": "reference",
+        "label": "Reference",
+        "type": "text"
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Transfer",
+     "icon": "right-left",
+     "method": "POST",
+     "url": "/inventory/{id}/transfer",
+     "form": {
+      "title": "Transfer to another warehouse",
+      "fields": [
+       {
+        "name": "toWarehouseId",
+        "label": "Destination warehouse",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/warehouses",
+         "path": "data",
+         "value": "id",
+         "label": "name"
+        },
+        "cast": "number",
+        "required": true
+       },
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Adjust count",
+     "icon": "scale-balanced",
+     "method": "POST",
+     "url": "/inventory/{id}/adjust",
+     "form": {
+      "title": "Adjust stock after a count",
+      "fields": [
+       {
+        "name": "newQuantity",
+        "label": "Counted quantity",
+        "type": "number",
+        "required": true,
+        "from": "quantity"
+       },
+       {
+        "name": "note",
+        "label": "Reason",
+        "type": "textarea",
+        "required": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "receiving": {
+   "id": "receiving",
+   "title": "Receive Goods",
+   "subtitle": "Book in goods against purchase orders that have been ordered from suppliers.",
+   "type": "table",
+   "endpoint": "/purchase-orders",
+   "params": {
+    "status": "ordered"
+   },
+   "columns": [
+    {
+     "label": "PO",
+     "field": "poNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Supplier",
+     "field": "supplierName",
+     "type": "text"
+    },
+    {
+     "label": "Item",
+     "field": "item",
+     "type": "text"
+    },
+    {
+     "label": "Ordered",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Received",
+     "field": "quantityReceived",
+     "type": "number"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Receive goods",
+     "icon": "boxes-packing",
+     "method": "POST",
+     "url": "/goods-received",
+     "bodyFromRow": {
+      "purchaseOrderId": "id"
+     },
+     "form": {
+      "title": "Record goods received",
+      "fields": [
+       {
+        "name": "warehouseId",
+        "label": "Warehouse",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/warehouses",
+         "path": "data",
+         "value": "id",
+         "label": "name"
+        },
+        "cast": "number",
+        "required": true
+       },
+       {
+        "name": "inventoryId",
+        "label": "Add to stock record (optional)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/inventory",
+         "path": "data",
+         "value": "id",
+         "label": "sku",
+         "tpl": "{warehouseName}: {sku} - {name}"
+        },
+        "cast": "number",
+        "optional": true,
+        "tpl": "{warehouseName}: {sku} - {name}"
+       },
+       {
+        "name": "quantityReceived",
+        "label": "Quantity received",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "dispatch-stock": {
+   "id": "dispatch-stock",
+   "title": "Dispatch Stock",
+   "subtitle": "Issue stock for outbound shipments.",
+   "type": "table",
+   "endpoint": "/inventory",
+   "search": true,
+   "columns": [
+    {
+     "label": "Warehouse",
+     "field": "warehouseName",
+     "type": "text"
+    },
+    {
+     "label": "SKU",
+     "field": "sku",
+     "type": "strong"
+    },
+    {
+     "label": "Item",
+     "field": "name",
+     "type": "text"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Unit",
+     "field": "unit",
+     "type": "text"
+    },
+    {
+     "label": "Reorder at",
+     "field": "reorderLevel",
+     "type": "number"
+    },
+    {
+     "label": "Bin",
+     "field": "location",
+     "type": "text"
+    },
+    {
+     "label": "Alert",
+     "field": "lowStock",
+     "type": "lowstock"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Dispatch stock",
+     "icon": "arrow-up-from-line",
+     "method": "POST",
+     "url": "/inventory/{id}/dispatch",
+     "form": {
+      "title": "Dispatch stock",
+      "fields": [
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "shipmentId",
+        "label": "For shipment (optional)",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/shipments?limit=200",
+         "path": "data",
+         "value": "id",
+         "label": "trackingRef"
+        },
+        "cast": "number",
+        "optional": true
+       },
+       {
+        "name": "reference",
+        "label": "Reference",
+        "type": "text"
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "stock-transfers": {
+   "id": "stock-transfers",
+   "title": "Stock Transfers",
+   "subtitle": "Transfers between warehouses.",
+   "type": "table",
+   "endpoint": "/stock-transfers",
+   "columns": [
+    {
+     "label": "When",
+     "field": "createdAt",
+     "type": "datetime"
+    },
+    {
+     "label": "Ref",
+     "field": "reference",
+     "type": "strong"
+    },
+    {
+     "label": "SKU",
+     "field": "sku",
+     "type": "text"
+    },
+    {
+     "label": "From",
+     "field": "fromWarehouse",
+     "type": "text"
+    },
+    {
+     "label": "To",
+     "field": "toWarehouse",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "By",
+     "field": "performedBy",
+     "type": "text"
+    }
+   ]
+  },
+  "low-stock-alerts": {
+   "id": "low-stock-alerts",
+   "title": "Low-Stock Alerts",
+   "subtitle": "Items at or below their reorder level.",
+   "type": "table",
+   "endpoint": "/inventory",
+   "params": {
+    "lowStock": "true"
+   },
+   "search": true,
+   "columns": [
+    {
+     "label": "Warehouse",
+     "field": "warehouseName",
+     "type": "text"
+    },
+    {
+     "label": "SKU",
+     "field": "sku",
+     "type": "strong"
+    },
+    {
+     "label": "Item",
+     "field": "name",
+     "type": "text"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Unit",
+     "field": "unit",
+     "type": "text"
+    },
+    {
+     "label": "Reorder at",
+     "field": "reorderLevel",
+     "type": "number"
+    },
+    {
+     "label": "Bin",
+     "field": "location",
+     "type": "text"
+    },
+    {
+     "label": "Alert",
+     "field": "lowStock",
+     "type": "lowstock"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Receive stock",
+     "icon": "arrow-down-to-line",
+     "method": "POST",
+     "url": "/inventory/{id}/receive",
+     "form": {
+      "title": "Receive stock",
+      "fields": [
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "reference",
+        "label": "Reference (GRN / PO)",
+        "type": "text"
+       },
+       {
+        "name": "note",
+        "label": "Note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Request purchase",
+     "icon": "cart-plus",
+     "method": "POST",
+     "url": "/purchase-requests",
+     "form": {
+      "title": "Request purchase",
+      "fields": [
+       {
+        "name": "item",
+        "label": "Item",
+        "type": "text",
+        "required": true,
+        "from": "name"
+       },
+       {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "estimatedCost",
+        "label": "Estimated cost (ZAR)",
+        "type": "number",
+        "required": true
+       },
+       {
+        "name": "justification",
+        "label": "Justification",
+        "type": "textarea"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "stock-movements": {
+   "id": "stock-movements",
+   "title": "Stock Movement History",
+   "subtitle": "Every receipt, dispatch, transfer and adjustment.",
+   "type": "table",
+   "endpoint": "/stock-movements",
+   "filters": [
+    {
+     "param": "type",
+     "label": "Type",
+     "options": [
+      "receive",
+      "dispatch",
+      "transfer_in",
+      "transfer_out",
+      "adjustment"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "When",
+     "field": "createdAt",
+     "type": "datetime"
+    },
+    {
+     "label": "Item",
+     "field": "itemName",
+     "type": "strong"
+    },
+    {
+     "label": "Warehouse",
+     "field": "warehouseName",
+     "type": "text"
+    },
+    {
+     "label": "Type",
+     "field": "type",
+     "type": "status"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Balance",
+     "field": "balanceAfter",
+     "type": "number"
+    },
+    {
+     "label": "Reference",
+     "field": "reference",
+     "type": "text"
+    },
+    {
+     "label": "By",
+     "field": "performedBy",
+     "type": "text"
+    }
+   ]
+  },
+  "inventory-reports": {
+   "id": "inventory-reports",
+   "title": "Inventory Reports",
+   "subtitle": "Stock levels and movements.",
+   "type": "reports",
+   "reports": [
+    [
+     "inventory",
+     "Inventory"
+    ]
+   ]
+  },
+  "vehicle-management": {
+   "id": "vehicle-management",
+   "title": "Vehicles",
+   "subtitle": "Register vehicles and manage their status. Assigned and on-route vehicles are controlled by dispatch.",
+   "type": "table",
+   "endpoint": "/vehicles",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "available",
+      "assigned",
+      "on_route",
+      "maintenance",
+      "idle",
+      "retired"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Registration",
+     "field": "registration",
+     "type": "strong"
+    },
+    {
+     "label": "Make / model",
+     "field": "makeModel",
+     "type": "text"
+    },
+    {
+     "label": "Type",
+     "field": "type",
+     "type": "text"
+    },
+    {
+     "label": "Capacity",
+     "field": "capacityKg",
+     "type": "kg"
+    },
+    {
+     "label": "Mileage",
+     "field": "mileageKm",
+     "type": "km"
+    },
+    {
+     "label": "Next service",
+     "field": "nextServiceDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Register vehicle",
+    "title": "New vehicle",
+    "method": "POST",
+    "url": "/vehicles",
+    "fields": [
+     {
+      "name": "registration",
+      "label": "Registration",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "makeModel",
+      "label": "Make and model",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "type",
+      "label": "Vehicle type",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "capacityKg",
+      "label": "Capacity (kg)",
+      "type": "number",
+      "required": true
+     },
+     {
+      "name": "mileageKm",
+      "label": "Mileage (km)",
+      "type": "number"
+     },
+     {
+      "name": "lastServiceDate",
+      "label": "Last service",
+      "type": "date"
+     },
+     {
+      "name": "nextServiceDate",
+      "label": "Next service due",
+      "type": "date"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "method": "PATCH",
+     "url": "/vehicles/{id}",
+     "form": {
+      "title": "Edit vehicle",
+      "fields": [
+       {
+        "name": "makeModel",
+        "label": "Make and model",
+        "type": "text",
+        "from": "makeModel"
+       },
+       {
+        "name": "type",
+        "label": "Type",
+        "type": "text",
+        "from": "type"
+       },
+       {
+        "name": "capacityKg",
+        "label": "Capacity (kg)",
+        "type": "number",
+        "from": "capacityKg"
+       },
+       {
+        "name": "nextServiceDate",
+        "label": "Next service due",
+        "type": "date",
+        "from": "nextServiceDate"
+       },
+       {
+        "name": "status",
+        "label": "Status",
+        "type": "select",
+        "options": [
+         "available",
+         "maintenance",
+         "idle",
+         "retired"
+        ],
+        "optional": true
+       }
+      ]
+     }
+    },
+    {
+     "label": "Retire",
+     "icon": "box-archive",
+     "when": {
+      "status": [
+       "available",
+       "idle",
+       "maintenance"
+      ]
+     },
+     "method": "DELETE",
+     "url": "/vehicles/{id}",
+     "confirm": "Retire this vehicle? History is kept.",
+     "danger": true
+    }
+   ]
+  },
+  "maintenance-schedule": {
+   "id": "maintenance-schedule",
+   "title": "Vehicle Maintenance",
+   "subtitle": "Schedule, start and complete maintenance.",
+   "type": "table",
+   "endpoint": "/maintenance",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "scheduled",
+      "in_progress",
+      "completed",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Vehicle",
+     "field": "registration",
+     "type": "strong"
+    },
+    {
+     "label": "Type",
+     "field": "type",
+     "type": "text"
+    },
+    {
+     "label": "Supplier",
+     "field": "supplierName",
+     "type": "text"
+    },
+    {
+     "label": "Cost",
+     "field": "cost",
+     "type": "money"
+    },
+    {
+     "label": "Scheduled",
+     "field": "scheduledDate",
+     "type": "date"
+    },
+    {
+     "label": "Completed",
+     "field": "completedDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Schedule maintenance",
+    "title": "Schedule maintenance",
+    "method": "POST",
+    "url": "/maintenance",
+    "fields": [
+     {
+      "name": "vehicleId",
+      "label": "Vehicle",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/vehicles",
+       "path": "data",
+       "value": "id",
+       "label": "registration"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "supplierId",
+      "label": "Supplier (optional)",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/suppliers",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "optional": true
+     },
+     {
+      "name": "type",
+      "label": "Maintenance type",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea"
+     },
+     {
+      "name": "cost",
+      "label": "Estimated cost (ZAR)",
+      "type": "number",
+      "step": "0.01"
+     },
+     {
+      "name": "scheduledDate",
+      "label": "Scheduled date",
+      "type": "date",
+      "required": true
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Start",
+     "icon": "play",
+     "when": {
+      "status": [
+       "scheduled"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/maintenance/{id}",
+     "body": {
+      "status": "in_progress"
+     },
+     "confirm": "Take this vehicle out of service for maintenance?"
+    },
+    {
+     "label": "Complete",
+     "icon": "check",
+     "when": {
+      "status": [
+       "scheduled",
+       "in_progress"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/maintenance/{id}",
+     "body": {
+      "status": "completed"
+     },
+     "form": {
+      "title": "Complete maintenance",
+      "fields": [
+       {
+        "name": "cost",
+        "label": "Final cost (ZAR)",
+        "type": "number",
+        "step": "0.01",
+        "from": "cost"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Cancel",
+     "icon": "ban",
+     "when": {
+      "status": [
+       "scheduled",
+       "in_progress"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/maintenance/{id}",
+     "body": {
+      "status": "cancelled"
+     },
+     "danger": true,
+     "confirm": "Cancel this maintenance record?"
+    }
+   ]
+  },
+  "fuel-management": {
+   "id": "fuel-management",
+   "title": "Fuel Management",
+   "subtitle": "Fuel transactions and costs.",
+   "type": "table",
+   "endpoint": "/fuel",
+   "filters": [],
+   "columns": [
+    {
+     "label": "Date",
+     "field": "fuelledAt",
+     "type": "date"
+    },
+    {
+     "label": "Vehicle",
+     "field": "registration",
+     "type": "strong"
+    },
+    {
+     "label": "Driver",
+     "field": "driverName",
+     "type": "text"
+    },
+    {
+     "label": "Litres",
+     "field": "litres",
+     "type": "number"
+    },
+    {
+     "label": "R / litre",
+     "field": "costPerLitre",
+     "type": "money"
+    },
+    {
+     "label": "Total",
+     "field": "totalCost",
+     "type": "money"
+    },
+    {
+     "label": "Odometer",
+     "field": "odometerKm",
+     "type": "km"
+    },
+    {
+     "label": "Station",
+     "field": "station",
+     "type": "text"
+    }
+   ],
+   "create": {
+    "label": "Record fuel",
+    "title": "Record fuel transaction",
+    "method": "POST",
+    "url": "/fuel",
+    "fields": [
+     {
+      "name": "vehicleId",
+      "label": "Vehicle",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/vehicles",
+       "path": "data",
+       "value": "id",
+       "label": "registration"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "driverId",
+      "label": "Driver (optional)",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/drivers",
+       "path": "data",
+       "value": "id",
+       "label": "fullName"
+      },
+      "cast": "number",
+      "optional": true
+     },
+     {
+      "name": "litres",
+      "label": "Litres",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     },
+     {
+      "name": "costPerLitre",
+      "label": "Cost per litre (ZAR)",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     },
+     {
+      "name": "odometerKm",
+      "label": "Odometer (km)",
+      "type": "number"
+     },
+     {
+      "name": "station",
+      "label": "Station",
+      "type": "text"
+     }
+    ]
+   }
+  },
+  "vehicle-assignments": {
+   "id": "vehicle-assignments",
+   "title": "Vehicle Assignments",
+   "subtitle": "Which vehicle carries which shipment.",
+   "type": "table",
+   "endpoint": "/assignments",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "assigned",
+      "active",
+      "completed",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Vehicle",
+     "field": "vehicleRegistration",
+     "type": "strong"
+    },
+    {
+     "label": "Shipment",
+     "field": "trackingRef",
+     "type": "text"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Driver",
+     "field": "driverName",
+     "type": "text"
+    },
+    {
+     "label": "Pickup",
+     "field": "scheduledPickup",
+     "type": "datetime"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ]
+  },
+  "fleet-tracking": {
+   "id": "fleet-tracking",
+   "title": "Fleet Tracking",
+   "subtitle": "Operational status of vehicles currently on assignment.",
+   "type": "table",
+   "endpoint": "/fleet/overview",
+   "dataPath": "liveAssignments",
+   "columns": [
+    {
+     "label": "Vehicle",
+     "field": "registration",
+     "type": "strong"
+    },
+    {
+     "label": "Vehicle status",
+     "field": "vehicleStatus",
+     "type": "status"
+    },
+    {
+     "label": "Shipment",
+     "field": "trackingRef",
+     "type": "text"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Driver",
+     "field": "driverName",
+     "type": "text"
+    },
+    {
+     "label": "Shipment status",
+     "field": "shipmentStatus",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Route map",
+     "icon": "map-location-dot",
+     "type": "navigate",
+     "field": "destination",
+     "originField": "origin"
+    }
+   ]
+  },
+  "upcoming-maintenance": {
+   "id": "upcoming-maintenance",
+   "title": "Upcoming Maintenance",
+   "subtitle": "Maintenance scheduled within the next 30 days.",
+   "type": "table",
+   "endpoint": "/maintenance/upcoming",
+   "dataPath": "scheduled",
+   "columns": [
+    {
+     "label": "Vehicle",
+     "field": "registration",
+     "type": "strong"
+    },
+    {
+     "label": "Type",
+     "field": "type",
+     "type": "text"
+    },
+    {
+     "label": "Scheduled",
+     "field": "scheduledDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ]
+  },
+  "fleet-reports": {
+   "id": "fleet-reports",
+   "title": "Fleet Reports",
+   "subtitle": "Fleet status, fuel and maintenance costs.",
+   "type": "reports",
+   "reports": [
+    [
+     "fleet",
+     "Fleet"
+    ]
+   ]
+  },
+  "suppliers": {
+   "id": "suppliers",
+   "title": "Suppliers",
+   "subtitle": "Manage supplier records.",
+   "type": "table",
+   "endpoint": "/suppliers",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "active",
+      "inactive"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Code",
+     "field": "code",
+     "type": "strong"
+    },
+    {
+     "label": "Supplier",
+     "field": "name",
+     "type": "text"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "text"
+    },
+    {
+     "label": "Contact",
+     "field": "contactName",
+     "type": "text"
+    },
+    {
+     "label": "Email",
+     "field": "email",
+     "type": "text"
+    },
+    {
+     "label": "Phone",
+     "field": "phone",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Register supplier",
+    "title": "New supplier",
+    "method": "POST",
+    "url": "/suppliers",
+    "fields": [
+     {
+      "name": "name",
+      "label": "Supplier name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "category",
+      "label": "Category",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "contactName",
+      "label": "Contact person",
+      "type": "text"
+     },
+     {
+      "name": "email",
+      "label": "Email",
+      "type": "email"
+     },
+     {
+      "name": "phone",
+      "label": "Phone",
+      "type": "text"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "method": "PATCH",
+     "url": "/suppliers/{id}",
+     "form": {
+      "title": "Edit supplier",
+      "fields": [
+       {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "from": "name"
+       },
+       {
+        "name": "category",
+        "label": "Category",
+        "type": "text",
+        "from": "category"
+       },
+       {
+        "name": "contactName",
+        "label": "Contact",
+        "type": "text",
+        "from": "contactName"
+       },
+       {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "from": "email"
+       },
+       {
+        "name": "phone",
+        "label": "Phone",
+        "type": "text",
+        "from": "phone"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Deactivate",
+     "icon": "ban",
+     "when": {
+      "status": [
+       "active"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/suppliers/{id}",
+     "body": {
+      "status": "inactive"
+     },
+     "confirm": "Mark this supplier inactive?",
+     "danger": true
+    },
+    {
+     "label": "Activate",
+     "icon": "check",
+     "when": {
+      "status": [
+       "inactive"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/suppliers/{id}",
+     "body": {
+      "status": "active"
+     }
+    },
+    {
+     "label": "Delete",
+     "icon": "trash",
+     "method": "DELETE",
+     "url": "/suppliers/{id}",
+     "confirm": "Delete this supplier? Suppliers with orders cannot be deleted.",
+     "danger": true
+    }
+   ]
+  },
+  "purchase-requests": {
+   "id": "purchase-requests",
+   "title": "Purchase Requests",
+   "subtitle": "Requests from warehouse, fleet and procurement.",
+   "type": "table",
+   "endpoint": "/purchase-requests",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "pending",
+      "approved",
+      "rejected",
+      "ordered"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Reference",
+     "field": "reference",
+     "type": "strong"
+    },
+    {
+     "label": "Item",
+     "field": "item",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Estimated",
+     "field": "estimatedCost",
+     "type": "money"
+    },
+    {
+     "label": "Requested by",
+     "field": "requestedBy",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "Date",
+     "field": "createdAt",
+     "type": "date"
+    }
+   ],
+   "create": {
+    "label": "New request",
+    "title": "New purchase request",
+    "method": "POST",
+    "url": "/purchase-requests",
+    "fields": [
+     {
+      "name": "item",
+      "label": "Item",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "quantity",
+      "label": "Quantity",
+      "type": "number",
+      "required": true
+     },
+     {
+      "name": "estimatedCost",
+      "label": "Estimated cost (ZAR)",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     },
+     {
+      "name": "justification",
+      "label": "Justification",
+      "type": "textarea"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Approve",
+     "icon": "check",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/purchase-requests/{id}/decision",
+     "body": {
+      "decision": "approve"
+     }
+    },
+    {
+     "label": "Reject",
+     "icon": "xmark",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/purchase-requests/{id}/decision",
+     "body": {
+      "decision": "reject"
+     },
+     "confirm": "Reject this request?",
+     "danger": true
+    },
+    {
+     "label": "Create order",
+     "icon": "file-circle-plus",
+     "when": {
+      "status": [
+       "approved"
+      ]
+     },
+     "method": "POST",
+     "url": "/purchase-orders",
+     "bodyFromRow": {
+      "purchaseRequestId": "id",
+      "item": "item",
+      "quantity": "quantity"
+     },
+     "form": {
+      "title": "Create purchase order",
+      "fields": [
+       {
+        "name": "supplierId",
+        "label": "Supplier",
+        "type": "select",
+        "optionsFrom": {
+         "url": "/suppliers?status=active",
+         "path": "data",
+         "value": "id",
+         "label": "name"
+        },
+        "cast": "number",
+        "required": true
+       },
+       {
+        "name": "unitCost",
+        "label": "Unit cost (ZAR)",
+        "type": "number",
+        "required": true,
+        "step": "0.01"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "purchase-orders": {
+   "id": "purchase-orders",
+   "title": "Purchase Orders",
+   "subtitle": "Orders placed with suppliers.",
+   "type": "table",
+   "endpoint": "/purchase-orders",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "draft",
+      "pending",
+      "approved",
+      "ordered",
+      "received",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "PO",
+     "field": "poNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Supplier",
+     "field": "supplierName",
+     "type": "text"
+    },
+    {
+     "label": "Item",
+     "field": "item",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantity",
+     "type": "number"
+    },
+    {
+     "label": "Unit cost",
+     "field": "unitCost",
+     "type": "money"
+    },
+    {
+     "label": "Total",
+     "field": "total",
+     "type": "money"
+    },
+    {
+     "label": "Received",
+     "field": "quantityReceived",
+     "type": "number"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "New purchase order",
+    "title": "New purchase order",
+    "method": "POST",
+    "url": "/purchase-orders",
+    "fields": [
+     {
+      "name": "supplierId",
+      "label": "Supplier",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/suppliers?status=active",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "item",
+      "label": "Item",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "quantity",
+      "label": "Quantity",
+      "type": "number",
+      "required": true
+     },
+     {
+      "name": "unitCost",
+      "label": "Unit cost (ZAR)",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Submit",
+     "icon": "paper-plane",
+     "when": {
+      "status": [
+       "draft"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/purchase-orders/{id}/status",
+     "body": {
+      "status": "pending"
+     }
+    },
+    {
+     "label": "Approve",
+     "icon": "check",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/purchase-orders/{id}/status",
+     "body": {
+      "status": "approved"
+     }
+    },
+    {
+     "label": "Mark ordered",
+     "icon": "truck",
+     "when": {
+      "status": [
+       "approved"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/purchase-orders/{id}/status",
+     "body": {
+      "status": "ordered"
+     }
+    },
+    {
+     "label": "Cancel",
+     "icon": "ban",
+     "when": {
+      "status": [
+       "draft",
+       "pending",
+       "approved",
+       "ordered"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/purchase-orders/{id}/status",
+     "body": {
+      "status": "cancelled"
+     },
+     "confirm": "Cancel this purchase order?",
+     "danger": true
+    }
+   ]
+  },
+  "goods-received": {
+   "id": "goods-received",
+   "title": "Goods Received",
+   "subtitle": "Receipts recorded against purchase orders.",
+   "type": "table",
+   "endpoint": "/goods-received",
+   "columns": [
+    {
+     "label": "Received",
+     "field": "receivedAt",
+     "type": "datetime"
+    },
+    {
+     "label": "PO",
+     "field": "poNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Item",
+     "field": "item",
+     "type": "text"
+    },
+    {
+     "label": "Warehouse",
+     "field": "warehouseName",
+     "type": "text"
+    },
+    {
+     "label": "Qty",
+     "field": "quantityReceived",
+     "type": "number"
+    },
+    {
+     "label": "By",
+     "field": "receivedBy",
+     "type": "text"
+    },
+    {
+     "label": "Note",
+     "field": "note",
+     "type": "text"
+    }
+   ],
+   "create": {
+    "label": "Record goods received",
+    "title": "Goods received",
+    "method": "POST",
+    "url": "/goods-received",
+    "fields": [
+     {
+      "name": "purchaseOrderId",
+      "label": "Purchase order",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/purchase-orders?status=ordered",
+       "path": "data",
+       "value": "id",
+       "label": "poNumber",
+       "tpl": "{poNumber} - {item} ({quantityReceived}/{quantity})"
+      },
+      "cast": "number",
+      "required": true,
+      "tpl": "{poNumber} - {item} ({quantityReceived}/{quantity})"
+     },
+     {
+      "name": "warehouseId",
+      "label": "Warehouse",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/warehouses",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "inventoryId",
+      "label": "Add to stock record (optional)",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/inventory",
+       "path": "data",
+       "value": "id",
+       "label": "sku",
+       "tpl": "{warehouseName}: {sku} - {name}"
+      },
+      "cast": "number",
+      "optional": true,
+      "tpl": "{warehouseName}: {sku} - {name}"
+     },
+     {
+      "name": "quantityReceived",
+      "label": "Quantity",
+      "type": "number",
+      "required": true
+     },
+     {
+      "name": "note",
+      "label": "Note",
+      "type": "textarea"
+     }
+    ]
+   }
+  },
+  "supplier-invoices": {
+   "id": "supplier-invoices",
+   "title": "Supplier Invoices",
+   "subtitle": "Invoices received from suppliers.",
+   "type": "table",
+   "endpoint": "/supplier-invoices",
+   "columns": [
+    {
+     "label": "Invoice",
+     "field": "invoiceNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Supplier",
+     "field": "supplierName",
+     "type": "text"
+    },
+    {
+     "label": "Amount",
+     "field": "amount",
+     "type": "money"
+    },
+    {
+     "label": "Issued",
+     "field": "issueDate",
+     "type": "date"
+    },
+    {
+     "label": "Due",
+     "field": "dueDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "displayStatus",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Capture invoice",
+    "title": "Capture supplier invoice",
+    "method": "POST",
+    "url": "/supplier-invoices",
+    "fields": [
+     {
+      "name": "invoiceNumber",
+      "label": "Supplier invoice number",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "supplierId",
+      "label": "Supplier",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/suppliers",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "purchaseOrderId",
+      "label": "Purchase order (optional)",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/purchase-orders",
+       "path": "data",
+       "value": "id",
+       "label": "poNumber"
+      },
+      "cast": "number",
+      "optional": true
+     },
+     {
+      "name": "amount",
+      "label": "Amount incl. VAT (ZAR)",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     },
+     {
+      "name": "issueDate",
+      "label": "Issue date",
+      "type": "date",
+      "required": true
+     },
+     {
+      "name": "dueDate",
+      "label": "Due date",
+      "type": "date",
+      "required": true
+     }
+    ]
+   }
+  },
+  "procurement-reports": {
+   "id": "procurement-reports",
+   "title": "Procurement Reports",
+   "subtitle": "Order values and supplier spend.",
+   "type": "reports",
+   "reports": [
+    [
+     "procurement",
+     "Procurement"
+    ]
+   ]
+  },
+  "invoices": {
+   "id": "invoices",
+   "title": "Invoices",
+   "subtitle": "Create, issue and track client invoices in South African Rand (VAT included).",
+   "type": "table",
+   "endpoint": "/invoices",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "draft",
+      "unpaid",
+      "partially_paid",
+      "paid",
+      "overdue",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Invoice",
+     "field": "invoiceNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Shipment",
+     "field": "trackingRef",
+     "type": "text"
+    },
+    {
+     "label": "Total",
+     "field": "total",
+     "type": "money"
+    },
+    {
+     "label": "Paid",
+     "field": "paid",
+     "type": "money"
+    },
+    {
+     "label": "Balance",
+     "field": "balance",
+     "type": "money"
+    },
+    {
+     "label": "Due",
+     "field": "dueDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "displayStatus",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Create invoice",
+    "title": "New invoice",
+    "method": "POST",
+    "url": "/invoices",
+    "fields": [
+     {
+      "name": "companyId",
+      "label": "Client company",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/companies?limit=200",
+       "path": "data",
+       "value": "id",
+       "label": "name"
+      },
+      "cast": "number",
+      "required": true
+     },
+     {
+      "name": "shipmentId",
+      "label": "Delivered shipment (optional)",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/shipments?status=delivered&limit=200",
+       "path": "data",
+       "value": "id",
+       "label": "trackingRef",
+       "tpl": "{trackingRef} - {companyName}"
+      },
+      "cast": "number",
+      "optional": true,
+      "tpl": "{trackingRef} - {companyName}"
+     },
+     {
+      "name": "description",
+      "label": "Description",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "subtotal",
+      "label": "Amount excl. VAT (ZAR)",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     },
+     {
+      "name": "dueDate",
+      "label": "Due date",
+      "type": "date",
+      "required": true
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Record payment",
+     "icon": "money-bill-wave",
+     "when": {
+      "status": [
+       "unpaid",
+       "partially_paid"
+      ]
+     },
+     "method": "POST",
+     "url": "/invoices/{id}/payments",
+     "form": {
+      "title": "Record a payment received (no payment is processed here)",
+      "fields": [
+       {
+        "name": "amount",
+        "label": "Amount received (ZAR)",
+        "type": "number",
+        "required": true,
+        "step": "0.01",
+        "from": "balance"
+       },
+       {
+        "name": "method",
+        "label": "Method",
+        "type": "select",
+        "options": [
+         "eft",
+         "card",
+         "cash",
+         "other"
+        ],
+        "required": true
+       },
+       {
+        "name": "reference",
+        "label": "Bank / payment reference",
+        "type": "text"
+       },
+       {
+        "name": "paidAt",
+        "label": "Payment date",
+        "type": "date"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Issue",
+     "icon": "paper-plane",
+     "when": {
+      "status": [
+       "draft"
+      ]
+     },
+     "method": "POST",
+     "url": "/invoices/{id}/issue"
+    },
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "when": {
+      "status": [
+       "draft",
+       "unpaid"
+      ],
+      "paid": [
+       0
+      ]
+     },
+     "method": "PATCH",
+     "url": "/invoices/{id}",
+     "form": {
+      "title": "Edit invoice",
+      "fields": [
+       {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "from": "description"
+       },
+       {
+        "name": "subtotal",
+        "label": "Amount excl. VAT",
+        "type": "number",
+        "from": "subtotal",
+        "step": "0.01"
+       },
+       {
+        "name": "dueDate",
+        "label": "Due date",
+        "type": "date",
+        "from": "dueDate"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Cancel",
+     "icon": "ban",
+     "when": {
+      "status": [
+       "draft",
+       "unpaid"
+      ],
+      "paid": [
+       0
+      ]
+     },
+     "method": "POST",
+     "url": "/invoices/{id}/cancel",
+     "confirm": "Cancel this invoice?",
+     "danger": true
+    }
+   ],
+   "export": {
+    "label": "Download CSV",
+    "url": "/invoices?format=csv",
+    "filename": "invoices.csv"
+   }
+  },
+  "payments": {
+   "id": "payments",
+   "title": "Payments",
+   "subtitle": "Payments recorded against invoices.",
+   "type": "table",
+   "endpoint": "/payments",
+   "columns": [
+    {
+     "label": "Date",
+     "field": "paidAt",
+     "type": "date"
+    },
+    {
+     "label": "Invoice",
+     "field": "invoiceNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Amount",
+     "field": "amount",
+     "type": "money"
+    },
+    {
+     "label": "Method",
+     "field": "method",
+     "type": "text"
+    },
+    {
+     "label": "Reference",
+     "field": "reference",
+     "type": "text"
+    },
+    {
+     "label": "Receipt",
+     "field": "receiptNumber",
+     "type": "text"
+    }
+   ]
+  },
+  "receipts": {
+   "id": "receipts",
+   "title": "Receipts",
+   "subtitle": "Receipts issued for recorded payments.",
+   "type": "table",
+   "endpoint": "/receipts",
+   "columns": [
+    {
+     "label": "Receipt",
+     "field": "receiptNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Invoice",
+     "field": "invoiceNumber",
+     "type": "text"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Amount",
+     "field": "amount",
+     "type": "money"
+    },
+    {
+     "label": "Method",
+     "field": "method",
+     "type": "text"
+    },
+    {
+     "label": "Paid",
+     "field": "paidAt",
+     "type": "date"
+    }
+   ]
+  },
+  "accounts-payable": {
+   "id": "accounts-payable",
+   "title": "Accounts Payable",
+   "subtitle": "Unpaid supplier invoices.",
+   "type": "table",
+   "endpoint": "/finance/payables",
+   "columns": [
+    {
+     "label": "Invoice",
+     "field": "invoiceNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Supplier",
+     "field": "supplierName",
+     "type": "text"
+    },
+    {
+     "label": "Amount",
+     "field": "amount",
+     "type": "money"
+    },
+    {
+     "label": "Due",
+     "field": "dueDate",
+     "type": "date"
+    },
+    {
+     "label": "Overdue",
+     "field": "overdue",
+     "type": "bool"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Mark paid",
+     "icon": "check",
+     "method": "PATCH",
+     "url": "/supplier-invoices/{id}/pay",
+     "confirm": "Mark this supplier invoice as paid?"
+    }
+   ]
+  },
+  "accounts-receivable": {
+   "id": "accounts-receivable",
+   "title": "Accounts Receivable",
+   "subtitle": "Outstanding balances by client.",
+   "type": "table",
+   "endpoint": "/finance/receivables",
+   "columns": [
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "strong"
+    },
+    {
+     "label": "Open invoices",
+     "field": "invoices",
+     "type": "number"
+    },
+    {
+     "label": "Outstanding",
+     "field": "outstanding",
+     "type": "money"
+    },
+    {
+     "label": "Overdue",
+     "field": "overdue",
+     "type": "money"
+    }
+   ]
+  },
+  "financial-reports": {
+   "id": "financial-reports",
+   "title": "Financial Reports",
+   "subtitle": "Invoiced, collected and outstanding amounts.",
+   "type": "reports",
+   "reports": [
+    [
+     "finance",
+     "Finance"
+    ],
+    [
+     "shipments",
+     "Shipments"
+    ],
+    [
+     "procurement",
+     "Procurement"
+    ]
+   ]
+  },
+  "expenses": {
+   "id": "expenses",
+   "title": "Expenses",
+   "subtitle": "Record and approve operating expenses.",
+   "type": "table",
+   "endpoint": "/expenses",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "pending",
+      "approved",
+      "rejected"
+     ]
+    },
+    {
+     "param": "department",
+     "label": "Department",
+     "options": [
+      "admin",
+      "dispatch",
+      "warehouse",
+      "fleet",
+      "procurement",
+      "finance"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Date",
+     "field": "expenseDate",
+     "type": "date"
+    },
+    {
+     "label": "Department",
+     "field": "department",
+     "type": "text"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "strong"
+    },
+    {
+     "label": "Description",
+     "field": "description",
+     "type": "text"
+    },
+    {
+     "label": "Amount",
+     "field": "amount",
+     "type": "money"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "By",
+     "field": "recordedBy",
+     "type": "text"
+    }
+   ],
+   "create": {
+    "label": "Add expense",
+    "title": "New expense",
+    "method": "POST",
+    "url": "/expenses",
+    "fields": [
+     {
+      "name": "department",
+      "label": "Department",
+      "type": "select",
+      "options": [
+       "admin",
+       "dispatch",
+       "warehouse",
+       "fleet",
+       "procurement",
+       "finance"
+      ],
+      "required": true
+     },
+     {
+      "name": "category",
+      "label": "Category",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "description",
+      "label": "Description",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "amount",
+      "label": "Amount (ZAR)",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     },
+     {
+      "name": "expenseDate",
+      "label": "Date",
+      "type": "date",
+      "required": true
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Approve",
+     "icon": "check",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/expenses/{id}/decision",
+     "body": {
+      "decision": "approve"
+     }
+    },
+    {
+     "label": "Reject",
+     "icon": "xmark",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/expenses/{id}/decision",
+     "body": {
+      "decision": "reject"
+     },
+     "danger": true
+    },
+    {
+     "label": "Delete",
+     "icon": "trash",
+     "when": {
+      "status": [
+       "pending"
+      ]
+     },
+     "method": "DELETE",
+     "url": "/expenses/{id}",
+     "confirm": "Delete this pending expense?",
+     "danger": true
+    }
+   ]
+  },
+  "budgets": {
+   "id": "budgets",
+   "title": "Budgets",
+   "subtitle": "Allocated budgets against approved spend.",
+   "type": "table",
+   "endpoint": "/budgets",
+   "columns": [
+    {
+     "label": "Department",
+     "field": "department",
+     "type": "strong"
+    },
+    {
+     "label": "Period",
+     "field": "periodLabel",
+     "type": "text"
+    },
+    {
+     "label": "Allocated",
+     "field": "allocated",
+     "type": "money"
+    },
+    {
+     "label": "Spent",
+     "field": "spent",
+     "type": "money"
+    },
+    {
+     "label": "Remaining",
+     "field": "remaining",
+     "type": "money"
+    },
+    {
+     "label": "Over budget",
+     "field": "overBudget",
+     "type": "bool"
+    }
+   ],
+   "create": {
+    "label": "Add budget",
+    "title": "New budget",
+    "method": "POST",
+    "url": "/budgets",
+    "fields": [
+     {
+      "name": "department",
+      "label": "Department",
+      "type": "select",
+      "options": [
+       "admin",
+       "dispatch",
+       "warehouse",
+       "fleet",
+       "procurement",
+       "finance"
+      ],
+      "required": true
+     },
+     {
+      "name": "periodLabel",
+      "label": "Period label (e.g. Q1-2027)",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "startDate",
+      "label": "Start",
+      "type": "date",
+      "required": true
+     },
+     {
+      "name": "endDate",
+      "label": "End",
+      "type": "date",
+      "required": true
+     },
+     {
+      "name": "allocatedAmount",
+      "label": "Allocated (ZAR)",
+      "type": "number",
+      "required": true,
+      "step": "0.01"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Edit",
+     "icon": "pen",
+     "method": "PATCH",
+     "url": "/budgets/{id}",
+     "form": {
+      "title": "Edit allocation",
+      "fields": [
+       {
+        "name": "allocatedAmount",
+        "label": "Allocated (ZAR)",
+        "type": "number",
+        "from": "allocated",
+        "step": "0.01"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Delete",
+     "icon": "trash",
+     "method": "DELETE",
+     "url": "/budgets/{id}",
+     "confirm": "Delete this budget?",
+     "danger": true
+    }
+   ]
+  },
+  "my-deliveries": {
+   "id": "my-deliveries",
+   "title": "Assigned Shipments",
+   "subtitle": "Your current deliveries. Update status as you go.",
+   "type": "table",
+   "endpoint": "/driver/deliveries",
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Collect from",
+     "field": "origin",
+     "type": "text"
+    },
+    {
+     "label": "Deliver to",
+     "field": "destination",
+     "type": "text"
+    },
+    {
+     "label": "Cargo",
+     "field": "cargoDescription",
+     "type": "text"
+    },
+    {
+     "label": "Pickup",
+     "field": "assignment.scheduledPickup",
+     "type": "datetime"
+    },
+    {
+     "label": "Due",
+     "field": "assignment.scheduledDelivery",
+     "type": "datetime"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Collected",
+     "icon": "box",
+     "when": {
+      "status": [
+       "assigned"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/shipments/{id}/status",
+     "body": {
+      "status": "collected"
+     },
+     "confirm": "Confirm that you have collected the cargo?"
+    },
+    {
+     "label": "In transit",
+     "icon": "truck-fast",
+     "when": {
+      "status": [
+       "collected"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/shipments/{id}/status",
+     "body": {
+      "status": "in_transit"
+     }
+    },
+    {
+     "label": "Proof of delivery",
+     "icon": "signature",
+     "when": {
+      "status": [
+       "in_transit"
+      ]
+     },
+     "method": "POST",
+     "url": "/shipments/{id}/pod",
+     "form": {
+      "title": "Proof of delivery",
+      "fields": [
+       {
+        "name": "recipientName",
+        "label": "Name of person who received the goods",
+        "type": "text",
+        "required": true
+       },
+       {
+        "name": "note",
+        "label": "Delivery note",
+        "type": "textarea"
+       }
+      ]
+     }
+    },
+    {
+     "label": "Delivery failed",
+     "icon": "triangle-exclamation",
+     "when": {
+      "status": [
+       "in_transit"
+      ]
+     },
+     "method": "PATCH",
+     "url": "/shipments/{id}/status",
+     "body": {
+      "status": "failed"
+     },
+     "danger": true,
+     "form": {
+      "title": "Report failed delivery",
+      "fields": [
+       {
+        "name": "note",
+        "label": "What went wrong?",
+        "type": "textarea",
+        "required": true
+       }
+      ]
+     }
+    },
+    {
+     "label": "Navigate",
+     "icon": "location-arrow",
+     "type": "navigate",
+     "field": "destination",
+     "originField": "origin"
+    },
+    {
+     "label": "Report incident",
+     "icon": "circle-exclamation",
+     "method": "POST",
+     "url": "/incidents",
+     "bodyFromRow": {
+      "shipmentId": "id"
+     },
+     "form": {
+      "title": "Report an incident",
+      "fields": [
+       {
+        "name": "type",
+        "label": "Type",
+        "type": "select",
+        "options": [
+         "breakdown",
+         "accident",
+         "delay",
+         "damage",
+         "theft",
+         "other"
+        ],
+        "required": true
+       },
+       {
+        "name": "severity",
+        "label": "Severity",
+        "type": "select",
+        "options": [
+         "low",
+         "medium",
+         "high"
+        ]
+       },
+       {
+        "name": "description",
+        "label": "Describe what happened",
+        "type": "textarea",
+        "required": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "delivery-schedule": {
+   "id": "delivery-schedule",
+   "title": "Delivery Schedule",
+   "subtitle": "Upcoming pickups and deliveries in schedule order.",
+   "type": "table",
+   "endpoint": "/driver/deliveries",
+   "columns": [
+    {
+     "label": "Pickup",
+     "field": "assignment.scheduledPickup",
+     "type": "datetime"
+    },
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Due",
+     "field": "assignment.scheduledDelivery",
+     "type": "datetime"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Navigate",
+     "icon": "location-arrow",
+     "type": "navigate",
+     "field": "destination",
+     "originField": "origin"
+    }
+   ]
+  },
+  "driver-navigation": {
+   "id": "driver-navigation",
+   "title": "Navigation",
+   "subtitle": "Open the collection or delivery address in your maps app.",
+   "type": "table",
+   "endpoint": "/driver/deliveries",
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Collect from",
+     "field": "origin",
+     "type": "text"
+    },
+    {
+     "label": "Deliver to",
+     "field": "destination",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Go to collection",
+     "icon": "warehouse",
+     "type": "navigate",
+     "field": "origin"
+    },
+    {
+     "label": "Go to delivery",
+     "icon": "location-dot",
+     "type": "navigate",
+     "field": "destination"
+    }
+   ]
+  },
+  "proof-of-delivery": {
+   "id": "proof-of-delivery",
+   "title": "Proof of Delivery",
+   "subtitle": "Shipments in transit that are ready to be signed for.",
+   "type": "table",
+   "endpoint": "/driver/deliveries",
+   "params": {},
+   "filterRows": {
+    "status": [
+     "in_transit"
+    ]
+   },
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Deliver to",
+     "field": "destination",
+     "type": "text"
+    },
+    {
+     "label": "Cargo",
+     "field": "cargoDescription",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Proof of delivery",
+     "icon": "signature",
+     "when": {
+      "status": [
+       "in_transit"
+      ]
+     },
+     "method": "POST",
+     "url": "/shipments/{id}/pod",
+     "form": {
+      "title": "Proof of delivery",
+      "fields": [
+       {
+        "name": "recipientName",
+        "label": "Name of person who received the goods",
+        "type": "text",
+        "required": true
+       },
+       {
+        "name": "note",
+        "label": "Delivery note",
+        "type": "textarea"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "delivery-history": {
+   "id": "delivery-history",
+   "title": "Delivery History",
+   "subtitle": "Completed deliveries.",
+   "type": "table",
+   "endpoint": "/driver/deliveries",
+   "params": {
+    "scope": "history"
+   },
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Client",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Delivered",
+     "field": "deliveredAt",
+     "type": "datetime"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ]
+  },
+  "incident-reporting": {
+   "id": "incident-reporting",
+   "title": "Incident Reporting",
+   "subtitle": "Report and review your incidents.",
+   "type": "table",
+   "endpoint": "/incidents",
+   "columns": [
+    {
+     "label": "Reported",
+     "field": "reportedAt",
+     "type": "datetime"
+    },
+    {
+     "label": "Shipment",
+     "field": "trackingRef",
+     "type": "text"
+    },
+    {
+     "label": "Type",
+     "field": "type",
+     "type": "status"
+    },
+    {
+     "label": "Severity",
+     "field": "severity",
+     "type": "status"
+    },
+    {
+     "label": "Description",
+     "field": "description",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    }
+   ],
+   "create": {
+    "label": "Report incident",
+    "title": "Report an incident",
+    "method": "POST",
+    "url": "/incidents",
+    "fields": [
+     {
+      "name": "shipmentId",
+      "label": "Related shipment (optional)",
+      "type": "select",
+      "optionsFrom": {
+       "url": "/driver/deliveries",
+       "path": "data",
+       "value": "id",
+       "label": "trackingRef"
+      },
+      "cast": "number",
+      "optional": true
+     },
+     {
+      "name": "type",
+      "label": "Type",
+      "type": "select",
+      "options": [
+       "breakdown",
+       "accident",
+       "delay",
+       "damage",
+       "theft",
+       "other"
+      ],
+      "required": true
+     },
+     {
+      "name": "severity",
+      "label": "Severity",
+      "type": "select",
+      "options": [
+       "low",
+       "medium",
+       "high"
+      ]
+     },
+     {
+      "name": "description",
+      "label": "Describe what happened",
+      "type": "textarea",
+      "required": true
+     }
+    ]
+   }
+  },
+  "client-quote": {
+   "id": "client-quote",
+   "title": "Request a Quotation",
+   "subtitle": "Tell us what you need moved. We will price it and you can accept online.",
+   "type": "table",
+   "endpoint": "/quotations",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "submitted",
+      "in_review",
+      "quoted",
+      "accepted",
+      "rejected",
+      "declined",
+      "converted"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Reference",
+     "field": "reference",
+     "type": "strong"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Cargo",
+     "field": "cargoDescription",
+     "type": "text"
+    },
+    {
+     "label": "Weight",
+     "field": "weightKg",
+     "type": "kg"
+    },
+    {
+     "label": "Quoted (excl. VAT)",
+     "field": "quotedAmount",
+     "type": "money"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "Requested",
+     "field": "createdAt",
+     "type": "date"
+    }
+   ],
+   "create": {
+    "label": "Request quotation",
+    "title": "New quotation request",
+    "method": "POST",
+    "url": "/quotations",
+    "fields": [
+     {
+      "name": "origin",
+      "label": "Collection address / city",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "destination",
+      "label": "Delivery address / city",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "cargoDescription",
+      "label": "Cargo description",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "weightKg",
+      "label": "Weight (kg)",
+      "type": "number",
+      "required": true
+     },
+     {
+      "name": "serviceType",
+      "label": "Service",
+      "type": "select",
+      "options": [
+       "standard",
+       "express",
+       "refrigerated",
+       "bulk",
+       "hazardous"
+      ]
+     },
+     {
+      "name": "preferredDate",
+      "label": "Preferred collection date",
+      "type": "date"
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "View",
+     "icon": "eye",
+     "type": "detail",
+     "detail": {
+      "title": "Quotation {reference}",
+      "fields": [
+       {
+        "label": "Client",
+        "path": "companyName"
+       },
+       {
+        "label": "From",
+        "path": "origin"
+       },
+       {
+        "label": "To",
+        "path": "destination"
+       },
+       {
+        "label": "Cargo",
+        "path": "cargoDescription"
+       },
+       {
+        "label": "Weight (kg)",
+        "path": "weightKg"
+       },
+       {
+        "label": "Service",
+        "path": "serviceType"
+       },
+       {
+        "label": "Preferred date",
+        "path": "preferredDate",
+        "type": "date"
+       },
+       {
+        "label": "Quoted (excl. VAT)",
+        "path": "quotedAmount",
+        "type": "money"
+       },
+       {
+        "label": "Staff notes",
+        "path": "staffNotes"
+       },
+       {
+        "label": "Status",
+        "path": "status",
+        "type": "status"
+       },
+       {
+        "label": "Tracking",
+        "path": "trackingRef"
+       }
+      ],
+      "url": "/quotations/{id}"
+     }
+    },
+    {
+     "label": "Accept",
+     "icon": "check",
+     "when": {
+      "status": [
+       "quoted"
+      ]
+     },
+     "method": "POST",
+     "url": "/quotations/{id}/respond",
+     "body": {
+      "action": "accept"
+     },
+     "confirm": "Accept this quotation?"
+    },
+    {
+     "label": "Decline",
+     "icon": "xmark",
+     "when": {
+      "status": [
+       "quoted"
+      ]
+     },
+     "method": "POST",
+     "url": "/quotations/{id}/respond",
+     "body": {
+      "action": "decline"
+     },
+     "confirm": "Decline this quotation?",
+     "danger": true
+    }
+   ]
+  },
+  "client-track": {
+   "id": "client-track",
+   "title": "Track Shipment",
+   "subtitle": "Enter a tracking reference (for example MHM-000001) or pick one of your shipments.",
+   "type": "tracking",
+   "endpoint": "/shipments",
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "ETA",
+     "field": "eta",
+     "type": "date"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Track",
+     "icon": "route",
+     "type": "detail",
+     "detail": {
+      "title": "Shipment {trackingRef}",
+      "url": "/shipments/{id}",
+      "fields": [
+       {
+        "label": "Client",
+        "path": "shipment.companyName"
+       },
+       {
+        "label": "From",
+        "path": "shipment.origin"
+       },
+       {
+        "label": "To",
+        "path": "shipment.destination"
+       },
+       {
+        "label": "Cargo",
+        "path": "shipment.cargoDescription"
+       },
+       {
+        "label": "Weight (kg)",
+        "path": "shipment.weightKg"
+       },
+       {
+        "label": "Status",
+        "path": "shipment.status",
+        "type": "status"
+       },
+       {
+        "label": "Driver",
+        "path": "shipment.assignment.driverName"
+       },
+       {
+        "label": "Vehicle",
+        "path": "shipment.assignment.vehicleRegistration"
+       },
+       {
+        "label": "ETA",
+        "path": "shipment.eta",
+        "type": "date"
+       },
+       {
+        "label": "Delivered to",
+        "path": "proofOfDelivery.recipientName"
+       }
+      ],
+      "lists": [
+       {
+        "title": "Status history",
+        "path": "history",
+        "columns": [
+         {
+          "label": "When",
+          "field": "at",
+          "type": "datetime"
+         },
+         {
+          "label": "Status",
+          "field": "status",
+          "type": "status"
+         },
+         {
+          "label": "Note",
+          "field": "note",
+          "type": "text"
+         },
+         {
+          "label": "Location",
+          "field": "location",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "shipment-history": {
+   "id": "shipment-history",
+   "title": "Shipment History",
+   "subtitle": "All shipments for your company.",
+   "type": "table",
+   "endpoint": "/shipments",
+   "search": true,
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "pending",
+      "assigned",
+      "collected",
+      "in_transit",
+      "delivered",
+      "failed",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Tracking",
+     "field": "trackingRef",
+     "type": "strong"
+    },
+    {
+     "label": "Route",
+     "field": "origin|destination",
+     "type": "route"
+    },
+    {
+     "label": "Cargo",
+     "field": "cargoDescription",
+     "type": "text"
+    },
+    {
+     "label": "Weight",
+     "field": "weightKg",
+     "type": "kg"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "ETA",
+     "field": "eta",
+     "type": "date"
+    },
+    {
+     "label": "Delivered",
+     "field": "deliveredAt",
+     "type": "date"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Track",
+     "icon": "route",
+     "type": "detail",
+     "detail": {
+      "title": "Shipment {trackingRef}",
+      "url": "/shipments/{id}",
+      "fields": [
+       {
+        "label": "Client",
+        "path": "shipment.companyName"
+       },
+       {
+        "label": "From",
+        "path": "shipment.origin"
+       },
+       {
+        "label": "To",
+        "path": "shipment.destination"
+       },
+       {
+        "label": "Cargo",
+        "path": "shipment.cargoDescription"
+       },
+       {
+        "label": "Weight (kg)",
+        "path": "shipment.weightKg"
+       },
+       {
+        "label": "Status",
+        "path": "shipment.status",
+        "type": "status"
+       },
+       {
+        "label": "Driver",
+        "path": "shipment.assignment.driverName"
+       },
+       {
+        "label": "Vehicle",
+        "path": "shipment.assignment.vehicleRegistration"
+       },
+       {
+        "label": "ETA",
+        "path": "shipment.eta",
+        "type": "date"
+       },
+       {
+        "label": "Delivered to",
+        "path": "proofOfDelivery.recipientName"
+       }
+      ],
+      "lists": [
+       {
+        "title": "Status history",
+        "path": "history",
+        "columns": [
+         {
+          "label": "When",
+          "field": "at",
+          "type": "datetime"
+         },
+         {
+          "label": "Status",
+          "field": "status",
+          "type": "status"
+         },
+         {
+          "label": "Note",
+          "field": "note",
+          "type": "text"
+         },
+         {
+          "label": "Location",
+          "field": "location",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "documents": {
+   "id": "documents",
+   "title": "Documents",
+   "subtitle": "Invoices, receipts, proof of delivery and quotations for your company.",
+   "type": "table",
+   "endpoint": "/documents",
+   "search": true,
+   "filters": [
+    {
+     "param": "type",
+     "label": "Type",
+     "options": [
+      "invoice",
+      "receipt",
+      "pod",
+      "quotation",
+      "contract",
+      "other"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Title",
+     "field": "title",
+     "type": "strong"
+    },
+    {
+     "label": "Type",
+     "field": "type",
+     "type": "status"
+    },
+    {
+     "label": "Company",
+     "field": "companyName",
+     "type": "text"
+    },
+    {
+     "label": "Date",
+     "field": "createdAt",
+     "type": "date"
+    },
+    {
+     "label": "File",
+     "field": "fileName",
+     "type": "text"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Download",
+     "icon": "download",
+     "type": "download",
+     "url": "/documents/{id}/download",
+     "filename": "{fileName}"
+    },
+    {
+     "label": "Delete",
+     "icon": "trash",
+     "when": {
+      "uploaded": [
+       true
+      ]
+     },
+     "method": "DELETE",
+     "url": "/documents/{id}",
+     "confirm": "Delete this uploaded document?",
+     "danger": true
+    }
+   ],
+   "upload": {
+    "label": "Upload document",
+    "url": "/documents"
+   }
+  },
+  "support": {
+   "id": "support",
+   "title": "Support",
+   "subtitle": "Ask us a question or report a problem.",
+   "type": "table",
+   "endpoint": "/support",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "open",
+      "in_progress",
+      "resolved",
+      "closed"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Reference",
+     "field": "reference",
+     "type": "strong"
+    },
+    {
+     "label": "Category",
+     "field": "category",
+     "type": "text"
+    },
+    {
+     "label": "Subject",
+     "field": "subject",
+     "type": "text"
+    },
+    {
+     "label": "Status",
+     "field": "status",
+     "type": "status"
+    },
+    {
+     "label": "Response",
+     "field": "response",
+     "type": "text"
+    },
+    {
+     "label": "Sent",
+     "field": "createdAt",
+     "type": "date"
+    }
+   ],
+   "create": {
+    "label": "New support request",
+    "title": "New support request",
+    "method": "POST",
+    "url": "/support",
+    "fields": [
+     {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+       "general",
+       "shipment",
+       "billing",
+       "technical",
+       "account"
+      ]
+     },
+     {
+      "name": "subject",
+      "label": "Subject",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "message",
+      "label": "Message",
+      "type": "textarea",
+      "required": true
+     }
+    ]
+   },
+   "actions": [
+    {
+     "label": "Read",
+     "icon": "eye",
+     "type": "detail",
+     "detail": {
+      "title": "{reference}",
+      "url": "/support/{id}",
+      "fields": [
+       {
+        "label": "Subject",
+        "path": "request.subject"
+       },
+       {
+        "label": "Your message",
+        "path": "request.message"
+       },
+       {
+        "label": "Our response",
+        "path": "request.response"
+       },
+       {
+        "label": "Status",
+        "path": "request.status",
+        "type": "status"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "client-invoices": {
+   "id": "client-invoices",
+   "title": "Invoices",
+   "subtitle": "Your invoices and outstanding balances (ZAR).",
+   "type": "table",
+   "endpoint": "/invoices",
+   "filters": [
+    {
+     "param": "status",
+     "label": "Status",
+     "options": [
+      "unpaid",
+      "partially_paid",
+      "paid",
+      "overdue",
+      "cancelled"
+     ]
+    }
+   ],
+   "columns": [
+    {
+     "label": "Invoice",
+     "field": "invoiceNumber",
+     "type": "strong"
+    },
+    {
+     "label": "Shipment",
+     "field": "trackingRef",
+     "type": "text"
+    },
+    {
+     "label": "Total",
+     "field": "total",
+     "type": "money"
+    },
+    {
+     "label": "Paid",
+     "field": "paid",
+     "type": "money"
+    },
+    {
+     "label": "Balance",
+     "field": "balance",
+     "type": "money"
+    },
+    {
+     "label": "Due",
+     "field": "dueDate",
+     "type": "date"
+    },
+    {
+     "label": "Status",
+     "field": "displayStatus",
+     "type": "status"
+    }
+   ],
+   "actions": [
+    {
+     "label": "Details",
+     "icon": "receipt",
+     "type": "detail",
+     "detail": {
+      "title": "Invoice {invoiceNumber}",
+      "url": "/invoices/{id}",
+      "fields": [
+       {
+        "label": "Description",
+        "path": "invoice.description"
+       },
+       {
+        "label": "Subtotal",
+        "path": "invoice.subtotal",
+        "type": "money"
+       },
+       {
+        "label": "VAT",
+        "path": "invoice.vatAmount",
+        "type": "money"
+       },
+       {
+        "label": "Total",
+        "path": "invoice.total",
+        "type": "money"
+       },
+       {
+        "label": "Balance",
+        "path": "invoice.balance",
+        "type": "money"
+       }
+      ],
+      "lists": [
+       {
+        "title": "Payments received",
+        "path": "payments",
+        "columns": [
+         {
+          "label": "Date",
+          "field": "paidAt",
+          "type": "date"
+         },
+         {
+          "label": "Amount",
+          "field": "amount",
+          "type": "money"
+         },
+         {
+          "label": "Method",
+          "field": "method",
+          "type": "text"
+         },
+         {
+          "label": "Receipt",
+          "field": "receiptNumber",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "admin-dashboard": {
+   "id": "admin-dashboard",
+   "title": "Administrator Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  },
+  "dispatcher-dashboard": {
+   "id": "dispatcher-dashboard",
+   "title": "Dispatcher Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  },
+  "warehouse-dashboard": {
+   "id": "warehouse-dashboard",
+   "title": "Warehouse Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  },
+  "fleet-dashboard": {
+   "id": "fleet-dashboard",
+   "title": "Fleet Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  },
+  "procurement-dashboard": {
+   "id": "procurement-dashboard",
+   "title": "Procurement Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  },
+  "finance-dashboard": {
+   "id": "finance-dashboard",
+   "title": "Finance Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  },
+  "driver-dashboard": {
+   "id": "driver-dashboard",
+   "title": "Driver Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  },
+  "client-portal": {
+   "id": "client-portal",
+   "title": "Client Dashboard",
+   "subtitle": "Live figures from the shared database.",
+   "type": "dashboard"
+  }
+ },
+ "files": {
+  "notifications": "notifications.html",
+  "profile": "profile.html",
+  "company-profile": "company-profile.html",
+  "users": "user-management.html",
+  "roles": "roles.html",
+  "companies": "client-accounts.html",
+  "system-settings": "system-settings.html",
+  "audit-logs": "audit-logs.html",
+  "data-management": "data-management.html",
+  "admin-reports": "reports.html",
+  "quotations": "quotations.html",
+  "create-shipment": "assign-shipments.html",
+  "route-planning": "load-board.html",
+  "shipment-tracking": "shipment-tracking.html",
+  "delivery-scheduling": "delivery-scheduling.html",
+  "drivers": "drivers.html",
+  "shipment-reports": "shipment-reports.html",
+  "incidents": "incidents.html",
+  "support-admin": "support-admin.html",
+  "inventory-management": "inventory-management.html",
+  "stock-management": "stock-management.html",
+  "receiving": "receiving.html",
+  "dispatch-stock": "dispatch-stock.html",
+  "stock-transfers": "stock-transfers.html",
+  "low-stock-alerts": "low-stock-alerts.html",
+  "stock-movements": "stock-movements.html",
+  "inventory-reports": "inventory-reports.html",
+  "vehicle-management": "vehicle-management.html",
+  "maintenance-schedule": "maintenance-schedule.html",
+  "fuel-management": "fuel-management.html",
+  "vehicle-assignments": "vehicle-assignments.html",
+  "fleet-tracking": "fleet-tracking.html",
+  "upcoming-maintenance": "upcoming-maintenance.html",
+  "fleet-reports": "fleet-reports.html",
+  "suppliers": "suppliers.html",
+  "purchase-requests": "purchase-requests.html",
+  "purchase-orders": "purchase-orders.html",
+  "goods-received": "goods-received.html",
+  "supplier-invoices": "supplier-invoices.html",
+  "procurement-reports": "procurement-reports.html",
+  "invoices": "invoices.html",
+  "payments": "payments.html",
+  "receipts": "receipts.html",
+  "accounts-payable": "accounts-payable.html",
+  "accounts-receivable": "accounts-receivable.html",
+  "financial-reports": "financial-reports.html",
+  "expenses": "expenses.html",
+  "budgets": "budgets.html",
+  "my-deliveries": "my-deliveries.html",
+  "delivery-schedule": "delivery-schedule.html",
+  "driver-navigation": "driver-navigation.html",
+  "proof-of-delivery": "proof-of-delivery.html",
+  "delivery-history": "delivery-history.html",
+  "incident-reporting": "incident-reporting.html",
+  "client-quote": "client-quote.html",
+  "client-track": "client-track.html",
+  "shipment-history": "shipment-history.html",
+  "documents": "documents.html",
+  "support": "support.html",
+  "client-invoices": "client-invoices.html",
+  "admin-dashboard": "admin-dashboard.html",
+  "dispatcher-dashboard": "dispatcher-dashboard.html",
+  "warehouse-dashboard": "warehouse-dashboard.html",
+  "fleet-dashboard": "fleet-dashboard.html",
+  "procurement-dashboard": "procurement-dashboard.html",
+  "finance-dashboard": "finance-dashboard.html",
+  "driver-dashboard": "driver-dashboard.html",
+  "client-portal": "client-portal.html"
+ }
+}
