@@ -1,0 +1,58 @@
+
+name: Mhambi Logistics Backend CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  backend-tests:
+    name: Test Node.js Backend
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: mhambi_test_user
+          POSTGRES_PASSWORD: ci_only_test_password
+          POSTGRES_DB: mhambi_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U mhambi_test_user -d mhambi_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    defaults:
+      run:
+        working-directory: backend
+
+    env:
+      NODE_ENV: test
+      TEST_DATABASE_URL: postgresql://mhambi_test_user:ci_only_test_password@localhost:5432/mhambi_test
+      DATABASE_URL: postgresql://mhambi_test_user:ci_only_test_password@localhost:5432/mhambi_test
+      DB_SSL: "false"
+      JWT_ACCESS_SECRET: ci-only-jwt-secret-not-for-production-0123456789abcdef
+      BCRYPT_ROUNDS: "4"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install backend dependencies
+        run: npm ci
+
+      - name: Run backend Jest tests
+        run: npm test
