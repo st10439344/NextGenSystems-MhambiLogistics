@@ -1,380 +1,339 @@
-# NextGenSystems-MhambiLogistics
-Web application featuring client portals, warehouse inventory tracking, driver dispatching, and administrative dashboards.
 # Mhambi Logistics Enterprise Logistics Management Platform
 
-## 📌 Project Overview
+**Developed by NextGen Systems**
 
-The **Mhambi Logistics Enterprise Logistics Management Platform** is a web-based logistics management solution designed to support the operations of a professional logistics and transportation company.
-
-The platform provides a centralised digital environment where **clients and internal logistics departments** can access services and manage logistics-related activities.
-
-The system is being developed by **NextGen Systems** as part of the Mhambi Logistics project.
-
----
-
-## 🎯 Project Purpose
-
-The purpose of the Mhambi Logistics platform is to improve the way logistics information, customer interactions and internal operational activities are managed through a centralised digital system.
-
-The platform aims to improve:
-
-* Customer communication
-* Shipment visibility
-* Quotation requests
-* Document accessibility
-* Logistics coordination
-* Internal departmental workflows
-* Information management
-* Operational efficiency
+**Project:** Work Integrated Learning 3B — Enterprise Logistics Management Platform  
+**Institution:** IIE Rosebank College  
+**Project Team:** Sindisiwe Ntuli and Thandiswa Gama  
+**Project Status:** Academic prototype — active development and testing
 
 ---
 
-## 🌐 Platform Structure
+## 1. Project Overview
 
-The complete platform is designed around two main areas:
+The **Mhambi Logistics Enterprise Logistics Management Platform** is an integrated logistics management solution designed to support the operational needs of a logistics and transportation business.
 
-### Public Website
+Developed by **NextGen Systems**, the platform combines an Android mobile application, a RESTful backend API, a PostgreSQL database and a web-based interface.
 
-The public-facing website allows visitors and potential clients to learn more about Mhambi Logistics and its services.
+The system aims to improve shipment coordination, inventory management, fleet operations, procurement, financial administration and communication between clients and internal departments.
 
-It includes:
+## 2. Project Objectives
 
-* Home
-* About
-* Services
-* Fleet
-* Industries
-* Careers
-* Contact
-* Client Login
-* Client Registration
-* Quote Access
-* Shipment Tracking
+The primary objectives are to:
 
-### Client Portal
+- Centralise logistics information and departmental operations.
+- Improve shipment creation, assignment and tracking.
+- Support warehouse stock monitoring and inventory movements.
+- Improve fleet and driver coordination.
+- Facilitate procurement and supplier management.
+- Support financial and administrative workflows.
+- Provide role-based access to appropriate system functionality.
+- Improve operational visibility through dashboards and reports.
 
-Registered business clients can access a dedicated portal containing:
+## 3. Technology Stack
 
-* Client Dashboard
-* Request a Quote
-* Shipment Tracking
-* Shipment History
-* Documents
-* Company Profile
-* Support
-* Logout
+| Component | Technology |
+|---|---|
+| Android application | Kotlin, Jetpack Compose |
+| Android development | Android Studio |
+| Backend API | Node.js, Express.js |
+| Database | PostgreSQL |
+| Cloud database hosting | Neon |
+| Website | HTML5, CSS3, JavaScript |
+| Authentication | JWT-based authentication and Google Sign-In integration |
+| Backend testing | Jest, Supertest |
+| Android testing | Gradle unit tests |
+| Version control | Git, GitHub |
+| Continuous integration | GitHub Actions |
+| Android testing environment | BlueStacks 5 |
 
-### Internal Logistics Management System
+## 4. System Architecture
 
-The internal system is structured around different organisational roles:
+The platform consists of four main components.
 
-#### Administrator
+### Android Application
 
-Responsible for:
+The Android application provides mobile access to role-specific dashboards and logistics functions.
 
-* User Management
-* Role Management
-* Company Management
-* System Settings
-* Audit Logs
-* Data Management
-* Reports and Analytics
-* Notifications
-* Profile Management
+It is developed using Kotlin and Jetpack Compose.
 
-#### Dispatcher
+### REST API
 
-Responsible for:
+The Node.js and Express backend processes requests from application clients, implements business logic and provides access to logistics data.
 
-* Shipment Creation
-* Driver Assignment
-* Route Planning
-* Shipment Tracking
-* Delivery Scheduling
-* Shipment Reports
+### PostgreSQL Database
 
-#### Warehouse
+PostgreSQL stores the platform's structured information, including users, companies, shipments, inventory and other operational records.
 
-Responsible for:
+The development project uses a PostgreSQL database hosted on Neon.
 
-* Inventory
-* Stock Management
-* Receiving Stock
-* Dispatching Stock
-* Stock Transfers
-* Low-Stock Alerts
-* Inventory Reports
+### Website
 
-#### Fleet
+The website provides a public-facing interface and web-based logistics portal functionality.
 
-Responsible for:
+The website and Android application form part of the broader Mhambi Logistics solution. Their integration and individual features should be evaluated separately.
 
-* Vehicle Management
-* Vehicle Maintenance
-* Fuel Management
-* Vehicle Assignments
-* Fleet Tracking
-* Maintenance Scheduling
-* Fleet Reports
+## 5. User Roles
 
-#### Procurement
+The system is designed around eight user roles.
 
-Responsible for:
+| Role | Primary Responsibilities |
+|---|---|
+| Administrator | User management, role management, company management, system settings and audit logs |
+| Dispatcher | Shipment creation, driver assignment, route planning and delivery scheduling |
+| Warehouse | Inventory management, stock receiving, stock dispatch and low-stock monitoring |
+| Fleet | Vehicle management, maintenance, fuel management and vehicle assignments |
+| Procurement | Supplier management, purchase requests, purchase orders and goods received |
+| Finance | Invoices, payments, receipts, expenses and financial reports |
+| Driver | Assigned deliveries, delivery schedules, navigation, proof of delivery and incident reporting |
+| Client | Quotation requests, shipment tracking, shipment history, documents and support |
 
-* Supplier Management
-* Purchase Requests
-* Purchase Orders
-* Goods Received
-* Supplier Invoices
-* Procurement Reports
+## 6. Key Features
 
-#### Finance
+The project includes the following areas of functionality:
 
-Responsible for:
+- User registration and authentication.
+- Role-based dashboards and navigation.
+- Google Sign-In integration.
+- Shipment and delivery management.
+- Warehouse inventory operations.
+- Fleet and vehicle management.
+- Procurement and supplier workflows.
+- Finance and reporting interfaces.
+- Client quotation and tracking functions.
+- User profile and settings management.
 
-* Invoices
-* Payments
-* Receipts
-* Accounts Payable
-* Accounts Receivable
-* Expenses
-* Budgets
-* Financial Reports
+Some features remain prototype-level and may use demonstration data.
 
-#### Driver
-
-Responsible for:
-
-* Assigned Shipments
-* Delivery Schedule
-* Navigation
-* Proof of Delivery
-* Delivery History
-* Incident Reporting
-
----
-
-## 📱 Mobile Application
-
-A mobile application is also part of the overall Mhambi Logistics solution.
-
-The mobile application is intended to provide convenient access to important logistics functions for users who may not always be working from a desktop computer.
-
-Planned mobile functionality includes:
-
-* User authentication
-* Dashboard
-* Shipment information
-* Shipment tracking
-* Delivery information
-* Notifications
-* Documents
-* Profile management
-* Role-specific functionality
-
----
-
-## 🗺️ Project Design
-
-The project includes the following design and planning artefacts:
-
-* Project Plan
-* Work Breakdown Structure (WBS)
-* Gantt Chart
-* System Sitemap
-* Website Wireframes
-* Mobile Application Wireframes
-
-These artefacts are used to guide the development of the platform and maintain consistency between the planned system and the implemented solution.
-
----
-
-## 💻 Technologies
-
-The project uses web development technologies including:
-
-* **HTML5** – Website structure and semantic content
-* **CSS3** – Styling, layout and responsive design
-* **JavaScript** – Client-side functionality and interaction
-* **Git** – Version control
-* **GitHub** – Source-code management and collaboration
-* **Visual Studio Code** – Development environment
-
-Additional backend, database and mobile technologies may be integrated as the project progresses.
-
----
-
-## 📂 Project Structure
+## 7. Repository Structure
 
 ```text
-Mhambi-Logistics/
-│
-├── index.html
-├── about.html
-├── services.html
-├── fleet.html
-├── industries.html
-├── careers.html
-├── contact.html
-│
-├── client/
-│   ├── client-portal.html
-│   ├── client-quote.html
-│   ├── client-track.html
-│   ├── shipment-history.html
-│   ├── documents.html
-│   ├── company-profile.html
-│   ├── support.html
-│   └── logout.html
-│
-├── admin/
-├── dispatcher/
-├── warehouse/
-├── fleet/
-├── procurement/
-├── finance/
-├── driver/
-│
-├── mobile/
-│
-├── css/
-├── js/
-├── images/
-│
+NextGenSystems-MhambiLogistics/
+├── .github/
+│   └── workflows/
+│       ├── android-ci.yml
+│       └── backend-ci.yml
+├── android/
+│   └── Android application source and Gradle configuration
+├── backend/
+│   ├── src/
+│   ├── tests/
+│   ├── package.json
+│   └── package-lock.json
+├── NextGenSystem-Complete/
+│   └── Website and web portal project files
+├── shared/
+│   └── portal-config.json
+├── .gitignore
 └── README.md
 ```
 
-> **Note:** The folder structure may change as additional system modules are developed.
+## 8. Backend Setup
+
+### Prerequisites
+
+- Node.js version 20 or newer.
+- npm.
+- Access to a PostgreSQL database.
+- A correctly configured backend environment file.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/st10439344/NextGenSystems-MhambiLogistics.git
+```
+
+Navigate to the backend:
+
+```bash
+cd NextGenSystems-MhambiLogistics/backend
+```
+
+Install dependencies:
+
+```bash
+npm ci
+```
+
+Create a local `.env` file using the provided `.env.example` as a guide.
+
+Configure the required environment variables using your own development credentials.
+
+**Never commit `.env`, passwords, database connection strings or private API credentials to GitHub.**
+
+Run database migrations:
+
+```bash
+node --env-file=.env src/db/migrate.js
+```
+
+Start the backend:
+
+```bash
+node --env-file=.env src/server.js
+```
+
+The local API uses port `3000` unless configured otherwise.
+
+The health endpoint is:
+
+```text
+http://localhost:3000/api/v1/health
+```
+
+### Important Database Warning
+
+The backend test setup drops and recreates the `public` schema.
+
+Never run the Jest test suite against the production database or the main Neon development database.
+
+Always use a separate, disposable PostgreSQL database specifically created for testing.
+
+## 9. Android Application Setup
+
+### Prerequisites
+
+- Android Studio.
+- Android SDK.
+- Java 17 for the Gradle build.
+- BlueStacks 5 or another compatible Android testing device.
+- A running backend API for network-dependent functionality.
+
+### Running the Application
+
+1. Open Android Studio.
+2. Select **Open**.
+3. Open the repository's `android` folder.
+4. Allow Gradle synchronization to complete.
+5. Start BlueStacks 5 and enable Android debugging.
+6. Connect BlueStacks through ADB if required.
+7. Select the connected Android device.
+8. Build and run the application.
+
+The Android application must be configured to use a backend address reachable from the selected device.
+
+**Note:** BlueStacks was approved by the project lecturer as the Android testing environment for this academic project.
+
+## 10. Automated Testing and Continuous Integration
+
+GitHub Actions is used to automate testing and build verification.
+
+### Android CI
+
+Workflow:
+
+```text
+.github/workflows/android-ci.yml
+```
+
+The workflow:
+
+- Configures Java 17.
+- Executes Android unit tests.
+- Builds a debug APK.
+- Uploads the APK as a GitHub Actions artifact.
+
+**Latest verified status during README preparation:** Passed.
+
+### Backend CI
+
+Workflow:
+
+```text
+.github/workflows/backend-ci.yml
+```
+
+The workflow:
+
+- Configures Node.js.
+- Starts an isolated PostgreSQL testing service.
+- Installs backend dependencies.
+- Executes Jest tests.
+
+**Status during README preparation:** Troubleshooting outstanding test-suite failures.
+
+The backend test workflow uses a disposable database and does not require access to the main Neon database.
+
+### GitHub Actions
+
+View the latest workflow results:
+
+https://github.com/st10439344/NextGenSystems-MhambiLogistics/actions
+
+## 11. Testing Evidence
+
+The project uses automated tests and manual functional testing.
+
+Areas covered include:
+
+- Authentication and registration.
+- Role-based access control.
+- API functionality.
+- Database operations.
+- Inventory and operational workflows.
+- Android build verification.
+- Navigation and role-specific screens.
+
+The team also performs manual Android application testing using BlueStacks.
+
+Passing automated tests should not be interpreted as proof that every production scenario has been tested.
+
+## 12. Security Considerations
+
+The system incorporates or is designed to support:
+
+- Authentication and access control.
+- Role-based permissions.
+- Protected backend endpoints.
+- Input validation.
+- Environment-based configuration.
+- Password hashing.
+- Database access restrictions.
+- Audit logging.
+
+Production deployment would require further security review, vulnerability remediation, secure secret management and operational monitoring.
+
+## 13. Current Development Status
+
+### Implemented and Demonstrated
+
+- Android application with eight role-based interfaces.
+- User registration and login workflows.
+- Google Sign-In functionality.
+- REST API backend.
+- PostgreSQL database integration.
+- Development database migrations and demonstration data.
+- GitHub source-code repository.
+- Android automated testing and APK build workflow.
+
+### Ongoing Work
+
+- Resolution of remaining backend CI test-suite failures.
+- Final documentation and testing evidence.
+- Verification of all project requirements against the assessment rubric.
+- Final demonstration and submission preparation.
+
+## 14. Project Team
+
+**NextGen Systems**
+
+| Team Member | Project Role |
+|---|---|
+| Sindisiwe Ntuli | Team Leader |
+| Thandiswa Gama | System Developer |
+
+**Academic Supervisor/Lecturer:** Mr Zenzele Vilakazi.
+
+## 15. Academic Disclaimer
+
+This repository contains an academic prototype developed for the Work Integrated Learning module at IIE Rosebank College.
+
+The project is intended to demonstrate software development, system integration, database design, role-based functionality, testing and teamwork.
+
+The platform is not represented as a production-certified logistics system.
 
 ---
 
-## 🚀 Current Development Status
-
-The project is being developed in phases.
-
-### Completed / Developed
-
-* Public website structure
-* Public website pages
-* Client registration and login
-* Client Portal
-* Client quotation page
-* Client shipment tracking
-* Shipment history
-* Client documents
-* Company profile
-* Client support
-* Logout functionality
-* Consistent website styling
-* Initial project sitemap
-* Project planning documentation
-
-### Currently Being Developed
-
-* Internal logistics management modules
-* Administrator dashboard
-* Dispatcher dashboard
-* Warehouse dashboard
-* Fleet dashboard
-* Procurement dashboard
-* Finance dashboard
-* Driver dashboard
-* Mobile application
-* Final wireframes
-* System integration
-
-### Future Development
-
-* Backend integration
-* Database integration
-* Real-time shipment data
-* Secure authentication
-* Production-level role-based access control
-* Notifications
-* Advanced reporting and analytics
-
----
-
-## 🧪 Testing
-
-The project will be tested throughout development to ensure that the platform is functional, usable and consistent.
-
-Testing areas include:
-
-* Navigation testing
-* Form testing
-* Login and registration testing
-* Client portal functionality
-* Shipment tracking
-* Responsive design
-* Browser compatibility
-* Mobile usability
-* HTML structure
-* CSS validation
-* JavaScript functionality
-* Content and spelling review
-
----
-
-## 🔐 Security Considerations
-
-Security is an important consideration because the platform will handle business and logistics information.
-
-The completed system is intended to implement:
-
-* Role-based access control
-* Secure authentication
-* Appropriate access restrictions
-* Protection of client information
-* Secure database access
-* Audit logging
-* Input validation
-* Secure communication
-
-Production security mechanisms will be implemented as the backend and database components are integrated.
-
----
-
-## 👥 Project Team
-
-### NextGen Systems
-
-**Project Team**
-
-* System Development Team
-* Project Management Team
-* UI/UX Design Team
-* Testing and Quality Assurance
-
----
-
-## 📚 Project Documentation
-
-Supporting project documentation includes:
-
-* Updated Project Plan
-* Client Needs Analysis
-* Work Breakdown Structure
-* Gantt Chart
-* Sitemap
-* Website Wireframes
-* Mobile Application Wireframes
-* System Requirements
-* Testing Documentation
-* Final Project Report
-
----
-
-## 📌 Important Note
-
-This repository represents an **academic/prototype development project** for Mhambi Logistics.
-
-Some functionality is currently implemented as a prototype and may use demonstration data. These components are intended to demonstrate the planned user experience and system functionality before integration with a production backend and database.
-
----
-
-## 📄 License
-
-This project is developed for academic/project purposes.
-
-© NextGen Systems — Mhambi Logistics Enterprise Logistics Management Platform.
+© 2026 NextGen Systems. Mhambi Logistics Enterprise Logistics Management Platform. Academic project.
