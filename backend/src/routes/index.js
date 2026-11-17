@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.use('/auth', require('./auth'));
 router.use('/quotations', require('./quotations'));
+router.use('/demo-payments', require('./demoPayments')); // opt-in, development-only simulation
 router.use(require('./shipments'));   // /shipments, /track/:ref, /assignments, /drivers, /driver/deliveries, /incidents
 router.use(require('./warehouse'));   // /warehouses, /inventory, /stock-movements, /stock-transfers
 router.use(require('./fleet'));       // /vehicles, /maintenance, /fuel, /fleet/overview
