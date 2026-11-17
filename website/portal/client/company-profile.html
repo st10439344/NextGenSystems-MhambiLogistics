@@ -1,0 +1,177 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Company profile | Mhambi Logistics</title>
+  <link rel="stylesheet" href="../../css/modern.css">
+</head>
+
+<body class="portal-body" data-role="client" data-module="company-profile.html">
+  <div class="portal-layout">
+
+    <!-- Sidebar -->
+    <aside class="portal-sidebar">
+      <a class="brand portal-brand" href="../../public/index.html">
+        <span class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path
+              d="M5 34c12 2 22-4 38-24M8 16c10 2 19-1 28-8M12 41c13-1 24-9 30-19"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="5"
+              stroke-linecap="round"
+            />
+            <path
+              d="m36 8 7 2-2 7"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <strong>MHAMBI</strong>
+          <small>TRANSPORT & LOGISTICS</small>
+        </span>
+      </a>
+
+      <p class="sidebar-label">CLIENT PORTAL</p>
+
+      <nav>
+        <a href="index.html">
+          Overview <span>↗</span>
+        </a>
+
+        <a href="client-track.html">
+          Track shipments <span>↗</span>
+        </a>
+
+        <a href="client-quote.html">
+          Get a quote <span>↗</span>
+        </a>
+
+        <a href="shipment-history.html">
+          Shipment history <span>↗</span>
+        </a>
+
+        <a href="documents.html">
+          Documents <span>↗</span>
+        </a>
+
+        <a class="selected" href="company-profile.html">
+          Company profile <span>↗</span>
+        </a>
+
+        <a href="support.html">
+          Support <span>↗</span>
+        </a>
+
+        <a href="demo-payments.html">
+          Demo payments <span>↗</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="../../public/index.html">← Public website</a>
+        <button id="logout" type="button">Sign out ↗</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="portal-main">
+
+      <header class="portal-topbar">
+        <button class="sidebar-toggle" aria-label="Open navigation">
+          ☰
+        </button>
+
+        <span>Mhambi / <b>Client</b></span>
+
+        <div class="account-pill">
+          <span id="userName">Account</span>
+          <span class="avatar">●</span>
+        </div>
+      </header>
+
+      <main class="portal-content">
+
+        <!-- Page heading -->
+        <section class="portal-overview">
+          <div class="portal-kicker">
+            CLIENT / MHAMBI PLATFORM
+          </div>
+
+          <h1>Company profile</h1>
+          <p>Account information</p>
+        </section>
+
+        <!-- Existing company data -->
+        <section class="data-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow dark">CONNECTED DATA</span>
+              <h2>Live records</h2>
+            </div>
+
+            <button
+              class="button button-small"
+              id="refreshModule"
+              type="button"
+            >
+              Refresh ↻
+            </button>
+          </div>
+
+          <p class="module-status" role="status">
+            Waiting for the backend data endpoint to be configured.
+          </p>
+
+          <div id="moduleData" class="module-data"></div>
+        </section>
+
+        <!-- NEW: Google account linking section -->
+        <section
+          class="data-panel"
+          aria-labelledby="googleLinkHeading"
+        >
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow dark">ACCOUNT SECURITY</span>
+              <h2 id="googleLinkHeading">Google account</h2>
+            </div>
+          </div>
+
+          <p>
+            Connect your Google account to your existing
+            Mhambi Logistics Client account so you can
+            sign in with Google in the future.
+          </p>
+
+          <div id="googleLinkButton"></div>
+
+          <p id="googleLinkStatus" role="status">
+            Google account linking is not yet configured.
+          </p>
+        </section>
+
+        <!-- Existing page note -->
+        <div class="portal-note">
+          Connected data is available only after your backend
+          API routes have been configured and verified.
+          This interface does not fabricate shipment or
+          financial information.
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Existing scripts -->
+  <script src="../../js/api.js" defer></script>
+  <script src="../../js/portal.js" defer></script>
+</body>
+</html>

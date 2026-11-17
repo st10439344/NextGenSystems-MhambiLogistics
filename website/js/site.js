@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.getElementById('year')?.replaceChildren(String(new Date().getFullYear()));const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.site-nav');toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});});
